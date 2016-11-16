@@ -1,0 +1,40 @@
+<br />
+<form method="post" name="post" action="{?$url_pay?}">
+ <table class="grid" width="600" align="center">
+    <caption>欢迎使用在线支付系统</caption>
+    <tr class="odd"> 
+      <td>
+	  <br />
+	  您好，{?$buyname?}!
+	  <br /><br />
+	  您选择的交易类型为：
+	  <br /><br />
+	  <span class="hottext">
+	  * 购买{?$egold?}点{?$egoldname?}，合计人民币：{?$money?}元</span>
+	  <br /><br />
+	  确认购买请点击“进入下一步”。
+	  <br />
+	  <br />
+	  </td>
+    </tr>
+    <tr class="even"> 
+      <td height="30" valign="middle">
+	  <input type="hidden" name="service" value="{?$service?}">
+	  <input type="hidden" name="partner" value="{?$partner?}">
+	  <input type="hidden" name="return_url" value="{?$return_url?}">
+	  <input type="hidden" name="notify_url" value="{?$notify_url?}">
+	  <input type="hidden" name="_input_charset" value="{?$_input_charset?}">
+	  <input type="hidden" name="subject" value="{?$subject?}">
+	  <input type="hidden" name="out_trade_no" value="{?$out_trade_no?}">
+	  <input type="hidden" name="total_fee" value="{?$total_fee?}">
+	  <input type="hidden" name="payment_type" value="{?$payment_type?}">
+	  <input type="hidden" name="show_url" value="{?$show_url?}">
+	  <input type="hidden" name="seller_email" value="{?$seller_email?}">
+	  <input type="hidden" name="sign" value="{?$sign?}">
+	  <input type="hidden" name="sign_type" value="{?$sign_type?}">
+      <input type="submit" class="button" value=" 进入下一步 " name="v_action">
+	  </td>
+    </tr>
+  </table>
+</form>
+<br /><br />

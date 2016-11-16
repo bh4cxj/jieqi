@@ -1,0 +1,6 @@
+<ul class="ultop">
+{?section name=i loop=$tagarry ?}
+  <li> <a href="{?$linkurl?}/tag.php?tagname={?$tagarry[i].tagname |urlencode?}"> [{?$tagarry[i].tagname ?}] </a> 约有{?$tagarry[i].num ?}篇相关文章 约有点击次数{?$tagarry[i].click ?}次</li>
+{?/section?}
+</ul>
+<div class="pages">{?$pages?}</div>

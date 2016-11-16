@@ -1,0 +1,36 @@
+
+<div class="main">
+    <div id="articlelist">
+        <h3>
+            <span>Comment</span>《<a href="{?$url_articleinfo?}">{?$articlename?}</a>》书评列表 <em><a href="/book/reviews-{?$articleid?}.html">全部书评</a> 
+            <a href="/book/goodreviews-{?$articleid?}.html">精华书评</a></em>
+        </h3>
+        <div class="comment_info_list">
+           {?section name=i loop=$reviewrows?} 
+            <div class="comments">
+                <div class="reviewer">
+                    <img src="{?function jieqi_geturl:'system':'avatar':$replyrows[i].userid:'l':$replyrows[i].avatar?}">{?if $reviewrows[i].replierid > 0?}{?$reviewrows[i].replier?}{?else?}游客{?/if?}</div>
+                <h2><a href="/book/comment-{?$reviewrows[i].topicid?}.html">{?$reviewrows[i].title?}</a></h2>
+                <p class="comment_infos">　最后回复：{?if $reviewrows[i].replyflag > 0?}{?if $reviewrows[i].replierid > 0?}{?$reviewrows[i].replier?}{?else?}游客{?/if?}{?/if?}　回复数：{?$reviewrows[i].replies?}　点击数：{?$reviewrows[i].views?}　评论时间：{?$reviewrows[i].posttime|date:"Y-m-d H:i:s"?} </p>
+            </div>  
+            {?/section?}
+                     
+        </div>
+        
+        
+       <div class="comment_form">
+    <form action="/modules/article/reviews.php?aid={?$articleid?}" method="post" name="frmreview" target="_blank"  onsubmit="return jieqiFormValidate_frmreview();">
+        <p>评论标题：<input name='ptitle' type='text' class='title_input' value="{?$author?}加油，《{?$articlename?}》写得好棒！" onclick="this.value=''" /></p>
+        <p><textarea name="pcontent" id="pcontent" class="re_textarea"></textarea></p>
+        <p id="re_submit">
+            <!--<img src="/checkcode.php" style="cursor:pointer;" onclick="this.src='/checkcode.php?rand='+Math.random();">
+            验证码:<input type="text" class="text" name="checkcode" id="checkcode" size="8" maxlength="8" value="" />-->
+            <input value="发表评论" class="coment_sub" type="submit" name="submit">
+        </p>
+    </form>
+</div>
+
+    
+    </div>
+
+</div>

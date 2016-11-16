@@ -1,0 +1,5 @@
+<ul class="ultop">
+{?section name=i loop=$quizarry?}
+  <li><a href="{?$linkurl?}/problems.php?id={?$quizarry[i].quizid?}">{?$quizarry[i].title |truncate:20?}</a></li>
+{?/section?}
+</ul>

@@ -1,0 +1,137 @@
+BODY {MARGIN: 10px; BACKGROUND-COLOR: #ffffff;WORD-BREAK: break-all; WORD-WRAP: break-word; font-size:12px;
+}
+TD {
+	WORD-BREAK: break-all; WORD-WRAP: break-word
+}
+DIV {
+	WORD-BREAK: break-all; WORD-WRAP: break-word
+}
+FORM {
+	MARGIN: 0px
+}
+TD {
+	FONT-SIZE: 12px; LINE-HEIGHT: 18px
+}
+DIV {
+	FONT-SIZE: 12px; LINE-HEIGHT: 18px
+}
+A:link {
+	COLOR: #0033cc
+}
+A:visited {
+	COLOR: #800080
+}
+.dialog .close {
+	RIGHT: 4px; POSITION: absolute; TOP: 3px
+}
+.dialog .box {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 12px; PADDING-LEFT: 12px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: #fff; FILTER: ; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 12px; WIDTH: 100%; PADDING-TOP: 12px; POSITION: relative; BORDER-RIGHT-WIDTH: 0px; moz-opacity: 0.95
+}
+.dialog .formarea TD {
+	FONT-SIZE: 12px; PADDING-BOTTOM: 5px
+}
+.dialog .formarea .itn {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; WHITE-SPACE: nowrap
+}
+.dialog .itn {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; WHITE-SPACE: nowrap
+}
+.dialog .formarea .sbt {
+	PADDING-TOP: 5px
+}
+.dialog .formarea .sbtm {
+	MARGIN-TOP: 5px
+}
+.dialog .sr {
+	FONT-SIZE: 0px; BACKGROUND: #9b9b9b; FILTER: alpha(opacity=55); LINE-HEIGHT: 0px; moz-opacity: 0.55
+}
+.dialog .sb {
+	FONT-SIZE: 0px; BACKGROUND: #9b9b9b; FILTER: alpha(opacity=55); LINE-HEIGHT: 0px; moz-opacity: 0.55
+}
+.dialog .sr {
+	RIGHT: -4px; WIDTH: 4px; POSITION: absolute; TOP: 6px
+}
+.dialog .sb {
+	MARGIN-LEFT: 6px; HEIGHT: 4px
+}
+.dialog DIV.line {
+	BORDER-TOP: #bbbbbb 1px solid; MARGIN-TOP: 15px; LINE-HEIGHT: 15px
+}
+.dialog .list .pad {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 16px; PADDING-TOP: 16px
+}
+.dialog .list .padl {
+	PADDING-LEFT: 12px
+}
+.dialog .list TD.hd {
+	FONT-SIZE: 12px; BORDER-BOTTOM: #cdcdcd 1px solid
+}
+.dialog .list TD {
+	FONT-SIZE: 12px; BORDER-BOTTOM: #cdcdcd 1px solid
+}
+.dialog .list TD.hd {
+	BORDER-TOP: #cdcdcd 1px solid; FONT-WEIGHT: bold; BACKGROUND: #ebebeb; HEIGHT: 24px
+}
+.dialog .list TR.on {
+	FONT-WEIGHT: normal; BACKGROUND: #ffffd1; HEIGHT: 22px
+}
+.dialog .list TR.off {
+	FONT-WEIGHT: normal; BACKGROUND: #fff; HEIGHT: 22px
+}
+.formtit {
+	PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: #deeef4; MARGIN-BOTTOM: 5px; LINE-HEIGHT: 24px; HEIGHT: 24px
+}
+.formhd {
+	MARGIN-LEFT: 4px
+}
+.formsb {
+	PADDING-TOP: 12px
+}
+.listhd {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 1px; COLOR: #333333; PADDING-TOP: 4px
+}
+.listtd {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-SIZE: 12px; BACKGROUND: #ffffff; PADDING-BOTTOM: 1px; COLOR: #333333; PADDING-TOP: 4px
+}
+.line {
+	BORDER-TOP: #cccccc 1px solid; MARGIN-TOP: 0px; LINE-HEIGHT: 0px
+}
+#tabst {
+	MARGIN-BOTTOM: 5px; BORDER-BOTTOM: #3385a4 3px solid; HEIGHT: 27px
+}
+#tabst TD.off {
+	FONT-SIZE: 14px; BACKGROUND: url(http://img.baidu.com/hi/img/staboff.gif) #deeef4 no-repeat; PADDING-TOP: 4px
+}
+#tabst TD.on {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(http://img.baidu.com/hi/img/stabon.gif) #3385a4 no-repeat; COLOR: #ffffff; PADDING-TOP: 4px
+}
+#tabst A {
+	DISPLAY: block; WIDTH: 100%; COLOR: #261cdc
+}
+#tabst A:visited {
+	COLOR: #261cdc
+}
+.gray {
+	COLOR: #666666
+}
+.padl10 {
+	PADDING-LEFT: 10px
+}
+.f12 {
+	FONT-SIZE: 12px
+}
+.f14 {
+	FONT-SIZE: 14px
+}
+.error {
+	FONT-SIZE: 12px; COLOR: #ff0000
+}
+.sucess {
+	FONT-SIZE: 12px; COLOR: #008000
+}
+.photoprv {
+	BORDER-RIGHT: #c2c2c2 1px solid; BORDER-TOP: #c2c2c2 1px solid; BORDER-LEFT: #c2c2c2 1px solid; BORDER-BOTTOM: #c2c2c2 1px solid
+}
+.line2 {
+	BORDER-TOP: #cccccc 1px dotted; MARGIN-TOP: 10px; LINE-HEIGHT: 10px
+}

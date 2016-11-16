@@ -1,0 +1,39 @@
+<table class="grid" width="600" align="center">
+  <caption>神州行卡支付</caption>
+  <tr>
+    <td class="even"><form name="frmbank" method="post" action="{?$jieqi_modules['pay']['url']?}/99cardv2.php">
+      <table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%">&nbsp;</td>
+          <td width="44%" valign="middle"><table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="left">请选择购买类别</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="10000" class="radio">
+            10000点{?$egoldname?}（100元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="5000" class="radio">
+            5000点{?$egoldname?}（50元）</td>
+              </tr>
+              <tr>
+                <td><input type="submit" name="Submit" value="进入下一步" class="button" >
+                    <input type="hidden" name="action" value="bankpay"></td>
+              </tr>
+          </table></td>
+          <td width="4%" valign="top">&nbsp;</td>
+          <td width="48%" valign="top">操作说明：<br />
+              <br />
+&nbsp;&nbsp;&nbsp;&nbsp;1、购买神州行充值卡（50元，100元）<br />
+&nbsp;&nbsp;&nbsp;&nbsp;2、在页面点击相应面值充值按钮,点“下一步”<br />
+&nbsp;&nbsp;&nbsp;&nbsp;3、选择“刮开一张新的神州行卡支付”，输入您的Email地址，点“下一步”之后，输入“神州行卡卡号”和“神州行卡密码”。点确定支付就成功了。<br /><br />
+特别提醒：<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;1.“金卡神州行充值卡”为地方发行卡，不能充值翠微币。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;2. 如果充值不成功，请联系客服QQ帮忙解决</td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+</table>
+<br /><br />

@@ -1,0 +1,30 @@
+{?set jieqi_blocks_module = "obook"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+<form action="" method="post" name="checkform" id="checkform">
+<table class="grid" width="100%" align="center">
+<caption>您的VIP书架可收藏 {?$maxbookcase?} 本，已收藏 {?$nowbookcase?} 本</caption>
+  <tr align="center">
+    <th width="5%">新</th>
+    <th width="17%">文章名称</th>
+    <th width="29%">最新章节</th>
+    <th width="29%">书签</th>
+    <th width="13%">更新日期</th>
+    <th width="7%">操作</th>
+  </tr>
+{?section name=i loop=$bookcaserows?}
+  <tr>
+    <td class="odd" align="center">
+	{?if $bookcaserows[i].hasnew == 1?}
+    <span class="hottext">新</span>
+	{?/if?}
+    </td>
+    <td class="even"><a href="{?$bookcaserows[i].url_obookinfo?}" target="_blank">{?$bookcaserows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$bookcaserows[i].url_lastchapter?}" target="_blank">{?$bookcaserows[i].lastchapter?}</a></td>
+    <td class="even"><a href="{?$bookcaserows[i].url_obookmark?}" target="_blank">{?$bookcaserows[i].obookmark?}</a></td>
+    <td class="odd" align="center">{?$bookcaserows[i].lastupdate?}</td>
+    <td class="even" align="center"><a href="javascript:if(confirm('确实要将本书移除书架么？')) document.location='{?$bookcaserows[i].url_delete?}';">移除</a></td>
+{?/section?}
+  </tr>
+</table>
+</form>
+

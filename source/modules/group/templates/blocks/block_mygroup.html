@@ -1,0 +1,8 @@
+
+<ul class="ulitem">
+	{?section name=i loop=$grouprows?}
+	<li>[{? $grouprows[i].catname ?}] <a href="{?$jieqi_modules['group']['url']?}/?g={? $grouprows[i].gid ?}">{?$grouprows[i].gname ?}</a></li>
+	{?/section?}
+	  <li><a href="{?$jieqi_modules['group']['url']?}/create.php">创建圈子</a></li>
+  <li><a href="{?$jieqi_modules['group']['url']?}/mangroup.php">我的圈子</a></li>
+</ul>

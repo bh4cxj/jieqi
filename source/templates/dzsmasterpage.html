@@ -1,0 +1,37 @@
+{?include file="themes/chaoliu/zzheader.html"?}
+
+<style>
+table tbody tr{height:30px;line-height:30px;}
+
+.zzxx{border: 2px solid #c99500;border-right:none;
+background-color: white;}
+.menu .cjzp{border:none;background:url(/themes/chaoliu/images/chuangjian_14.gif) 27px center no-repeat;}
+</style>
+    	<h2>我的电子书</h2>
+		<table class="grid" width="100%" align="center">
+  <tr align="center">
+    <th width="20%">书名</th>
+    <th width="26%">最新章节</th>
+    <th width="10%">更新</th>
+    <th width="10%">公众章节</th>
+    <th width="20%">总销售额</th>
+    <th width="8%">状态</th>
+    <th width="6%">管理</th>
+  </tr>
+  {?section name=i loop=$obookrows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$obookrows[i].obookid?}">{?$obookrows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$obookrows[i].url_lastchapter?}" target="_blank">{?$obookrows[i].lastvolume?} {?$obookrows[i].lastchapter?}</a></td>
+    <td class="even" align="center">{?$obookrows[i].lastupdate?}</td>
+    <td class="odd" align="center">{?if $obookrows[i].articleid > 0?}<a href="{?$obookrows[i].url_read?}" target="_blank">公众章节</a>{?/if?}</td>
+    <td class="odd" align="center"><a href="{?$obook_dynamic_url?}/chapterstat.php?oid={?$obookrows[i].obookid?}">{?$obookrows[i].sumemoney?}{?if $jieqi_silverusage==1?}({?$obookrows[i].sumegold?}/{?$obookrows[i].sumesilver?}){?/if?}</a></td>
+    <td class="odd" align="center">{?$obookrows[i].salestatus?}</td>
+    <td class="odd" align="center"><a href="{?$obook_static_url?}/obookmanage.php?id={?$obookrows[i].obookid?}">管理</a></td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>
+    </div>
+                
+</div>
+

@@ -1,0 +1,19 @@
+<form name='editbadge' id='editbadge' action='man.php?g={?$badge_linkid?}' method='post' enctype="multipart/form-data">
+<table width='580' class='grid' cellspacing='1' align='center'><caption>徽章管理 (工会徽章)</caption>
+<tr valign='middle' align='left'>
+<td class='odd' width='25%'>徽章名称</td>
+<td class='even'><input type='text' class='text' name='caption' id='caption' size='30' maxlength='100' value='{?$badge_name?}' /></td>
+</tr>
+<tr valign='middle' align='left'>
+<td class='odd' width='25%'>徽章图片</td><td class='even'><input type='file' class='text' size='30' name='badgeimage' id='badgeimage' /> <span class="hottext">图片格式为 .gif .jpg .jpeg .png</span></td>
+</tr>
+<input type='hidden' name='set' id='set' value='badge' />
+<input type='hidden' name='action' id='action' value='{?$action?}' />
+<input type='hidden' name='btypeid' id='btypeid' value='2010' />
+<input type='hidden' name='linkid' id='linkid' value='{?$badge_linkid?}' />
+<tr valign='middle' align='left'>
+<td class='odd' width='25%'>&nbsp;</td>
+<td class='even'>
+<input type='submit' class='button' name='submit'  id='submit' value='提 交' /></td>
+</tr></table>
+</form>

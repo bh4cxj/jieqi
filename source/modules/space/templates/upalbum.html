@@ -1,0 +1,97 @@
+<link href="{?$jieqi_modules['space']['url']?}/include/swfupload/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{?$jieqi_modules['space']['url']?}/include/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="{?$jieqi_modules['space']['url']?}/include/swfupload/js/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="{?$jieqi_modules['space']['url']?}/include/swfupload/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="{?$jieqi_modules['space']['url']?}/include/swfupload/js/fileprogress.js"></script>
+<script type="text/javascript" src="{?$jieqi_modules['space']['url']?}/include/swfupload/js/handlers.js"></script>
+<script type="text/javascript">
+var swfu;
+SWFUpload.onload = function () {
+	var settings = {
+		flash_url : "{?$jieqi_modules['space']['url']?}/include/swfupload/swfupload.swf",
+		upload_url: "{?$jieqi_modules['space']['url']?}/include/swfupload/upload.php",	// Relative to the SWF file
+		post_params: {
+			"catid" : "{?$catid?}",
+			"uid" : "{?$uid?}"
+		},
+		file_size_limit : "{?$maximagesize?} MB",
+        file_types : "*.jpg;*.jpeg;*.gif;*.png;*.bmp",
+		file_types_description : "Images",
+		file_upload_limit : 100,
+		file_queue_limit : 0,
+		custom_settings : {
+			progressTarget : "fsUploadProgress",
+			cancelButtonId : "btnCancel"
+		},
+		debug: false,
+
+		// Button Settings
+		button_image_url : "{?$jieqi_modules['space']['url']?}/include/swfupload/upload.gif",	// Relative to the SWF file
+		button_placeholder_id : "spanButtonPlaceholder",
+		button_width: 71,
+		button_height: 21,
+
+		// The event handler functions are defined in handlers.js
+		swfupload_loaded_handler : swfUploadLoaded,
+		file_queued_handler : fileQueued,
+		file_queue_error_handler : fileQueueError,
+		file_dialog_complete_handler : fileDialogComplete,
+		upload_start_handler : uploadStart,
+		upload_progress_handler : uploadProgress,
+		upload_error_handler : uploadError,
+		upload_success_handler : uploadSuccess,
+		upload_complete_handler : uploadComplete,
+		queue_complete_handler : queueComplete,	// Queue plugin event
+		
+		// SWFObject settings
+		minimum_flash_version : "9.0.28",
+		swfupload_pre_load_handler : swfUploadPreLoad,
+		swfupload_load_failed_handler : swfUploadLoadFailed
+	};
+	swfu = new SWFUpload(settings);
+}
+
+</script>
+
+<div class="c_navigation">
+<div class="fl">请选择要上传的照片:</div><div class="fr">{? if $space_hoster==1 ?} <a href="{?$space_album_create_url?}">+ 创建新相册</a>{? /if ?}</div>
+</div>
+<div class="c_subject">
+	<h2>上传图片每张大小在{?$maximagesize?}M以内。您可以上传JPG、GIF、BMP和PNG格式的照片。</h2>
+	<h2><strong>小技巧</strong>：点击下面的浏览图片按纽并按住CTRL键或框选多张图片一起上传。
+	</h2>
+	<h2>&nbsp;请选择照片所属的相册：</span>
+	  <select onchange="javascript:window.location.href=this.value;" name="catid">
+	   {? section name=i loop=$image_cats ?}
+        <option value="?uid={?$uid?}&catid={? $image_cats[i].id ?}" {? if $image_cats[i].id==$default_cat_id ?}selected="selected"{?/if?}>{? $image_cats[i].name ?}</option>
+		{? /section ?}
+      </select>
+	</h2><br>	
+		
+		<div id="divSWFUploadUI">
+			<div class="fieldset  flash" id="fsUploadProgress">
+			<span class="legend">上传状态</span>
+			</div>
+			<p id="divStatus">0 个文件已经上传</p>
+			<p>
+				<span id="spanButtonPlaceholder"></span>
+				<input id="btnCancel" type="button" value="取消所有待上传文件" disabled="disabled" style="margin-left: 2px; height: 22px; font-size:12px;" />
+				<br />
+			</p>
+		</div>
+		<noscript style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px;">
+			对不起！上传控件加载失败.请<a href=# onclick="javascript:window.location.reload();"><font color=red>刷新</font></a>本页面重新加载控件.
+		</noscript>
+		<div id="divLoadingContent" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
+			上传控件加载失败.请稍点此<a href=# onclick="javascript:window.location.reload();"><font color=red>刷新</font></a>本页面重新加载...
+		</div>
+		<div id="divLongLoading" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
+			请确保Flash插件已经安装。访问<a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"><font color=red>Adobe website</font></a> 获得 Flash Player，或者<a href=# onclick="javascript:window.location.reload();"><font color=red>刷新</font></a>本页面....
+		</div>
+		<div id="divAlternateContent" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
+			我们很抱歉。 上传控件无法载入。您可能需要安装或升级Flash插件。访问<a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">Adobe website</a> 获得 Flash Player.
+		</div>
+	
+</div>
+<hr />
+<div class="pages">{?$url_jumppage?}</div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{?$article_title?} {?$jieqi_title?} - {?$jieqi_sitename?}</title>
+<meta name="keywords" content="{?$jieqi_title?},{?$article_title?},{?$author?}">
+<meta name="description" content="此页面是{?$author?}写的{?$sortname?}类小说《{?$article_title?}》章节{?$jieqi_title?}，{?$jieqi_sitename?}网提供的《{?$article_title?}》最新章节。">
+<link rel="stylesheet" type="text/css" href="/52mb/css/page.css"/>
+<script src="/52mb/js/common.js" ></script>
+ <script type="text/javascript">
+ <!--
+ var preview_page = "{?$articleid|subdirectory?}/{?$article_id?}/{?$preview_chapterid?}.html";
+ var next_page = "{?$articleid|subdirectory?}/{?$article_id?}/{?$next_chapterid?}.html";
+ var index_page = "{?$articleid|subdirectory?}/{?$article_id?}/";
+ var article_id = "{?$article_id?}";
+ var chapter_id = "{?$chapter_id?}";
+ function jumpPage() {
+   var event = document.all ? window.event : arguments[0];
+   if (event.keyCode == 37) document.location = preview_page;
+   if (event.keyCode == 39) document.location = next_page;
+   if (event.keyCode == 13) document.location = index_page;
+ }
+ document.onkeydown=jumpPage;
+ -->
+ </script>
+</head>
+
+<body>
+<div class="header">
+<div class="topbar">
+    <ul>
+        <li id="home"><a href="{?$jieqi_url?}">{?$jieqi_sitename?}首页</a></li>
+         <li id="bookcase"><a href="/modules/article/bookcase.php" target="_blank">我的书架</a></li>
+        <li id="toplist"><a href="/quanben/" target="_blank">全本小说</a></li>
+        <li id="quanben"><a href="/top/toptime.html" title="点击榜" target="_blank">点击榜</a></li>
+        <li id="visit"><a href="/top/allvisit.html" target="_blank">口水榜</a></li>
+        <li id="vote"><a href="/top/allvote.html" target="_blank">推荐榜</a></li>
+        <li id="fav"><a href="/top/goodnum.html" target="_blank">收藏榜</a></li>
+        <li id="so"><a href="/top/allvisit.html" target="_blank">好看的书</a></li>
+        <li id="loginbarx"><a href="/userdetail.php" target="_blank">个人中心</a></li>
+    </ul>
+</div>
+<div class="nav"><div class="nav-left"><strong class="lastupdate"><a href="/top/lastupdate.html">连载：</a></strong><a href="/mulu/1-1.html">玄幻</a><em>|</em><a href="/mulu/2-1.html">武侠</a><em>|</em><a href="/mulu/3-1.html">都市</a><em>|</em><a href="/mulu/4-1.html">历史</a><em>|</em><a href="/mulu/6-1.html">网游</a><em>|</em><a href="/mulu/7-1.html">科幻</a><em>|</em><a href="/mulu/5-1.html">推理</a><em>|</em><a href="/mulu/8-1.html">恐怖</a><em>|</em><a href="/mulu/9-1.html">穿越</a><em>|</em><a href="/mulu/10-1.html">其他</a></div>
+<div class="nav-right"><strong class="quanben"><a href="/quanben/" target="_blank">完结：</a></strong><a href="/quanben/1-1.html">玄幻</a><em>|</em><a href="/quanben/2-1.html">修真</a><em>|</em><a href="/quanben/3-1.html">言情</a><em>|</em><a href="/quanben/4-1.html">军事</a><em>|</em><a href="/quanben/6-1.html">竞技</a><em>|</em><a href="/quanben/7-1.html">科幻</a><em>|</em><a href="/quanben/8-1.html">恐怖</a><em>|</em><a href="/quanben/9-1.html">穿越</a><em>|</em><a href="/quanben/10-1.html">其他</a></div>
+</div>
+</div>
+
+<div class="read_page" id="read_page">
+
+
+<div class="nowplace">
+    <span><script src="/52mb/js/pagetop.js"></script></span>
+    您的位置：<a href="{?$jieqi_url?}">{?$jieqi_sitename?}</a>  &gt; <a href="/mulu/{?$sortid?}-1.html">{?$sortname?}</a> &gt; <a href="{?$articleid|subdirectory?}/{?$article_id?}/">{?$article_title?}</a>  &gt; {?$jieqi_title?}
+</div>
+
+<div class="yuedu_page">
+	<div class="info">
+    	<h1>{?$jieqi_title?}</h1>
+        <table width="100%">
+        	<tr>
+            	<td><script>mb_nr1()</script></td>
+                <td><script>mb_nr2()</script></td>
+                <td><script>mb_nr3()</script></td>
+            </tr>
+        </table>
+        <p>
+            作品:<a href="{?$articleid|subdirectory?}/{?$article_id?}/" target="_blank">{?$article_title?}</a> 
+            作者:<a href="/modules/article/authorarticle.php?author={?$author?}" title="查看{?$author?}最新作品大全">{?$author?}</a> 
+            字数:<script src="/modules/article/52mb.php?id={?$article_id?}&zishu="></script> <a href="/down/txt{?$article_id?}.html" title="{?$article_title?}全本TXT下载">下载本书</a>
+            &nbsp;<a href="/newmessage.php?tosys=1&title=举报本章节错误/更新太慢&content=%0D%0A%0D%0A原因如下：" style="color:red;font-weight:bold">举报本章节错误/更新太慢</a>
+        </p>
+    </div>
+
+
+<div class="yuedu_zhengwen" id="content">{?$jieqi_content?}</div>
+
+
+<div class="page_next_preview">
+<p class="button"><span>← <a href="{?$preview_chapterid?}.html">上一章</a></span><span><a href="{?$articleid|subdirectory?}/{?$article_id?}/">返回目录</a></span><span><a href="{?$next_chapterid?}.html">下一章</a> →</span></p>
+</div>
+
+</div>
+<div class="tujian">推荐阅读:
+{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="allvote,10,0,0,0,0" template="52mb_nr_allvote.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+</div>
+<div style=" text-align:center"><script>mb_right();mb_duilian();mb_tongji();</script></div>
+</div>
+<script src="/52mb/js/pagebottom.js"></script>
+</body>
+
+</html>

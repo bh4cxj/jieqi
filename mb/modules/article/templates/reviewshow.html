@@ -1,0 +1,42 @@
+
+<div id="articlelist">
+
+    <h3>
+    <span>Reply</span>
+    《<a href="{?$url_articleinfo?}">{?$articlename?}</a>》评论：{?$title?}
+     <em><a href="/book/reviews-{?$articleid?}.html">全部书评</a>
+      <a href="/book/goodreviews-{?$articleid?}.html">精华书评</a></em>
+    </h3>
+
+    <div class="comment_info_list">
+        
+        
+        {?section name=i loop=$replyrows?}
+        <div class="discuss" id="comment14">
+            <div class="reviewer">
+                <img src="{?function jieqi_geturl:'system':'avatar':$replyrows[i].userid:'l':$replyrows[i].avatar?}">{?$replyrows[i].username?}<br />
+                经验：{?$replyrows[i].experience?}<br />积分：{?$replyrows[i].score?}<br />
+            </div>
+            <div class="booktext">
+                <h5>{?$replyrows[i].subject?}</h5>
+                <br />{?$replyrows[i].posttext?}<br />
+                <p>
+                    评论时间：{?$replyrows[i].posttime|date:"Y-m-d H:i:s"?} <font color=red>第{?$replyrows[i].order?}#楼</font>
+                </p>
+            </div>
+        </div>
+        {?/section?}
+    </div>
+
+    <div class="comment_form">
+        <form action="/modules/article/reviews.php?aid={?$articleid?}" method="post" name="frmreview" target="_blank"  onsubmit="return jieqiFormValidate_frmreview();">
+            <p>评论标题：<input name='ptitle' type='text' class='title_input' value="{?$author?}加油，《{?$articlename?}》写得好棒！" onclick="this.value=''" /></p>
+            <p><textarea name="pcontent" id="pcontent" class="re_textarea"></textarea></p>
+            <p id="re_submit">
+                <!--<img src="/checkcode.php" style="cursor:pointer;" onclick="this.src='/checkcode.php?rand='+Math.random();">
+                验证码:<input type="text" class="text" name="checkcode" id="checkcode" size="8" maxlength="8" value="" />-->
+                <input value="发表评论" class="coment_sub" type="submit" name="submit">
+            </p>
+        </form>
+    </div>
+</div>

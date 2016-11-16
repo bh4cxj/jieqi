@@ -1,0 +1,17 @@
+<form name="form1" id="form1" action="{? $action_url ?}" method="post">
+<input type="hidden" name="action" value="doset">
+<div class="c_navigation">选择模板：</div>
+<ul style="width:100%;">
+  {? section  name=i loop=$themes ?}
+  <li style="float:left; margin:10px;  overflow:hidden">
+  <image src="{? $themes[i].demo ?}" style="border:1px solid #CCCCCC;padding:2px; height:137px; width:184px;">
+  <p align="center">
+  <input class="radio" type="radio" name="theme" value="{? $themes[i].name ?}" {? $themes[i].checked ?} >{? $themes[i].name ?}</p>
+  </li>
+  {? /section ?}
+</ul>
+<div style="clear:both; padding-left:100px; margin:10px;">
+   <input class="button" value="提 交" type="submit" />
+  </div>
+</form>
+<br /> 

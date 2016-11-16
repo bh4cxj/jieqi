@@ -1,0 +1,7 @@
+{?section name=i loop=$articlerows?}        
+    <div class="book_img_list">
+        <a href="{?$articlerows[i].url_articleinfo?}"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}txtÏÂÔØ"></a>
+        <h3><a href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename?}</a></h3>
+        <p>{?$articlerows[i].intro?}...</p>
+    </div>
+{?/section?}

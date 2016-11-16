@@ -1,0 +1,6 @@
+{?section name=i loop=$articlerows?}
+<li>
+<span class="grey">[{?$articlerows[i].sort?}]</span>
+<a href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}">{?$articlerows[i].articlename?}</a>
+</li>
+{?/section?}

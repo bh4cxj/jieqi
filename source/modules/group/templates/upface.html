@@ -1,0 +1,15 @@
+<div class='gridtop'>上传圈子LOG</div>
+<table width='100%' class='grid' cellspacing=1>
+<form method="post" name='upform' action='' enctype='multipart/form-data'>
+<input type='hidden' name='doup' value=1>
+<input type='hidden' name='g' value={?$gid?}>
+<tr align='center'>
+	<td class=odd><image src="{? $imgsrc ?}"></td>
+<tr align='center'>
+	<td class=odd><input class='text' type="file" name="gpic"></td>
+</tr>
+<tr align='center'>
+	<td class=odd><input type='submit' name='submit' value='上传' class='button'>&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' name='' value='跳过'    class='button' onClick=location.href='./{? $jumppage ?}'  >
+</tr>
+</form>
+</table>

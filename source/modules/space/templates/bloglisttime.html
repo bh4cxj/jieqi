@@ -1,0 +1,22 @@
+{?set jieqi_blocks_module = "space"?}
+{?set jieqi_blocks_config = "bloglistblocks"?}
+<table class="grid" width="100%" align="center">
+<caption>最新文章</caption>
+  <tr align="center">
+    <th width="14%">文章</th>
+    <th width="10%">作者</th>
+    <th width="8%">评论数</th>
+    <th width="8%">点击数</th>
+    <th width="12%">日期</th>
+  </tr>
+  {?section name=i loop=$blogs?}
+  <tr>
+    <td class="even"><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$blogs[i].uid?}&id={?$blogs[i].id?}" target="_blank">{?$blogs[i].title?}</a></td>
+    <td class="odd" align="center"><a href="{?$jieqi_modules['space']['url']?}/archives.php?uid={?$blogs[i].uid?}" target="_blank">{?$blogs[i].name?}</a></td>
+    <td class="odd" align="center">{?$blogs[i].review_num?}</td>
+    <td class="odd" align="center">{?$blogs[i].hit_num?}</td>
+    <td class="even" align="center">{?$blogs[i].up_time|date:m-d H:i:s?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>

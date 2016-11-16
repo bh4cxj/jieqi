@@ -1,0 +1,45 @@
+<form name="frmsearch" method="post" action="{?$jieqi_modules['pay']['url']?}/admin/paylog.php">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="0" maxlength="50"> <input type="radio" name="keytype" class="radio" value="0" checked> 交易序号 <input name="keytype" type="radio" class="radio" value="1"> 用户名 <input type="radio" name="keytype" class="radio" value="2"> 交易状态 &nbsp;&nbsp;
+            <input type="submit" name="btnsearch" class="button" value="搜 索">         
+        </td>
+    </tr>
+</table>
+</form>
+<br />
+<table class="grid" width="100%" align="center">
+  <caption>在线支付记录</caption>
+  <tr align="center" valign="middle">
+    <th width="10%">序号</th>
+    <th width="12%">日期</th>
+    <th width="12%">时间</th>
+    <th width="14%">用户名</th>
+    <th width="12%">购买点数</th>
+    <th width="12%">支付方式</th>
+    <th width="12%">交易状态</th>
+    <th width="16%">操作</th>
+  </tr>
+  {?section name=i loop=$payrows?}
+  <tr valign="middle">
+    <td align="center" class="odd">{?$payrows[i].payid?}</td>
+    <td align="center" class="odd">{?$payrows[i].date?}</td>
+    <td align="center" class="even">{?$payrows[i].time?}</td>
+    <td align="center" class="odd">{?if $payrows[i].buyname == ''?}{?$payrows[i].buyinfo?}{?else?}<a href="{?function jieqi_geturl:'system':'user':$payrows[i].buyid?}" target="_blank">{?$payrows[i].buyname?}</a>{?/if?}</td>
+    <td align="center" class="even">{?$payrows[i].egold?}</td>
+    <td align="center" class="odd">{?$payrows[i].paytype?}</td>
+    <td class="even">{?$payrows[i].payinfo?}</td>
+    <td align="center" class="odd">{?if $payrows[i].payflag == 0?}<a href="javascript:if(confirm('确实要手工确认该订单么？')) document.location='{?$jieqi_modules['pay']['url']?}/admin/paylog.php?action=confirm&id={?$payrows[i].payid?}';">手工处理</a> | <a href="javascript:if(confirm('确实要删除么？')) document.location='{?$jieqi_modules['pay']['url']?}/admin/paylog.php?action=del&id={?$payrows[i].payid?}';">删除</a>{?/if?}</td>
+  </tr>
+  {?/section?}
+</table>
+<table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">{?$url_jumppage?}</td>
+  </tr>
+</table>
+<br /><br />

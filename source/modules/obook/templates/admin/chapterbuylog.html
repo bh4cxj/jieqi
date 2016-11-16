@@ -1,0 +1,20 @@
+<table class="grid" width="100%" align="center">
+<caption>章节销售记录</caption>
+  <tr align="center">
+    <th width="20%">书名</th>
+    <th width="35%">章节</th>
+    <th width="10%">价格</th>
+    <th width="15%">购买人</th>
+    <th width="20%">购买日期</th>
+  </tr>
+  {?section name=i loop=$osalerows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$osalerows[i].obookid?}" target="_blank">{?$osalerows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$obook_static_url?}/reader.php?oid={?$osalerows[i].obookid?}&cid={?$osalerows[i].ochapterid?}" target="_blank">{?$osalerows[i].chaptername?}</a></td>
+    <td align="center" class="even">{?$osalerows[i].saleprice?}</td>
+    <td class="even" align="center"><a href="{?function jieqi_geturl:'system':'user':$osalerows[i].accountid?}" target="_blank">{?$osalerows[i].account?}</a></td>
+    <td class="even" align="center">{?$osalerows[i].buytime?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>

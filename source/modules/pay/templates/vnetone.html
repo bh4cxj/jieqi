@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>网盈一号通V币联合支付</title>
+</head>
+<body onLoad="document.forms[0].submit();">
+<form name="form1" action="{?$url_pay?}" method="post"><!--盈华讯方服务器页面-->
+<input name='spid'       type=hidden    value="{?$spid?}" ><!--spID 5位-->
+<input name='spname'    type=hidden   value="{?$spname?}" ><!--sp网站 客户网站名-->
+<input name='spoid'      type=hidden   value="{?$spoid?}" ><!--sp订单   唯一订单码，长度不超过50字符-->
+<input name='spreq'     type=hidden   value="{?$spreq?}" ><!--网站请求地址-->
+<input name='sprec'     type=hidden  value="{?$sprec?}" ><!--网站接收地址 请直接以ASP/php/jsp结尾 不要带参数 我方会给此地址加上？参数=XXX 等格式   客户站接收GET URL数据 -->
+<input name='userid'    type=hidden  value="{?$userid?}"><!--客户ID-->
+<input name='userip'    type=hidden   value="{?$userip?}" ><!--客户浏览器IP自己取IP -->
+<input name='spmd5'     type=hidden  value="{?$spmd5?}"><!--md5-->
+<input name='spcustom'  type=hidden  value="{?$spcustom?}" ><!--用户自己定义30个字符以内 -->
+<input name='spversion'  type=hidden  value="{?$spversion?}" ><!--支付版本号码 -->
+<input name='money'  type=hidden  value="{?$money?}" ><!--用户根据网站自己定义的整数面值如1,2,3,4.....-->
+<input name='urlcode'  type=hidden  value="{?$urlcode?}" ><!-- 编码 -->
+<input type="hidden" name="vnetpay" id="Submit" value="充值">
+</form>
+
+<form name="form2" action="{?$url_pay?}" method="post"><!--盈华讯方服务器页面-->
+<input name='spid'       type=hidden    value="{?$spid?}" ><!--spID 5位-->
+<input name='spname'    type=hidden   value="{?$spname?}" ><!--sp网站 客户网站名-->
+<input name='spoid'      type=hidden   value="{?$spoid?}" ><!--sp订单   唯一订单码，长度不超过50字符-->
+<input name='spreq'     type=hidden   value="{?$spreq?}" ><!--网站请求地址-->
+<input name='sprec'     type=hidden  value="{?$sprec?}" ><!--网站接收地址 请直接以ASP/php/jsp结尾 不要带参数 我方会给此地址加上？参数=XXX 等格式   客户站接收GET URL数据 -->
+<input name='userid'    type=hidden  value="{?$userid?}"><!--客户ID-->
+<input name='userip'    type=hidden   value="{?$userip?}" ><!--客户浏览器IP自己取IP -->
+<input name='spmd5'     type=hidden  value="{?$spmd5?}"><!--md5-->
+<input name='spcustom'  type=hidden  value="{?$spcustom?}" ><!--用户自己定义30个字符以内 -->
+<input name='spversion'  type=hidden  value="{?$spversion?}" ><!--支付版本号码 -->
+<input name='money'  type=hidden  value="{?$money?}" ><!--用户根据网站自己定义的整数面值如1,2,3,4.....-->
+<input name='urlcode'  type=hidden  value="{?$urlcode?}" ><!-- 编码 -->
+<input type="submit" name="vnetpay" id="Submit" value="继续充值">
+</form>
+</body>
+</html>

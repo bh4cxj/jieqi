@@ -1,0 +1,99 @@
+@charset "gb2312";.txt_nav{width:962px;padding:0 8px;font-size:15px;line-height:30px;height:21px}
+.good_xiaoshuo{margin:6px auto;background:#fff;width:978px;border:1px solid #ddd}
+.good_xiaoshuo h2{height:31px;line-height:31px;border-bottom:2px solid #017F01;margin:0 auto;width:950px;font-size:15px;color:#007E00}
+.imgitems{}
+.imgitems .book_img_list{float:left;display:inline;margin:10px 0 0 12px;width:126px;height:195px;color:#888;position:relative}
+.book_img_list img{padding:2px;border:1px solid #ddd;width:120px;height:150px}
+.book_img_list a:hover img{ background-color:#C30; }
+.book_img_list h3{cursor:pointer;position:absolute;width:115px;padding-right:5px;height:21px;line-height:21px;left:3px;top:130px;white-space:nowrap;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#7f000000', EndColorStr='#7f000000');text-align:right}
+.book_img_list h3 a{color:#fff;font-weight:normal}
+.book_top_list{padding:12px 0 10px 0;border-top:1px dashed #C0C0C0;margin:8px auto 0;width:950px}
+.book_top_list li{margin-left:5px;width:232px;overflow:hidden;height:28px;line-height:28px;float:left;font-size:14px;display:inline}
+.book_top_list a:hover{ text-decoration:underline; }
+.book_top_list a.mark{color:#888888;margin-left:0}
+.book_top_list a{color:#333333;margin-left:12px}
+.novel_info_txt{float:left;width:706px;overflow:visible}
+.con_txt{position:relative;border:1px solid #ddd;background:#fff;padding:15px 18px 15px 10px;overflow:visible;float:left;height:305px;margin-top:10px;width:666px}
+.con_limg{float:left;width:147px;text-align:center;padding:9px 0 160px 8px}
+.con_limg img{width:120px;height:150px;padding:3px;border:1px solid #CECECE}
+.author span{float:right}
+.author span a{display:inline-block;width:71px;height:24px;float:left;line-height:24px;padding-left:27px;color:#D05D00;text-decoration:none;background:url(fav_info.gif) no-repeat}
+.author a.fxcs{background-position:0 -30px;z-index:2}
+.author #qqtix{background-position:0 -60px;color:#FFF}
+.lzzico{background:url(b_lzzico.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="b_lzzico.png");_background:none;z-index:1;display:block;position:absolute;right:-8px;top:-8px;width:88px;height:88px}
+.ywjico{background:url(b_ywjico.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="b_ywjico.png");_background:none}
+.info{width:506px;float:right}
+.info h1{height:35px;white-space:nowrap;font-size:30px;display:inline-block;vertical-align:middle;padding-right:25px;line-height:30px}
+.novel_info_txt .author{color:#B0B0B0;border-bottom:1px dashed #DCDCDC;line-height:25px;padding-bottom:5px}
+.info .r_cons{margin-top:5px;height:145px;overflow-y:auto}
+.r_tools{margin-top:10px}
+.r_tools a{color:#019A02;vertical-align:middle;display:inline-block;height:39px;line-height:300px;margin-right:6px;background:url(txt_read.gif) no-repeat}
+#startedbtn{width:120px;background-position:0 -45px}
+#diralinks{width:67px;height:39px;background-position:0 0}
+#down_txt{background-position:0 -99px;width:120px;height:39px}
+.lastrecord{background:#FFFFEB;border:1px solid #FCC078;position:relative;height:25px;line-height:25px;color:#676767;padding-left:8px;margin-top:10px;overflow:visible}
+#jianj{position:absolute;top:-6px;height:6px;background:url(fav_info.gif) no-repeat;width:9px;left:42px;background-position:-74px -101px}
+.new_novel_txt{float:right;width:262px;margin-top:10px}
+.new_novel_txt h2{height:28px;text-indent:18px;font-size:14px;color:#08820e;line-height:37px;background:url(listbg02.png) no-repeat 0 -10px}
+.ritembox{height:307px;padding:0 14px;background:#fff;border:1px solid #ddd;border-top:none}
+.ritembox .cimgsfont{color:#999;line-height:1.6;height:122px;margin-top:9px}
+.cimgsfont img{width:91px;height:122px;float:left;display:inline;margin:0 10px 0 0}
+.cimgsfont h3{width:108px;height:17px;line-height:17px;margin-bottom:5px}
+.new_novel_txt ol{background:url(c_recbgs_gray.png) no-repeat 2px -12px;padding-left:27px;width:205px}
+.new_novel_txt ol li{height:16px;line-height:16px;margin-top:12px}
+.new_novel_txt ol li span{float:right;margin-left:5px}
+.xiaoshuo_bbs{margin:10px auto}
+.comment{float:left;width:668px;height:478px;border:1px solid #ddd;border-top:3px solid #017F01;background:#fff;padding:13px}
+.comment h3{height:26px;font-size:14px}
+.comment_content{height:300px;width:668px;overflow-y:auto;background:#f5f5f5;border:1px solid #ddd}
+.title_input{width:560px;border:1px solid #d8e1f0;height:25px;line-height:25px}
+.re_textarea{width:650px;border:1px solid #dedede;border-radius:10px;height:75px;border:1px solid #d8e1f0;font-size:13px;line-height:20px;margin:5px auto}
+#re_submit{background:url(l.gif) no-repeat left 8px;padding-left:348px;float:right}
+#re_submit img{margin:5px 10px 0 0;float:left}
+#re_submit .coment_sub{height:26px; width:88px;line-height:25px;margin-left:10px}
+.discuss{padding:10px;width:632px;}
+.discuss .reviewer{float:left;text-align:center;width:70px;}
+.reviewer img{height:66px;border-radius:100px;width:66px;border:1px solid #dedede;display:block}
+.reviewer img{margin-top:10px;display:block}
+.discuss .booktext{padding:10px;float:right;width:506px;border:1px solid #dedede;border-radius:10px;background-color:#FFF;border:1px solid #d8e1f0;font-size:13px;line-height:20px}
+.discuss .booktext p {margin-top:10px;border-top:1px dashed #dedede;font-size:12px;line-height:30px;color:#999}
+.comment_form{padding:10px;width:648px}
+.hot_txt_xiazai{float:right;width:232px;border:1px solid #ddd;padding:0 14px;background:#fff;height:506px}
+.hot_txt_xiazai h2{border-bottom:1px solid #DCDCDC;line-height:44px;height:37px;font-size:14px;color:#017D01}
+.cimgsfont{height:140px;margin-top:9px}
+.cimgsfont .imgcss{float:left;display:inline;margin:0 8px 0 0}
+.cimgsfont .imgcss,.cimgsfont .imgcss img{width:100px;height:130px}
+.cimgsfont h3{font-size:19px;width:120px;height:28px;line-height:28px}
+.cimgsfont p{height:88px;color:#666}
+.hot_txt_xiazai ol{background:url(c_recbgs.png) no-repeat 2px -12px}
+.hot_txt_xiazai ol li{height:16px;line-height:16px;margin-top:12px}
+.hot_txt_xiazai ol a{margin-left:27px}
+.hot_txt_xiazai ol span{float:right;margin-left:5px}
+.txt_top{padding:10px 0}
+.read_chapter{float:left;width:222px;border:1px solid #ddd;padding:0 14px;background:#fff}
+.read_chapter h3{border-bottom:1px solid #DCDCDC;line-height:44px;height:37px;font-size:14px;color:#017D01;text-align:center}
+.read_chapter ul{padding:10px 0;height:782px}
+.read_chapter ul li {vertical-align:bottom;height:26px}
+.read_chapter ul li i{font-size:10px;font-style:normal;background:url(i.gif) no-repeat center center;display:block;float:left;height:16px;width:16px;line-height:16px;text-align:center}
+.new_chapter i{background-image:url(n.gif) !important;color:#FFF}
+.new_chapter a{font-weight:bold;color:#C30}
+.read_chapter ul li a{display:block;float:right;width:198px;height:16px;line-height:22px}
+.xiazai{float:right;width:688px;padding:13px;background:#fff;border:1px solid #ddd}
+.cover_txt{float:left;width:130px;padding-bottom:150px}
+.show_num{float:right;width:550px}
+.show_num h1{height:35px;white-space:nowrap;font-size:15px;color:#999;display:inline-block;vertical-align:middle;line-height:30px;font-weight:normal}
+.show_num h1 a{font-size:30px;font-weight:bolder}
+.show_num ul,.show_num ul a,.show_num .update,.show_num .system{ color:#999; }
+.show_num ul a{color:#999}
+.show_num ul li{float:left;height:20px;width:170px;line-height:20px}
+.cover_txt #cover{width:120px;height:150px;border:1px solid #dfdfdf;padding:2px;margin-bottom:10px}
+.show_num .intro{height:140px}
+.show_num .intro h3{font-size:15px;line-height:25px}
+.show_num .intro p{color:#666;text-indent:25px}
+.down_center{height:60px}
+.xiazaitishi{background-color:#fcf8e9;padding:10px;float:right;height:112px;width:693px;border:1px solid #F00;line-height:23px}
+.xiazaitishi a{font-weight:bold;color:#F00}
+.xiazaitishi strong{color:#666}
+.txt_vote{margin:10px 0;width:693px;border:1px solid #ddd;padding:10px;background-color:#fff;float:right}
+.left_ad{float:left;height:280px;width:336px}
+.hot_txt_down{float:right;height:280px;width:336px}

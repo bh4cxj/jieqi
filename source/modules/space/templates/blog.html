@@ -1,0 +1,22 @@
+{?set jieqi_blocks_module = "space"?}
+{?set jieqi_blocks_config = "blogblocks"?}
+
+	<div class="c_navigation"><div class="fl">文章列表</div>{? if $space_hoster==1 ?}<div class="fr">+ <a href="{? $create_blog_url ?}">添加新文章</a>{? /if ?}</div>
+	</div>
+	<div class="c_content">
+	{? section name=i loop=$blogs ?}
+		<div class="c_subject"><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$uid?}&id={?$blogs[i].id?}">{? $blogs[i].title ?}</a></div>
+		
+		<div class="c_tag"><span class="c_lebel">发表时间：</span><span class="c_value">{? $blogs[i].up_time|date:Y-m-d?}</span></div>
+		
+		<div class="c_description">{? $blogs[i].content ?} </div>
+		<div class="c_read"><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$uid?}&id={?$blogs[i].id?}">阅读全文>></a>
+		</div>
+		<div class="c_note">类别:<a href="{? $jieqi_modules['space']['url'] ?}/blog.php?uid={?$uid ?}&cat_id={?$blogs[i].cat_id?}">{? $blogs[i].cat_name ?}</a>
+		{? if $space_hoster == 1 ?} | <a href="{? $jieqi_modules['space']['url'] ?}/editblog.php?uid={?$uid ?}&act=edit&id={?$blogs[i].id?}">编辑 </a> | <a href="{? $jieqi_modules['space']['url'] ?}/blog.php?uid={?$uid?}&act=del&id={?$blogs[i].id?}">删除</a>{?/if ?}| 评论:({? $blogs[i].review_num ?}) | 浏览:({? $blogs[i].hit_num ?})
+{? if $blogs[i].ar_open == 0 ?}|该文章为私有{?/if?}
+		</div>
+	{? /section ?}
+	</div>
+<div class="pages">{?$url_jumppage?}</div>
+<br /><br />

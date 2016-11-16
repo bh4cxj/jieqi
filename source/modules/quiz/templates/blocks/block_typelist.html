@@ -1,0 +1,9 @@
+{?section name=i loop=$typelist?}
+
+<div class="c_title">{? $typelist[i].caption ?}</div>
+
+{?section name=a loop=$typelist[i]['types'] ?}
+<span class="c_lebel"><a href="{? $linkurl ?}/type_list.php?type={? $typelist[i]['types'][a] | urlencode ?}">{? $typelist[i]['types'][a] ?}</a></span>
+{?/section?}
+ 
+{?/section?}

@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>帮助中心</title>
+<style type="text/css">
+.main {
+	width:960px;
+	margin:0 auto;
+	margin-top:20px;
+}
+.left {
+	position:fixed;
+	right:50%;
+	margin-right:240px;
+	padding:110px 0px 20px 0px;
+	width:240px;
+	height:auto;
+	background:url(/themes/chaoliu/images/help_03.gif) top center no-repeat;
+	_position:absolute;   _top:expression(eval(document.documentElement.scrollTop));   
+}
+.menu1 {
+	display:block;
+	width:220px;
+	padding-left:20px;
+	height:30px;
+	line-height:30px;
+	background-color:#f0851e;
+	color:#f7f7f7;
+	font-size:14px;
+	font-weight:bold;
+	cursor:pointer;
+	border-bottom:1px solid #fff;
+}
+.menu2_ul {
+	background-color:#fff5d9;
+}
+.menu2 {
+	display:block;
+	width:215px;
+	padding:5px 5px 5px 20px;
+	height:15px;
+	line-height:15px;
+	color:#333;
+	font-size:12px;
+	cursor:pointer;
+}
+.right {
+	padding:20px;
+	width:620px;
+	margin-left:260px;
+	height:auto;
+	background-color:#fbfbfc;
+	border:1px solid #cccccc;
+	border-radius:2px;
+}
+.right h1{
+	text-align:center;
+	font-size:20px;
+	padding:10px 0px 10px 0px;
+	color:#f18620;
+}
+.right h2{
+	font-size:16px;
+	padding:30px 0px 10px 0px;
+}
+.right h3{
+	color:#666666;
+	font-size:14px;
+	font-weight:normal;
+	padding:20px 0px 20px 0px;
+}
+.content {
+	padding:20px;
+	background-color:#fffaec;
+	border:1px solid #d9ecdc;
+}
+.content p {
+	line-height:25px;
+	color:#666;
+}
+span {
+	color:red;
+}
+</style>
+
+<link href="/themes/chaoliu/css/reset.css" rel="stylesheet" />
+<script type="text/javascript" src="/themes/chaoliu/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+	
+	
+$('.menu1').click(function(){
+			$('.menu2_ul').slideUp(500)
+			if($(this).next('.menu2_ul').css('display')=='none'){
+				$(this).next('.menu2_ul').slideDown(500)
+			}else{
+				$(this).next('.menu2_ul').slideUp(500)
+			}
+			})
+		//主导航的锚点跳动延迟效果
+		$(".menu1,.menu2").click(function(){
+    	var href = $(this).attr("href");//获得a的href连接属性
+    	var pos = $(href).offset().top;//pos等于需要移动的距离。(offset获取匹配元素在当前视口的相对偏移。返回的对象包含两个整形属性：top 和 left。此方法只对可见元素有效。)
+    	$("html,body").animate({scrollTop: pos}, 1000);//animate是创建动画。scrollTop是滚动条的相对偏移。
+    	return false;//return结束当前函数
+	});	
+})
+			
+</script>
+</head>
+
+<body>
+<div class="main">
+
+	<ul class="left">
+		<li>
+			<a class="menu1" href="#b1" >一、会员注册</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b11">1、为什么要进行注册？</a></li>
+				<li><a class="menu2" href="#b12">2、怎么注册帐号？</a></li>
+				<li><a class="menu2" href="#b13">3、怎么登录？</a></li>
+				<li><a class="menu2" href="#b14">4、如何修改密码、头像和个人信息？</a></li>
+				<li><a class="menu2" href="#b15">5、如何找回密码？</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b2" >二、会员等级</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b21">1、什么是会员等级？</a></li>
+				<li><a class="menu2" href="#b22">2、会员等级说明</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b3">三、书架管理</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b31">1、藏书架在哪里？</a></li>
+				<li><a class="menu2" href="#b32">2、藏书架有什么用？</a></li>
+				<li><a class="menu2" href="#b33">3、如何将作品加入书架呢？</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b4" >四、充值中心</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b41">1、什么潮流币？</a></li>
+				<li><a class="menu2" href="#b42">2、如何充值？</a></li>
+				<li><a class="menu2" href="#b43">3、如何查看充值是否成功？</a></li>
+				<li><a class="menu2" href="#b44">4、如何查看充值记录？</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b5">五、VIP会员</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b51">1、什么是VIP会员？</a></li>
+				<li><a class="menu2" href="#b52">2、VIP会员有哪些特权？</a></li>
+				<li><a class="menu2" href="#b53">3、如何提升VIP会员等级？</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b6">六、VIP章节订阅流程</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b61">1、什么是VIP章节？</a></li>
+				<li><a class="menu2" href="#b62">2、VIP章节的资费标准</a></li>
+				<li><a class="menu2" href="#b63">3、如何订阅VIP章节，查看订阅记录？</a></li>
+				<li><a class="menu2" href="#b64">4、关于VIP章节传播说明</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b7" >七、推荐票</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b71">1、什么是推荐票？</a></li>
+				<li><a class="menu2" href="#b72">2、如何获得推荐票？</a></li>
+				<li><a class="menu2" href="#b73">3、在哪里投推荐票呢？</a></li>
+				<li><a class="menu2" href="#b74">4、推荐票的查刷与封禁</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b8" >八、月票</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b81">1、什么是月票？</a></li>
+				<li><a class="menu2" href="#b82">2、如何获得月票？</a></li>
+				<li><a class="menu2" href="#b83">3、月票的使用方法</a></li>
+				<li><a class="menu2" href="#b84">4、月票监管</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b9">九、仙草</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b91">1、什么是仙草？</a></li>
+				<li><a class="menu2" href="#b92">2、如何获得仙草？</a></li>
+				<li><a class="menu2" href="#b93">3、在哪里投仙草呢？</a></li>
+				<li><a class="menu2" href="#b94">4、如何查看仙草使用记录？</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b100">十、打赏</a>
+			<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b101">1、什么是打赏？</a></li>
+				<li><a class="menu2" href="#b102">2、如何使用打赏功能？</a></li>
+				<li><a class="menu2" href="#b103">3、如何查看打赏记录？</a></li>
+			</ul>
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b110" >十一、粉丝榜</a>
+			<!--<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b111" >1、粉丝值的定义</a></li>
+				<li><a class="menu2" href="#b112" >2、消费的潮流币与粉丝值的转化关系</a></li>
+				<li><a class="menu2" href="#b113" >3、粉丝值的等级系统</a></li>
+				<li><a class="menu2" href="#b114" >4、粉丝值和粉丝等级的作用</a></li>
+			</ul>-->
+		
+		</li>
+		<li>
+			<a class="menu1" href="#b120" >十二、作者相关问题</a>
+			<!--<ul class="menu2_ul" style="display:none;">
+				<li><a class="menu2" href="#b111" >1、粉丝值的定义</a></li>
+				<li><a class="menu2" href="#b112" >2、消费的潮流币与粉丝值的转化关系</a></li>
+				<li><a class="menu2" href="#b113" >3、粉丝值的等级系统</a></li>
+				<li><a class="menu2" href="#b114" >4、粉丝值和粉丝等级的作用</a></li>
+			</ul>-->
+		
+		</li>
+	</ul>
+	
+	<div class="right">
+		<h1>帮助中心</h1>
+		<h2 id="b1">一、会员注册</h2>
+		<h3 id="b11">1、为什么要进行注册？</h3>
+		<div class="content">
+			<p>1）因为注册后，可以获得多项网站会员的福利。免费的书架，专供您收藏作品；</p>
+			<p>2）可以为您喜欢的作品进行推荐、打赏、投月票、送仙草等，让作品得到更多的推广； </p>
+			<p>3）可以在作品书评区留言，发表您对作品的见解；</p>
+			<p>4）可以升级成为VIP会员，订阅VIP章节内容；</p>
+			<p>5）可以申请成为作者，并在我们网站发表您的作品；</p>
+			<p>6）以及其他各类站内小功能，期待您的体验。</p>
+		</div>
+		<h3 id="b12">2、怎么注册帐号？</h3>
+		<div class="content">
+			<p>点击网站任意页面右上方【会员注册】按钮，进入注册页面，填写相关信息并提交后，即可注册成功。</p>
+			<p><span>建议：会员名注册后不可修改，它将伴随您畅游潮流，会员名也是您对外展示的名称，在发表评论，发送短信息等均显示为此名称，建议您使用中文，便于潮友们相互辨识。</span></p>
+		</div>
+		<h3 id="b13">3、怎么登录？</h3>
+		<div class="content">
+			<p>在网站任意页面上方输入账号和密码，点击【会员登陆】即可。</p>
+		</div>
+		<h3 id="b14">4、如何修改密码、头像和个人信息？</h3>
+		<div class="content">
+			<p>请您登录后，在个人中心——个人资料——更改密码页面进行密码修改，在修改资料页面进行个人信息修改，在修改头像页面可以重新设置个性头像。</p>
+		</div>
+		<h3 id="b15">5、如何找回密码？</h3>
+		<div class="content">
+			<p>如您要找回自己注册的帐号密码，可通过本站页面上的客服QQ咨询找回。</p>
+		</div>
+		
+		<h2 id="b2">二、会员等级</h2>
+		<h3 id="b21">1、什么是会员等级？</h3>
+		<div class="content">
+			<p>会员等级是您在我们网站进行各项操作后累加的一个数据等级，等级越高，可获得的奖励越多。例如推荐票数量的增加。</p>
+		</div>
+		<!-- 开发程序为实现 暂时隐藏
+		<h3 id="b22">2、如何提升会员等级？</h3>
+		<div class="content">
+			<p>您的对作品的打赏、收藏、投票、发书评等一系列操作，都会获得相应积分。积分满足后，即可升级。</p>
+			<p>（1）会员注册成功，即赠送100积分。</p>
+			<p>（2）每天登录，每天可获得1积分。</p>
+			<p>（3）每天收藏一次作品，即可获得1积分，每天最多获得一次。</p>
+			<p>（4）每充值10潮流币，即可获得1积分。（用户转账或赠送等行为获得的潮流币，是不能获得积分的） </p>
+			<p>（5）每天打赏作品，每打赏一次可获得1积分。</p>
+			<p>（6）每天投推荐票，每投一张推荐票可获得1积分。 </p>
+			<p>（7）每天发表书评，每条书评可获得1积分；书评被版主加精后，可额外获得2积分，取消加精则扣除2积分。</p>
+		</div>
+		-->
+		<h3 id="b22">2、会员等级说明</h3>
+		<div class="content">
+			<img src="/themes/chaoliu/images/biaoge1.gif" />
+		</div>
+		
+		<h2 id="b3">三、藏书架管理</h2>
+		<h3 id="b31">1、藏书架在哪里？</h3>
+		<div class="content">
+			<p>您可以在个人中心——我的书架里看到。</p>
+		</div>
+		<h3 id="b32">2、藏书架有什么用？</h3>
+		<div class="content">
+			<p>藏书架可以保存您感兴趣的潮流站内作品，以便您下次阅读的时候可以直接找到。</p>
+		</div>
+		<h3 id="b33">3、如何将作品加入书架呢？</h3>
+		<div class="content">
+			<p>在作品主页中作品简介下方有【收藏本书】按钮，点击即可将当前作品加入您的书架。</p>
+		</div> 
+		
+		
+		<h2 id="b4">四、充值中心</h2>		
+		<h3 id="b41">1、什么潮流币？</h3>
+		<div class="content">
+			<p>潮流币是在潮流网站上使用的虚拟货币，可以用来订阅VIP作品章节，购买道具、打赏等。</p>
+			<p>人民币与潮流币兑换比例为：1元人民币=100潮流币。</p>
+		</div>
+		<h3 id="b42">2、如何充值？</h3>
+		<div class="content">
+			<p>登陆潮流原创文学网站首页导航栏点击充值中心或在个人中心-财务管理-充值中心，均可进入充值页面，为保障网上交易安全，目前网站仅支持支付宝充值。充值没有金额限制，您可以根据需要充值任意数额的潮流币。</p>
+		</div>
+		<h3 id="b43">3、如何查看充值是否成功？</h3>
+	<div class="content">
+			<p>1）您可以通过访问个人中心—账户管理中的充值记录，查看是否到账。</p>
+			<p>2）如果12小时内未能到账，请及时联系网页客服QQ查看。</p>
+		</div>
+        <h3 id="b44">4、如何查看充值记录？</h3>
+		<div class="content">
+			<p>您可以通过访问个人中心—账户管理中的充值记录查看。</p>
+		</div>
+
+		<h2 id="b5">五、VIP会员</h2>
+		<h3 id="b51">1、什么是VIP会员？</h3>
+    <div class="content">
+			<p>您在我们网站进行充值后，即可成为VIP会员，VIP会员等级越高，可获得的奖励和享受的特权越多。</p>
+		</div>
+		<h3 id="b52">2、VIP会员有哪些特权？</h3>
+		<div class="content">
+			<p>1）只有VIP会员可以订阅VIP章节；</p>
+			<p>2）只有VIP会员可以参与作品月票评选；</p>
+			<p>3）VIP会员可享受订阅、仙草等折扣，具体看下表<span>（VIP等级及特权说明）</span>；</p>
+			<p>其他VIP后续会陆续开放中，特权敬请期待。</p>
+			<p><span>VIP等级及特权说明：</span></p>
+            <img src="/themes/chaoliu/images/biaoge3.gif" />
+		</div>
+		<h3 id="b53">3、如何提升VIP会员等级？</h3>
+		<div class="content">
+			<p>充值100潮流币可增加1成长值。成长值所对应等级请看上表<span>（VIP等级及特权说明）</span>。</p>
+		</div>
+
+        <h2 id="b6">六、VIP章节订阅流程</h2>
+		<h3 id="b61">1、什么是VIP章节？</h3>
+		<div class="content">
+			<p>作品的VIP章节是指某些作品签约上架之后，章节内容读者是需要付费才能阅读的。</p>
+		</div>
+		<h3 id="b62">2、VIP章节的资费标准</h3>
+		<div class="content">
+			<p>目前VIP章节的资费标准设置是根据VIP会员等级不同而有区别的。VIP3及以下价格为千字3潮流币，VIP3以上价格为千字2潮流币。</p>
+		</div>
+		<h3 id="b63">3、如何订阅VIP章节，查看订阅记录？</h3>
+		<div class="content">
+			<p>1）点击VIP作品的VIP章节，进入VIP订购页面，选择要订阅的章节提交即可订阅成功。</p>
+			<p>2）您可以在个人中心—账务中心—消费记录里面查询到之前的订阅记录。</p>			
+		</div>
+		<h3 id="b64">4、关于VIP章节传播说明</h3>
+		<div class="content">
+			<p>传播、转发、泄露潮流原创文学网付费章节的内容、文字、图片等，或其他侵犯潮流原创文学网、作者或其他第三人知识产权的行为，给潮流原创文学网、作者或其他第三人造成损失的，可能将会被禁帐号或取消订阅资格等。</p>	
+		</div>
+
+        <h2 id="b7">七、推荐票</h2>
+		<h3 id="b71">1、什么是推荐票？</h3>
+		<div class="content">
+			<p>推荐票是表达您对一部作品的喜爱并乐于与他人分享的票种，同时也是一部作品受欢迎程度的重要判断依据。</p>
+		</div>
+		<h3 id="b72">2、如何获得推荐票？</h3>
+		<div class="content">
+			<p>您的用户等级提升后，即可获得相应等级奖励的推荐票。具体请您在【帮助中心——用户等级——会员等级说明】中查看。</p>
+		</div>
+		<h3 id="b73">3、在哪里投推荐票呢？</h3>
+		<div class="content">
+			<p>在作品主页的封面下方【投推荐票】按钮即可使用推荐票。</p>
+		</div>
+		<h3 id="b74">4、推荐票的查刷与封禁</h3>
+		<div class="content">
+			<p>1）为了维护网站上榜单的公平与公正，严禁对作品违规刷数据的行为，其中包括不允许对作品刷推荐票。潮流会对榜单作品的数据进行程序和人工结合的方式进行判断分析是否有刷数据的行为。 </p>
+			<p>2）如果潮流发现某部作品存在刷推荐票现象，则会扣除该部作品的推荐票以及相应比例的点击数；对刷票的帐号予以封禁推荐票权限，甚至封禁登录权限。如果用户存在疑问，可联系客服进行咨询。</p>
+		</div>
+
+        <h2 id="b8">八、月票</h2>
+		<h3 id="b81">1、什么是月票？</h3>
+		<div class="content">
+			<p>月票是VIP会员用户专有的票种，可以为站内所有签约作品投票。</p>
+		</div>
+		<h3 id="b82">2、如何获得月票？</h3>
+		<div class="content">
+			<p>目前月票的获得方式有以下三种：</p>
+			<p>1）VIP会员通过在潮流订阅章节消费，每消费10潮流币，赠送1张月票。</p>
+			<p>2）每月VIP会员可根据VIP等级获得月票。VIP1可获得一张，每升一级增加一张月票。</p>
+			<p>3）VIP会员通过打赏作品，根据标准系统自动给作品投月票，单次打赏作品100潮流币/张月票。</p>
+		</div>
+		<h3 id="b83">3、月票的使用方法</h3>
+		<div class="content">
+			<p>1）可从作品主页、作品阅读页等页面对作品投月票；</p>
+			<p>2）投月票时可选择需要投的票数进行投票，无票数限制。</p>
+		</div>
+		<!-- 尚未有评选奖励，暂时隐藏
+		<h3>4、月票的评选</h3>
+		<div class="content">
+			<p>参加评选的作品为潮流原创文学网已经上架的VIP作品，每月的月票榜前10名作品会获得奖励。</p>
+		</div>
+		-->
+		<h3 id="b84">4、月票监管</h3>
+		<div class="content">
+			<p>1）为了维护潮流站上榜单的公平与公正，严禁对作品违规刷数据的行为，其中包括不允许对作品刷月票。对榜单作品的数据潮流会进行程序和人工结合的方式进行判断分析是否有刷数据的行为。</p>
+			<p>2）如果发现某部作品存在刷月票现象，则会对刷票的账号予以封禁投月票权限，甚至封禁登录权限。如果用户存在疑问，可联系潮流客服进行咨询。</p>
+		</div>
+
+        <h2 id="b9">九、仙草</h2>
+		<h3 id="b91">1、什么是仙草？</h3>
+		<div class="content">
+			<p>仙草是您自愿花费潮流币来表达对作者作品情感的一种方式。</p>
+		</div>
+		<h3 id="b92">2、如何获得仙草？</h3>
+		<div class="content">
+			<p>个人中心-兑换仙草，即可进入仙草兑换页面，仙草价格为10潮流币/颗。</p>
+		</div>
+		<h3 id="b93">3、在哪里投仙草呢？</h3>
+		<div class="content">
+			<p>在作品主页的封面下方【赠送仙草】按钮即可投仙草。</p>
+		</div>
+		<h3 id="b94">4、如何查看仙草使用记录？</h3>
+		<div class="content">
+			<p>您可以在个人中心—账务管理—消费记录-仙草记录里面查询。</p>
+		</div>
+
+
+        <h2 id="b100">十、打赏</h2>
+		<h3 id="b101">1、什么是打赏？</h3>
+		<div class="content">
+			<p>如果您喜欢某部作品，您可以使用潮流币来对该作品进行直接的奖励，这种行为叫做打赏。您可以将一定数额的潮流币直接投给您喜欢的作品，以激发作者的写作动力。</p>
+		</div>
+		<h3 id="b102">2、如何使用打赏功能？</h3>
+		<div class="content">
+			<p>点击作品主页封面下[我要打赏]按钮，即可为您喜欢的作品进行打赏。</p>
+		</div>
+		<h3 id="b103">3、如何查看打赏记录？</h3>
+		<div class="content">
+			<p>您可以在个人中心—账务管理—打赏记录—打赏记录里面查询。</p>
+		</div>
+
+        <h2 id="b110">十一、粉丝榜</h2>
+		<h3 id="b111">1、粉丝值的定义</h3>
+		<div class="content">
+			<p>当您为站内某部作品产生潮流币消费时，则您便能获得对应于作品的粉丝值。消费是指订阅VIP小说章节，送仙草，打赏等行为方式。</p>
+		</div>
+		<h3 id="b112">2、消费的潮流币与粉丝值的转化关系</h3>
+		<div class="content">
+			<!--<p>1）订阅VIP小说章节：每消费1个潮流币转化为1个粉丝值。</p>
+			<p>2）仙草：每根仙草值100粉丝值。</p>-->
+			<p>打赏作者：每消费1个潮流币转化为1个粉丝值。 </p>
+			<p>以上积分间转化，存在24个小时的数据延迟，请用户耐心等候。</p>
+			<p><span>*粉丝积分数据统计启始日期为2013年10月16日。</span></p>
+		</div>
+		<h3 id="b113">3、粉丝值的等级系统</h3>
+		<div class="content">
+			<p>当您积累作品的粉丝值到一定程度时，您便能够获得不同的称号。具体规则如下。 </p>
+			<p><span>粉丝级别设置说明：</span></p>
+            <img src="/themes/chaoliu/images/biaoge2.gif" />
+		</div>
+		<h3 id="b114">4、粉丝值和粉丝等级的作用</h3>
+		<div class="content">
+			<p>1）当您拥有某本小说粉丝值达到1点以上，则在该小说的书评区，您所发表的主题或回复，其昵称后面会出现您所对应的粉丝等级标志，将鼠标移动到标志上，您的粉丝等级信息便会显示出来。</p>
+			<p>2）在小说的书页和小说评论区右侧，都有粉丝值榜单显示前十名的用户，若您要查看更多的排名，可点击“更多排名”按钮查看。 </p>
+		</div>
+		
+ 		<h2 id="b120">十二、作者相关问题</h2>
+		<h3 id="b121">1、如何成为作者？</h3>
+		<div class="content">
+			<p>第一步：您可以登陆后，点击网站右上角的个人中心进入个人中心首页，然后再点击左侧导航栏上的“成为作家”。</p>
+			<p>第二步：按照要求认真且详细的填写相关信息。</p>
+			<!--<p>第三步：仔细阅读“潮流原创网作家协议”，确认无误后点击同意。</p>-->
+			<p><span>重要提示：</span></p>
+			<p><span>您提交申请之后，我们会在24小时之内进行审核。</span></p>
+			<p><span>如果您申请成为专栏作家之后，没有上传作品或者上传的作品没有通过审核的话，页面上不会显示您的作家身份。</span></p>
+			<p><span>如果您在注册成为作家的时候，发现自己在其他文学网站的昵称已经被人占用，您可以联系我们的客服人员，我们会帮助您核实并进行处理。</span></p>
+		</div>
+		<h3 id="b122">2、如何上传作品？</h3>
+		<div class="content">
+			<p>1）成功登录作家专区后，点击网站右上角的作家专区。</p>
+			<p>2）点击“创建作品”，选择您要上传的站点，填写作品名称、作品类型、作品简介等作品相关信息，最后点击创建提交。</p>
+			<p>3）之后就可以在作者专区-作品管理-选择要管理的作品-发布新章节处上传您的章节内容了。 </p>
+		</div>
+		<h3 id="b123">3、如何管理作品？</h3>
+	<div class="content">
+			<p>1）成功登录作家专区后，点击左侧的作品管理。</p>
+<p> 2）作品管理下会显示作品管理和书评管理两项点击其中的作品管理即可。</p>
+<p> 3）对于已经上传的作品，有修改作品信息、创建分卷、发布新章节、修改新章节、章节排序、签约申请等操作。</p>
+<p> 4）修改作品信息下面有作者推荐，方便作者可以把自己喜欢的作品推荐给读者。</p>
+<p> 5）草稿箱可以保存作者暂时不想发表的章节，如作者想要发表时，只需把草稿箱中的内容复制到WORD文档或者记事本里面，然后打开发布新章节选项上传即可。</p>
+<p> 6）举报和投诉的方法：可直接联系官网客服QQ进行举报和投诉。 </p>
+<p>7）用户投诉和举报需提供以下信息 注：以上规定会不定期视具体情况做相应的改进，相关解释权归本站所有</p>
+</div>
+		<h3 id="b124">4、如何管理账户？</h3>
+		<div class="content">
+			<p>如果您需要修改部分作家资料、个人信息等，请点击个人中心-修改资料进行修改，或者直接联系客户人员。</p>
+		</div>
+		<h3 id="b125">5、作品如何通过审核？</h3>
+		<div class="content">
+			<p>1）请务必保证您提交的章节和作品符合潮流原创文学网作品信息收录规定的标准（如不能带有恶意攻击国家、政府、作者、读者等言论；不能影响社会安定团结和发展；不能带有侮辱性的文字和人身攻击等等）。</p>
+			<p>2） 章节上传满2000字之后将会进入编辑审核后台，编辑将会在2个工作日内进行审核，请您耐心等待。当您拥有某本小说粉丝值达到1点以上，则在该小说的书评区，您所发表的主题或回复，其昵称后面会出现您所对应的粉丝等级标志，将鼠标移动到标志上，您的粉丝等级信息便会显示出来。 </p>
+		</div>
+		<h3 id="b126">6、如何申请签约？</h3>
+		<div class="content">
+			<p>点击进入作家专区，进入作品管理，选择您要管理的作品点击申请签约，然后按要求填写相关信息提交即可。</p>
+		</div>
+		<h3 id="b127">7、签约作品的范围有哪些？</h3>
+		<div class="content">
+			<p>1）尚未与其他单位签约的作品，作者本人拥有独立版权；</p>
+			<p>2）在潮流原创网发表女频3万、男频6万字以上（其中短篇、诗歌、散文类或已完成的作品除外。</p>
+<p>3） 系作者本人独立创作，并且没有违背国家的相关法律法规，经潮流原创网审核通过。</p>
+		</div>	
+		<h3 id="b128">8、稿酬是如何计算的？</h3>
+		<div class="content">
+			<p>只有签约作品才可获得稿酬，稿酬计算和支付方式以签约时与签约编辑确认的合约为准。</p>
+		</div>	
+		<h3 id="b129">9、书评区有哪些注意事项？</h3>
+		<div class="content">
+			<p>1）书评区的作用：</p>
+			<p>书评区用于读者在阅读作品之后，方便参与讨论此作品，给作者留言，并且需要读者在登录状态下才可以发表意见或建议。</p>
+			<p>2）作者可以在自己的书评区做什么？</p>
+			<p>作者可以在自己的书评区对评论进行置顶、加精和删除等操作，除此之外还可以设置两名副版主帮助作者进行管理书评区。 </p>
+			<p>3）书评区存在的意义：</p>
+		<p>作者可以在书评区里看到读者对自己作品的评论，直观的感受到读者的声音，无论是批评还是建议，都可以更好的帮助作者不断改进自己的作品中出现的问题，吸取他人的经验，不断完善和丰富作品，提高作者的写作水平。</p>
+			<p>4）作者如何添加/取消副版主：</p>
+<p>作者可以在作者后台-作品管理-书评管理-添加副版主，输入要邀请副版主的会员名，即可成功添加副版主。 通过作者后台-作品管理-书评管理-取消副版主，勾选要取消副版主的会员名，提交即可取消副版主。</p>
+			<p>5）举报和投诉规则：</p>
+			<p>①、对于举报的违规书评，该书评发送时间须是当前时间一月之内的，情况严重的可例外，如政治反动，盗版言论，垃圾广告，恶毒的人身攻击，屠版等。 </p>
+			<p>②、对于用户与用户之间在书评区发生的矛盾纠纷，如某用户对某用户的人身攻击，须由当事人自己进行举报。 </p>
+			<p>③、用户针对某作品或某作品用户群体发表了不当言论，须由被攻击作品的作者本人，该作品书评区副版主或该作品的粉丝用户进行举报。在书评区发生的非人身攻击性言论，如刷书评，刷回复之类的违规，可由书评区副版主自行删除，禁言处理。 </p>
+			<p>④、对于书评区违规行为被举报核实的，一般只对用户违规行为所发生的书评区作单书禁言处理；对特别恶劣的攻击行为如：对家人父母的攻击，宣传盗版，垃圾广告，政治和反动言论等情况会考虑做书评区全区禁言。 </p>
+			<p>⑤、用户在非书评区发现的其他问题，如作品内容抄袭，网站功能BUG，月票，推荐票被禁等可联系客服。 </p>
+			<p>⑥、举报和投诉的方法：可直接联系官网客服QQ进行举报和投诉。</p>
+			<p> ⑦、用户投诉和举报需提供以下信息 注：以上规定会不定期视具体情况做相应的改进，相关解释权归本站所有。</p>
+		</div>	
+		<h3 id="b1210">10、订阅及收入查询。</h3>
+		<div class="content">
+			<p>1）在哪里可以查看我的作品订阅情况<br />
+　您可以在作者专区-管理作品-作品目录购买次数处查看当前订阅情况。或者在我的稿费-订阅明细处查看。</p>
+			<p>2）读者打赏在哪里查看<br />
+　您可以在作者专区-我的稿费-打赏明细中查看读者对您的作品打赏的详细情况。</p>
+			<p> 3）关于移动无线稿费查询<br />
+　您可以在作者专区-我的稿费-无线分成中查询到您的作品在无线上的分成稿费情况。</p>
+			<p>4）潮流原创文学网作者奖励体系<br />
+　您可以在首页导航区点击作者福利查看相关福利体系。</p>
+		</div>	
+	</div>
+	
+	
+</body>
+</html>

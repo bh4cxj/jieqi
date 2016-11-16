@@ -1,0 +1,61 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+
+
+<div id="alist">
+	<h3><span>List</span>{?if $sort != ""?}{?if $jieqi_thisurl|strstr:fullflag !== false?}好看的{?$sort?}全本小说{?else?}好看的{?$sort?}小说最新列表{?/if?}{?/if?}{?if $initial != ""?}首字母为 [ {?$initial?} ] 的小说列表{?/if?}{?if $sort == "" && $initial == ""?}好看的全本小说{?/if?}</h3>
+	{?section name=i loop=$articlerows?}
+    <div id="alistbox">
+    	<div class="pic"><a href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}txt下载" target="_blank"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}" title="{?$articlerows[i].articlename?}" width="115px" height="160px"></a></div>
+	<div class="info">
+    	<div class="title">
+        	<h2><a href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}最新章节列表" target="_blank">《{?$articlerows[i].articlename?}》</a></h2> <span>作者：<a href="/modules/article/authorarticle.php?author={?$articlerows[i].author?}" target="_blank" title="{?$articlerows[i].author?}全部小说">{?$articlerows[i].author?}</a></span>
+        </div>
+        <div class="intro">{?$articlerows[i].intro?}</div>
+        <div class="sys">
+            <li>最新章节：<a href="{?$articlerows[i].url_articleinfo?}{?$articlerows[i].lastchapterid?}.html" target="_blank">{?$articlerows[i].lastchapter?}</a></li>
+        </div>
+        <div class="yuedu">
+        	<a target="_blank" href="/down/txt{?$articlerows[i].articleid?}.html" title="{?$articlerows[i].articlename?}txt全集下载">下载本书</a> <script>addbookcase({?$articlerows[i].articleid?});</script></div>
+        </div>
+	</div>
+    {?/section?}
+
+<div class="clear"></div>
+</div>
+
+<div class="articlepage">{?$url_jumppage?}</div>
+
+<div class="articlemenu">
+<ul class="toplist">
+<li><a href="/initial/A/1.html">A类</a></li>
+<li><a href="/initial/B/1.html">B类</a></li>
+<li><a href="/initial/C/1.html">C类</a></li>
+<li><a href="/initial/D/1.html">D类</a></li>
+<li><a href="/initial/E/1.html">E类</a></li>
+<li><a href="/initial/F/1.html">F类</a></li>
+<li><a href="/initial/G/1.html">G类</a></li>
+<li><a href="/initial/H/1.html">H类</a></li>
+<li><a href="/initial/I/1.html">I类</a></li>
+<li><a href="/initial/J/1.html">J类</a></li>
+<li><a href="/initial/K/1.html">K类</a></li>
+<li><a href="/initial/L/1.html">L类</a></li>
+<li><a href="/initial/M/1.html">M类</a></li>
+<li><a href="/initial/N/1.html">N类</a></li>
+<li><a href="/initial/O/1.html">O类</a></li>
+<li><a href="/initial/P/1.html">P类</a></li>
+<li><a href="/initial/Q/1.html">Q类</a></li>
+<li><a href="/initial/R/1.html">R类</a></li>
+<li><a href="/initial/S/1.html">S类</a></li>
+<li><a href="/initial/T/1.html">T类</a></li>
+<li><a href="/initial/U/1.html">U类</a></li>
+<li><a href="/initial/V/1.html">V类</a></li>
+<li><a href="/initial/W/1.html">W类</a></li>
+<li><a href="/initial/X/1.html">X类</a></li>
+<li><a href="/initial/Y/1.html">Y类</a></li>
+<li><a href="/initial/Z/1.html">Z类</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+
+

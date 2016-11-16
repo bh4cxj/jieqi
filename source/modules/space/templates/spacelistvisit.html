@@ -1,0 +1,24 @@
+{?set jieqi_blocks_module = "space"?}
+{?set jieqi_blocks_config = "spacelistblocks"?}
+<table class="grid" width="100%" align="center">
+<caption>空间点击排行</caption>
+  <tr align="center">
+    <th width="20%">空间名称</th>
+    <th width="30%">简介</th>
+    <th width="15%">作者</th>
+    <th width="20%">更新时间</th>
+	<th width="9%">文章数</th>
+    <th width="6%">点击量</th>
+  </tr>
+  {?section name=i loop=$spaces?}
+  <tr>
+    <td class="odd"><a href="{? $jieqi_modules['space']['url']?}/space.php?uid={? $spaces[i].uid ?}">{?$spaces[i].title?}</a></td>
+    <td class="even">{?$spaces[i].brief ?}</td>
+    <td class="odd" align="center"><a href="{?$jieqi_modules['space']['url']?}/archives.php?uid={?$spaces[i].uid?}" target="_blank">{?$spaces[i].name?}</a></td>
+	<td class="even" align="center">{?$spaces[i].up_time|date:m-d H:i:s ?}</td>
+    <td class="even" align="center">{?$spaces[i].blog_num?}</td>
+    <td class="odd" align="center">{?$spaces[i].visit_num?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>

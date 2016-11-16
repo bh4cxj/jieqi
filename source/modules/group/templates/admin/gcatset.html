@@ -1,0 +1,40 @@
+<table class=grid cellSpacing=1 width="68%" align=center>
+<tbody>
+	<tr>
+		<td class="title" colspan="5">圈子分类</td>
+	</tr>
+	<tr vAlign=center align=center>
+		<td class=odd width="10%"  maxlength="2">排序</td>
+		<td class=odd width="40%">圈子分类</td>
+		<td class=odd width="30%" colspan="2">操作</td>
+	</tr>
+
+	{?section name=i loop=$gcats?}
+	<tr vAlign=center align=center>
+		<form name="gcatid{?$gcats[i].gcatid?}"  method="post" action="">
+		<input type="hidden" name="action" value="editgcat" />
+		<input type="hidden" name="gcatid" value="{?$gcats[i].gcatid?}" />
+		<td class=odd width="10%"><input name="gcatorder" size="6" value="{?$gcats[i].gcatorder?}" /></td>
+		<td class=odd width="40%"><input name="gcatname" size="20"  value="{?$gcats[i].gcatname?}" /></td>
+		<td class=odd width="15%"><a href="#" onclick="document.gcatid{?$gcats[i].gcatid?}.submit()">更新</a></td>
+		<td class=odd width="15%"><a href="javascript:if(confirm('确定要删除该分类吗？') )  document.location='?gcatid={?$gcats[i].gcatid?}&action=delgcat' ">删除</a></td>
+		</form>
+	</tr>
+	{?/section?}
+
+	<tr>
+		<td class="title" colspan="5">增加圈子分类</td>
+	</tr>
+	<tr vAlign=center align=center>
+		<form  action="" method="post">
+		<input type="hidden" name="action" value="newgcat" />
+		<td class=odd width="10%"><input name="gcatorder" size="6"  /></td>
+		<td class=odd width="40%"><input name="gcatname" size="20"  /></td> 
+		<td class=odd colspan="3" width="50%"><input type='submit' class='button' name='submit'  id='submit' value='添 加' /></td>
+		</form>
+	</tr>		
+</tbody>	
+</table>
+
+
+

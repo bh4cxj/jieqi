@@ -1,0 +1,1 @@
+function addToFavorite(){var a="http://www.chaoliuyc.com/";var b="潮流原创文学网";if(document.all){window.external.AddFavorite(a,b)}else if(window.sidebar){window.sidebar.addPanel(b,a,"")}else{alert("亲，您的浏览器不支持此操作\n请直接使用Ctrl+D收藏本站~")}}

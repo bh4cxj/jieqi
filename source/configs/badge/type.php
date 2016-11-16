@@ -1,0 +1,7 @@
+<?php 
+$jieqiType['badge']['1'] = array('btypeid' => '1', 'title' => 'µÈ¼¶»ÕÕÂ', 'sysflag' => '1');
+$jieqiType['badge']['2'] = array('btypeid' => '2', 'title' => 'Í·ÏÎ»ÕÕÂ', 'sysflag' => '1');
+$jieqiType['badge']['1010'] = array('btypeid' => '1010', 'title' => 'ÈÙÓþ»ÕÕÂ', 'sysflag' => '2');
+$jieqiType['badge']['2010'] = array('btypeid' => '2010', 'title' => '¹¤»á»ÕÕÂ', 'sysflag' => '3');
+$jieqiType['badge']['3010'] = array('btypeid' => '3010', 'title' => '»î¶¯»ÕÕÂ', 'sysflag' => '2');
+?>

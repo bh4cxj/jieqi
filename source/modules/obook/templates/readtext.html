@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>{?$jieqi_pagetitle?}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="-1">
+<meta name="keywords" content="{?$meta_keywords?}" />
+<meta name="description" content="{?$meta_description?}" />
+<meta name="author" content="{?$meta_author?}" />
+<meta name="copyright" content="{?$meta_copyright?}" />
+<meta name="generator" content="jieqi.com" />
+<link rel="stylesheet" type="text/css" media="all" href="{?$jieqi_url?}/configs/obook/page.css" />
+{?$jieqi_head?}
+</head>
+<body bgcolor="#f0f0f0" oncontextmenu="return false" onselectstart="return false" oncopy="return false">
+<table width="95%"  border="0" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td width="45%"><a href="{?$dynamic_url?}">{?$jieqi_sitename?}</a>-&gt;<a href="{?$url_obookroom?}">电子书店</a>-&gt;<a href="{?$url_obookinfo?}">{?$obookname?}</a></td>
+        <td width="55%" align="right"><a href="{?$url_preview?}">上一页</a> | <a href="{?$url_index?}">返回书目</a> | <a href="{?$url_next?}">下一页</a> | <a href="{?$dynamic_url?}/addbookcase.php?oid={?$obookid?}&cid={?$ochapterid?}" target="_blank">加入书签</a> | <a href="{?$dynamic_url?}/bookcase.php">打开书架</a> | <a href="{?$url_obookinfo?}">返回书页</a></td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+  <tr>
+    <td><hr size="1" noshade /></td>
+  </tr>
+  <tr>
+    <td><script type="text/javascript" src="{?$jieqi_url?}/configs/obook/pagetop_{?$jieqi_charset?}.js"></script></td>
+  </tr>
+  <tr>
+    <td align="center"><div id="title">{?$chaptertitle?}</div></td>
+  </tr>
+  <tr>
+    <td align="center"><div id="chaptercontent" name="chaptercontent">正在载入，请稍候...</div></td>
+  </tr>
+  <tr>
+    <td><script type="text/javascript" src="{?$jieqi_url?}/configs/obook/pagebottom.js"></script></td>
+  </tr>
+  <tr>
+    <td><hr size="1" noshade /></td>
+  </tr>
+  <tr>
+    <td align="center">
+	<a href="{?$url_preview?}">上一页</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{?$url_index?}">返回书目</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{?$url_next?}">下一页</a>
+	</td>
+  </tr>
+  <tr>
+    <td><hr size="1" noshade /></td>
+  </tr>
+</table>
+<iframe src="{?$static_url?}/obooktext.php?oid={?$obookid?}&cid={?$ochapterid?}" width="0" height="0"></iframe>
+</body>
+</html>

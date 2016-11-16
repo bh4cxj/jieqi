@@ -1,0 +1,84 @@
+{?set jieqi_blocks_module = "system"?}
+{?set jieqi_blocks_config = "userblocks"?}
+
+
+
+<link rel="stylesheet" type="text/css" href="/52mb/css/userinfo.css"/>
+
+
+<div class="main"><div class="user_info"><h3>用户信息</h3><ul class="ulitem">
+<li><a href="/userdetail.php">用户资料</a></li>
+<li><a href="/useredit.php">修改资料</a></li>
+<li><a href="/setavatar.php">设置头像</a></li>
+<li><a href="/passedit.php">修改密码</a></li>
+<li><a href="/logout.php">退出登录</a></li>
+</ul><ul class="ulitem">
+<li><a href="/message.php?box=inbox">收件箱</a></li>
+<li><a href="/message.php?box=outbox">发件箱</a></li>
+<li><a href="/newmessage.php">写新消息</a></li>
+<li><a href="/newmessage.php?tosys=1">写给管理员</a></li>
+</ul><ul class="ulitem">
+<li><a href="/myfriends.php">我的好友</a></li>
+<li><a href="/ptopics.php?uid=self">我的会客室</a></li>
+<li><a href="/mylink.php">我的链接</a></li>
+
+<li><a href="/modules/article/bookcase.php">我的书架</a></li>
+
+<li><a href="/modules/article/applywriter.php">申请作者</a></li>
+
+<li><a href="/online.php">在线用户</a></li>
+</ul>
+</div>
+
+<div class="bookcase">
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function frmpassedit_validate(){
+  if (document.frmpassedit.oldpass.value == ""){
+    alert( "请输入原密码！" );
+	document.frmpassedit.oldpass.focus();
+	return false;
+  }
+  if(document.frmpassedit.newpass.value == ""){
+    alert( "请输入新密码！" );
+	document.frmpassedit.newpass.focus();
+	return false;
+  }
+  if (document.frmpassedit.repass.value != document.frmpassedit.newpass.value){
+    alert( "两次新密码输入不同，请重新输入！" );
+	document.frmpassedit.repass.focus();
+	return false;
+  }
+}
+//-->
+</script>
+<form name="frmpassedit" id="frmpassedit" action="{?$url_passedit?}" method="post" onsubmit="return frmpassedit_validate();">
+<table width="580" class="" cellspacing="1" align="center">
+<caption>用户密码修改</caption>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">用户名</td>
+  <td class="even">{?$jieqi_username?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">原密码</td>
+  <td class="even"><input type="password" class="text" name="oldpass" id="oldpass" size="25" maxlength="20" value="" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">新密码</td>
+  <td class="even"><input type="password" class="text" name="newpass" id="newpass" size="25" maxlength="20" value="" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">重复新密码</td>
+  <td class="even"><input type="password" class="text" name="repass" id="repass" size="25" maxlength="20" value="" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">&nbsp;<input type="hidden" name="action" id="action" value="update" /></td>
+  <td class="even"><input type="submit" class="button" name="submit"  id="submit" value="保 存" /></td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+

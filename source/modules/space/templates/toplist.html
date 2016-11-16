@@ -1,0 +1,13 @@
+<DIV class=gridtop>{? $btitle ?}</DIV>
+<DIV class=blockcontent>
+  <UL class=ulmul>
+  {? section name=i loop=$articlerows ?}
+    <LI class="fl lm" style="WIDTH: 40%">[{?$articlerows[i].catname?}]<A 
+  href="{?$jieqi_blog_url?}?u={? $articlerows[i].bgdomain ?}&action=arview&arid={?$articlerows[i].arid?}" 
+  target=_blank>{?$articlerows[i].artitle?}</A> </LI>
+    <LI class="fr tr" style="WIDTH: 40%">{?$articlerows[i].name?}&nbsp;&nbsp;{?$articlerows[i].gatime?}</LI>
+  {? /section ?}
+  </UL>
+  <DIV class=more><A href=""></A></DIV>
+</DIV>
+<div class="more"><a href="./toplist.php?sort=allvisit">{? $url_jumppage ?}</div> 

@@ -1,0 +1,14 @@
+<div class="c_navigation"><span style="float:left;">&nbsp;<b>相册列表</b></span>{? if $space_hoster==1 ?} <a href="{? $space_album_upload_url?}">上传新照片</a> | <a href="{?$space_album_create_url?}">创建新相册</a>{? /if ?}</div>
+<div class="c_subject"><ul class="mybook_img">
+{? section name=i loop=$image_cats columns=3?}
+{?if $i['column'] == 1?}<ul class="mybook_img">{?/if?}
+{?if $image_cats[i].name!=''?}
+    <li><a href="photo.php?uid={?$uid?}&catid={? $image_cats[i].id ?}"><img src="{?$jieqi_url?}{? $image_cats[i].image|str_replace:'b_':'' ?}" border="0" /></a><br>{? $image_cats[i].name ?}({? $image_cats[i].num ?})</li>
+{?/if?}
+	{?if $i['column'] == $i['columns']?}</ul>{?/if?}
+{? /section ?}
+     </ul>
+</div>
+<hr />
+
+<div class="pages">{?$url_jumppage?}</div>

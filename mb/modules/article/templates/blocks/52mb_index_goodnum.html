@@ -1,0 +1,4 @@
+{?section name=i loop=$articlerows?}
+<div class="book"><a class="info_cover" href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}txt下载"><img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}txt全文下载"><span>{?$articlerows[i].goodnum?}</span><strong>{?$articlerows[i].author?}</strong></a><h3><a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}">{?$articlerows[i].articlename?}</a></h3></div>
+
+{?/section?}

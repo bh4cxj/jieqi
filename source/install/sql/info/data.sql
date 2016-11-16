@@ -1,0 +1,23 @@
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'conten_num', '内容简介提取多少个字符', '50', '内容简介截取多少个字符', 0, 0, '', 10001, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'de_city', '是否开启所有城市', '0', '是否开启所有城市', 0, 7, 'a:2:{i:0;s:12:"开启所有城市";i:1;s:12:"开启单一城市";}', 10003, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'de_city_name', '默认城市名称', '杭州', '开启单一城市后的城市默认值', 0, 0, '', 10006, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'list_num', '列表页提取条数', '10', '列表页提取条数', 0, 0, '', 10005, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'llmsg_notlogoin', '是否允许游客评论', '1', '是否允许未登录用户评论', 0, 9, 'a:2:{i:1;s:2:"是";i:0;s:2:"否";}', 10008, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'upload_max', '图片大小限制', '1111', '图片上传允许大小M', 0, 0, '', 10002, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'upload_num', '可以上传多少个图片', '4', '图片上传框个数', 0, 0, '', 10000, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'usekey', '是否启用验证码', '0', '是否启用验证码', 0, 9, 'a:2:{i:1;s:2:"是";i:0;s:2:"否";}', 10007, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'user_msg_check', '用户发布的信息是否需要审核', '1', '用户发布的信息是否需要审核', 0, 9, 'a:2:{i:0;s:8:"需要审核";i:1;s:10:"不需要审核";}', 10009, '');
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`)  VALUES(null, 'info', 'user_url_rewirte', '是否开启伪静态', '1', '是否开启伪静态', 0, 9, 'a:2:{i:1;s:2:"是";i:0;s:2:"否";}', 10009, '');
+
+INSERT INTO `jieqi_system_power` (`pid`, `modname`, `pname`, `ptitle`, `pdescription`, `pgroups`) VALUES(null, 'info', 'magmsg', '信息管理权限', '信息管理（发布，管理）', '');
+INSERT INTO `jieqi_system_power` (`pid`, `modname`, `pname`, `ptitle`, `pdescription`, `pgroups`) VALUES(null, 'info', 'magmx', '模型管理', '模型管理（添加，管理，删除）', '');
+INSERT INTO `jieqi_system_power` (`pid`, `modname`, `pname`, `ptitle`, `pdescription`, `pgroups`) VALUES(null, 'info', 'magupload', '附件管理权限', '附件管理权限', '');
+INSERT INTO `jieqi_system_power` (`pid`, `modname`, `pname`, `ptitle`, `pdescription`, `pgroups`) VALUES(null, 'info', 'mag_column', '分类栏目管理权限', '分类栏目管理权限（增加,修改,删除,绑定模型） ', '');
+
+INSERT INTO `jieqi_system_blocks` (`bid`, `blockname`, `modname`, `filename`, `classname`, `side`, `title`, `description`, `content`, `vars`, `template`, `cachetime`, `contenttype`, `weight`, `showstatus`, `custom`, `canedit`, `publish`, `hasvars`) VALUES(null, '提取子栏目区块', 'info', 'block_columnlist', 'BlocksInfoColumnlist', 4, '栏目详细分类', '//0.模板文件1.提取栏目的编号', '', '', '', 0, 4, 22550, 0, 0, 0, 0, 1);
+INSERT INTO `jieqi_system_blocks` (`bid`, `blockname`, `modname`, `filename`, `classname`, `side`, `title`, `description`, `content`, `vars`, `template`, `cachetime`, `contenttype`, `weight`, `showstatus`, `custom`, `canedit`, `publish`, `hasvars`) VALUES(null, '评论提取模块', 'info', 'block_lmsg.php', 'BlocksInfoLmsg', 4, '信息评论', '//0.模板文件1.文章id，2.文章类别type.3.回复id（提取单一回复，可以为空）', '', '', '', 0, 4, 22551, 0, 0, 0, 0, 1);
+INSERT INTO `jieqi_system_blocks` (`bid`, `blockname`, `modname`, `filename`, `classname`, `side`, `title`, `description`, `content`, `vars`, `template`, `cachetime`, `contenttype`, `weight`, `showstatus`, `custom`, `canedit`, `publish`, `hasvars`) VALUES(null, '分类信息列表', 'info', 'block_msglist', 'BlocksInfoMsglist', 4, '分类信息列表', '0.模板文件\r\n1.提取的文章栏目ID，\r\n2.提取条数\r\n3.城市名称（是否限制城市）\r\n4.排序', '', '', '', 0, 4, 22552, 0, 0, 0, 0, 1);
+
+
+
+INSERT INTO `jieqi_system_modules` (`mid`, `name`, `caption`, `description`, `version`, `vtype`, `lastupdate`, `weight`, `publish`, `modtype`)  VALUES(null, 'info', '分类信息', '分类信息', 100, '', 0, 0, 1, 0);

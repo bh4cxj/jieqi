@@ -1,0 +1,13 @@
+{?section name=i loop=$answer?}
+<hr />
+<div class="c_content">
+{?$answer[i]['content']['value']?}
+</div>
+<div class="c_content" id="addcontent{?$answer[i]['answerid']['value']?}" style="display:none"></div>
+<div class="c_content">回复人:{?$answer[i]['username']['value']?} 回复时间:{?$answer[i]['addtime']['value']| date:"Y-m-d H:i"?} 
+<a href="?action=delanswer&id={?$answer[i]['answerid']['value']?}" class="btnlink">[删除]</a>
+
+</div>
+{?/section?}
+<span class="hottext" onclick="javascript:history.go(-1);" style="cursor:hand">[返回上一页]</span>
+</div>

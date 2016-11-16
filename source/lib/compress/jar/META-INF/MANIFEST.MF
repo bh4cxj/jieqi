@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Name: 杰奇电子书
+MIDlet-Version: 1.0
+MIDlet-Vendor: JIEQI CMS (www.jieqi.com)
+MIDlet-1: 杰奇电子书, /icon.png, FormBook
+MicroEdition-Profile: MIDP-1.0
+Created-By: 1.4.2 (Sun Microsystems Inc.)

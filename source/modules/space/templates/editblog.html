@@ -1,0 +1,48 @@
+{?set jieqi_blocks_module = "space"?}
+{?set jieqi_blocks_config = "blogblocks"?}
+<form name="form1" id="form1" action="" method="post">
+  <input type="hidden" name="action" value="doedit"> 
+  <input type='hidden' name="id" value="{? $id ?}">
+  <table cellspacing="1" class="grid"  style="width:100%">
+  <caption>编辑文章</caption>
+  <tr>
+    <td>标题</td>
+    <td><input type="text" class="text" name="title"  size="25" maxlength="30" value="{?$title ?}" /></td>
+  </tr>
+  <tr>
+    <td>内容</td>
+    <td><textarea class="textarea" name="content"  id="pcontent" rows="16" cols="80">{? $content ?}</textarea>
+    <script language="javascript" src="{?$jieqi_url?}/scripts/ubbeditor.js"></script><script language="javascript">UBBEditor.Create("pcontent");</script></td>
+  </tr>
+  <tr>
+    <td>公开</td>
+    <td>
+    	
+    	<input type="radio" class="radio" name="ar_open" value="1" {? if $ar_open==1 ?} checked="checked" {? /if ?} />是
+        <input type="radio" class="radio" name="ar_open" value="0" {? if $ar_open==0 ?} checked="checked" {? /if ?} />否</td>
+  </tr>
+  <tr>
+    <td>允许评论</td>
+    <td><input type="radio" class="radio" name="allow_com" value="1" {? if $allow_com==1 ?} checked="checked" {? /if ?}  />是
+        <input type="radio" class="radio" name="allow_com" value="0" {? if $allow_com==0 ?} checked="checked" {? /if ?} />否</td>
+  </tr>
+  <tr>
+    <td>博客分类</td>
+    <td>
+	<select class="select" name="cat_id">
+        {? section name=i loop=$blog_cats ?}
+                <option value="{? $blog_cats[i].id ?}" 
+                {? if $blog_cats[i].id==$default_id ?}selected="selected"{? /if ?} >
+                {? $blog_cats[i].name ?}
+                </option>
+        {? /section ?}
+        </select>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" class="button" name="submit" id="submit" value="提 交" /></td>
+  </tr>
+</table>
+</form>
+<br />

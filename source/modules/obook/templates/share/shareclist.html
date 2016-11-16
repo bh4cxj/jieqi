@@ -1,0 +1,23 @@
+<table class="grid" width="100%" align="center">
+<caption>《{?$obookname?}》章节销售统计</caption>
+  <tr align="center">
+    <th width="20%">电子书名称</th>
+    <th width="30%">章节名称</th>
+    <th width="13%">单价</th>
+	<th width="13%">更新日期</th>
+    <th width="13%">状态</th>
+    <th width="11%">章节内容</th>
+  </tr>
+{?section name=i loop=$ochapterrows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$ochapterrows[i].obookid?}" target="_blank">{?$ochapterrows[i].obookname?}</a></td>
+    <td class="even"><a href="{?$ochapterrows[i].url_chapter?}" target="_blank">{?$ochapterrows[i].chaptername?}</a></td>
+    <td class="odd">{?$ochapterrows[i].saleprice?}</td>
+    <td class="odd" align="center">{?$ochapterrows[i].lastupdate?}</td>
+    <td class="even" align="center">{?$ochapterrows[i].salestatus?}</td>
+    <td class="even" align="center"><a href="{?$obook_dynamic_url?}/share/sharectext.php?cid={?$ochapterrows[i].ochapterid?}&oid={?$obookid?}" target="_blank">点击查看</a></td>
+  </tr>
+{?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>
+

@@ -1,0 +1,40 @@
+<br />
+<form method="post" name="post" action="{?$url_pay?}">
+ <table class="grid" width="600" align="center">
+    <caption>欢迎使用在线支付系统</caption>
+    <tr class="odd"> 
+      <td>
+	  <br />
+	  您好，{?$buyname?}!
+	  <br /><br />
+	  您选择的交易类型为：
+	  <br /><br />
+	  <span class="hottext">
+	  * 购买{?$egold?}点{?$egoldname?}，合计人民币：{?$money?}元</span>
+	  <br /><br />
+	  确认购买请点击“进入下一步”。
+	  <br />
+	  <br />
+	  </td>
+    </tr>
+    <tr class="even"> 
+      <td height="30" valign="middle">
+	  <input type="hidden" name="cmdno"    value="{?$cmdno?}">
+      <input type="hidden" name="date"    value="{?$date?}">
+      <input type="hidden" name="bank_type" value="{?$bank_type?}">
+	  <input type="hidden" name="desc" value="{?$desc?}">
+	  <input type="hidden" name="purchaser_id" value="{?$purchaser_id?}">
+	  <input type="hidden" name="bargainor_id" value="{?$bargainor_id?}">
+	  <input type="hidden" name="transaction_id"    value="{?$transaction_id?}">
+      <input type="hidden" name="sp_billno"    value="{?$sp_billno?}">
+      <input type="hidden" name="total_fee" value="{?$total_fee?}">
+	  <input type="hidden" name="fee_type"    value="{?$fee_type?}">
+      <input type="hidden" name="return_url" value="{?$return_url?}">
+	  <input type="hidden" name="attach" value="{?$attach?}"> 
+	  <input type="hidden" name="sign" value="{?$sign?}">  
+      <input type="submit" class="button" value=" 进入下一步 " name="v_action">
+	  </td>
+    </tr>
+  </table>
+</form>
+<br /><br />

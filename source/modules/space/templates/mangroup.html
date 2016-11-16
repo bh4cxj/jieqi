@@ -1,0 +1,31 @@
+<div class='gridtop'>我创建的圈子</div>
+<table width='100%' class='grid' cellspacinb=1>
+<tr align=center>
+        <td class='odd' width="30%">圈子名</td>
+        <td class='odd' width="20%">类别</td>
+        <td class='odd' width="20%">开通日期</td>
+        <td class='odd' width="15%">管理</td>
+        <td class='odd' width="15%">解散</td>
+</tr>
+
+{?section name=i loop=$mygs ?}
+<tr align=center>
+        <td class='odd' align='left'>{? $mygs[i].bname ?}</td>
+        <td class='odd'>{? $mygs[i].bcatname ?}</td>
+        <td class='odd'>{? $mygs[i].btime ?}</td>
+        <td class='odd'>管理</td>
+        <td class='odd'>解散</td>
+</tr>
+{?/section ?}
+</table>
+
+<div class='gridtop'>我加入的圈子</div>
+<table width='100%' class='grid' cellspacinb=1>
+<tr align=center>
+        <td class='odd' width="30%">圈子名</td>
+        <td class='odd' width="20%">类别</td>
+        <td class='odd' width="20%">开通日期</td>
+        <td class='odd' width="15%">创始人</td>
+        <td class='odd' width="15%">退出</td>
+</tr>
+</table>

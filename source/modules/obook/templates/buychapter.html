@@ -1,0 +1,29 @@
+<br /><br />
+<form name="frmbuychapter" method="post" action="{?$url_buychapter?}">
+ <table class="grid" width="400" align="center">
+    <caption>购买VIP章节</caption>
+	<tr>
+	  <td width="100" align="right" class="odd">章节名称：</td>
+	  <td width="300" class="even">《{?$obookname?} - {?$chaptername?}》</td>
+    </tr>
+	<tr>
+	  <td class="odd" align="right">价&nbsp;&nbsp;&nbsp; 格：</td>
+	  <td class="even">{?$saleprice?}{?$egoldname?}</td>
+    </tr>
+	<tr>
+	  <td class="odd" align="right">购买用户：</td>
+	  <td class="even">{?$username?}</td>
+    </tr>
+	<tr>
+	  <td class="odd" align="right">现有余额：</td>
+	  <td class="even">{?$useremoney?}{?$egoldname?}</td>
+    </tr>
+	<tr align="center">
+	  <td colspan="2" class="odd"><input type="hidden" name="action" value="buy">
+      <input type="hidden" name="cid" value="{?$cid?}">      <input type="submit" class="button" value="确定购买并阅读" name="submit"></td>
+    </tr>
+	<tr align="center">
+	  <td colspan="2" class="foot"> <a href="{?$url_obookinfo?}">查看本书信息</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{?$url_buyegold?}">我的帐户充值</a>      </td> 
+    </tr>
+  </table>
+</form><br /><br />

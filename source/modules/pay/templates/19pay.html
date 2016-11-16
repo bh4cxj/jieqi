@@ -1,0 +1,38 @@
+<br />
+<form method="post" name="post" action="{?$url_pay?}">
+ <table class="grid" width="600" align="center">
+    <caption>欢迎使用在线支付系统</caption>
+    <tr class="odd"> 
+      <td>
+	  <br />
+	  您好，{?$buyname?}!
+	  <br /><br />
+	  您选择的交易类型为：
+	  <br /><br />
+	  <span class="hottext">
+	  * 购买{?$egold?}点{?$egoldname?}，合计人民币：{?$money?}元</span>
+	  <br /><br />
+	  确认购买请点击“进入下一步”。
+	  <br />
+	  <br />
+	  </td>
+    </tr>
+    <tr class="even"> 
+      <td height="30" valign="middle">
+	  <input type="hidden" name="version_id"    value="{?$version_id?}">
+	  <input type="hidden" name="merchant_id"    value="{?$merchant_id?}">
+      <input type="hidden" name="order_date"    value="{?$order_date?}">
+	  <input type="hidden" name="order_id"    value="{?$order_id?}">
+      <input type="hidden" name="amount" value="{?$amount?}">
+	  <input type="hidden" name="currency" value="{?$currency?}">
+	  <input type="hidden" name="returl" value="{?$returl?}">
+	  <input type="hidden" name="order_name"    value="{?$order_name?}">
+      <input type="hidden" name="user_name"    value="{?$user_name?}">
+      <input type="hidden" name="user_email" value="{?$user_email?}">
+	  <input type="hidden" name="verifystring" value="{?$verifystring?}">
+      <input type="submit" class="button" value=" 进入下一步 " name="v_action">
+	  </td>
+    </tr>
+  </table>
+</form>
+<br /><br />

@@ -1,0 +1,6 @@
+	<ul class="ulitem">
+	{? section name=i loop=$gcats ?}
+	<li><a href="{?$jieqi_modules['group']['url']?}/grouplist.php?catid={?$gcats[i]['catid']?}">{?$gcats[i]['catname']?}</a></li>
+	{?/section ?}
+	</ul>
+

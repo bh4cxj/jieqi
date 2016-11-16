@@ -1,0 +1,80 @@
+<hr />
+<style>
+.added{ background-color:#FEFCD8;}
+</style>
+<script src='./templates/style/quiz_type.js'></script>
+<div class="textbox"> 
+<div class="c_title">{?$title?}</div>
+<div class="c_head"> <span class="c_lebel">发布时间：</span><span class="c_value">{?$addtime?}</span> <span class="c_lebel">过期时间：</span><span class="c_value">{?$overtime?}</span>  <span class="c_lebel">提问人：</span><span class="c_value">{?$username?}</span>  <span class="c_value">悬赏分:{?$score?}分</span> 
+
+{?if $jieqiuser==$username  & $type==1 & !$times?}
+<span class="notetext" onclick="add('a{?$quizid?}')" style="cursor:hand">[我要补充]</span>　<span class="notetext" onclick="javascript:location.href='{?$linkurl?}/answer.php?id={?$quizid?}&action=close'" style="cursor:hand">[关闭问题]</span>
+{? /if ?}
+
+</div>
+<hr />
+<div class="c_content"> {?$content?}
+</div>
+<div class="c_content" id="addcontenta{?$quizid?}" style="display:none"></div>
+<div class="c_foot"></div>
+
+{?if $answerid != 0?}
+{?section name=i loop=$answer?}
+{?if $answer[i]['answerid']['value']==$answerid ?}
+<hr />
+<div class="c_content">
+<span class="hottext">[最佳答案]</span><br />
+{?$answer[i]['content']['value']?}
+</div>
+<div class="c_content" id="addcontent{?$answer[i]['answerid']['value']?}" style="display:none"></div>
+<div class="c_content">回复人:{?$answer[i]['username']['value']?} 回复时间:{?$answer[i]['addtime']['value']| date:"Y-m-d H:i"?} 
+{? /if ?}
+{?/section?}
+{? /if?}
+
+{?section name=i loop=$answer?}
+{?if $answer[i]['answerid']['value']!=$answerid ?}
+<hr />
+<div class="c_content">
+{?$answer[i]['content']['value']?}
+</div>
+<div class="c_content" id="addcontent{?$answer[i]['answerid']['value']?}" style="display:none"></div>
+<div class="c_content">回复人:{?$answer[i]['username']['value']?} 回复时间:{?$answer[i]['addtime']['value']| date:"Y-m-d H:i"?} 
+{?if $jieqiuser==$answer[i]['username']['value']  & $type==1 ?}
+<span class="notetext" onclick="add({?$answer[i]['answerid']['value']?})" style="cursor:hand">[我要补充]</span>
+{? /if ?}
+{?if $jieqiuser==$username  & $type==1?}
+<span class="notetext" onclick="javascript:location.href='{?$linkurl?}/answer.php?id={?$answer[i]['answerid']['value']?}&action=best&quizid={?$quizid?}'" style="cursor:hand">[最佳答案]</span>
+{? /if ?}
+</div>
+{?/if?}
+{?/section?}
+</div>
+
+
+<div class="textbox" {?if $jieqiuser==$username  | $type==0 | $times?}style="display:none"{?/if?}>
+  <form name="form1" id="form1" action="answer.php" onsubmit="return novalue('contents')"  method="post">
+    <table width="70%" align="center" cellspacing="1" class="grid">
+      <caption>
+      立刻回答该问题
+      </caption>     
+      <tr>
+        <td>回复内容:</td>
+        <td><textarea class="textarea" name="contents" id="contents" rows="6" cols="60"></textarea></td>
+      </tr>
+	  
+	   {?if $jieqiConfigs['quiz']['usekey']==1?} 
+	   <tr>
+        <td>验证码</td>
+        <td><input type="text" class="text" size="8" maxlength="8" id="checkcode" name="checkcode">&nbsp;<img src="{?$url_checkcode?}"></td>
+      </tr>  
+	  {?/if?}
+	  
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" class="button" name="submit" id="submit" value="提 交" /></td>
+      </tr>
+    </table>
+	<input name="quizid" type="hidden" value="{?$quizid?}" />
+  </form>
+</div>

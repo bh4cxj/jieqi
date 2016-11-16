@@ -1,0 +1,4 @@
+<?php
+$jieqiBlocks[]=array('bid'=>0, 'blockname'=>'发布者工具箱', 'module'=>'cartoon', 'filename'=>'block_writerbox', 'classname'=>'BlockCartoonWriterbox', 'side'=>JIEQI_SIDEBLOCK_LEFT, 'title'=>'发布者工具箱', 'vars'=>'', 'template'=>'', 'contenttype'=>JIEQI_CONTENT_PHP, 'custom'=>0, 'publish'=>3, 'hasvars'=>0);
+$jieqiBlocks[]=array('bid'=>0, 'blockname'=>'原创漫画', 'module'=>'cartoon', 'filename'=>'block_mycartoon', 'classname'=>'BlockCartoonMycartoons', 'side'=>JIEQI_SIDEBLOCK_LEFT, 'title'=>'原创漫画', 'vars'=>'', 'template'=>'', 'contenttype'=>JIEQI_CONTENT_PHP, 'custom'=>0, 'publish'=>3, 'hasvars'=>0);
+?>

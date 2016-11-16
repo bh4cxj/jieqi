@@ -1,0 +1,32 @@
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+<form action="{?$obook_dynamic_url?}/admin/buylog.php" method="post" name="frmsearch">
+  <tr>
+    <td>购买用户：
+      <input name="uname" type="text" id="uname" size="20" maxlength="30" class="text" value="{?$uname?}">
+      &nbsp; 购买书籍：
+      <input name="oname" type="text" id="oname" size="20" maxlength="60" class="text" value="{?$oname?}">&nbsp; <input type="submit" name="Submit" value="搜  索" class="button">
+      &nbsp; <a href="{?$obook_dynamic_url?}/admin/buylog.php">显示全部</a></td>
+  </tr>
+</form>
+</table>
+<table class="grid" width="100%" align="center">
+<caption>电子书订阅记录</caption>
+  <tr align="center">
+    <th width="20%">书名</th>
+    <th width="45%">章节</th>
+    <th width="10%">价格</th>
+    <th width="15%">购买人</th>
+    <th width="10%">购买日期</th>
+  </tr>
+  {?section name=i loop=$osalerows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$osalerows[i].obookid?}" target="_blank">{?$osalerows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$obook_static_url?}/reader.php?oid={?$osalerows[i].obookid?}&cid={?$osalerows[i].ochapterid?}" target="_blank">{?$osalerows[i].chaptername?}</a></td>
+    <td align="center" class="even">{?$osalerows[i].saleprice?}</td>
+    <td class="even" align="center"><a href="{?function jieqi_geturl:'system':'user':$osalerows[i].accountid?}" target="_blank">{?$osalerows[i].account?}</a></td>
+    <td class="even" align="center">{?$osalerows[i].buytime?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>
+

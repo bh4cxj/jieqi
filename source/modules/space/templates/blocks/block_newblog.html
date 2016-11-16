@@ -1,0 +1,17 @@
+{? section name=i loop=$blogs ?}
+<div class="c_subject"  ><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$uid?}&id={?$blogs[i].id?}">{? $blogs[i].title ?}</a></div>
+<div class="c_tag"><span class="c_lebel">发表时间：</span><span class="c_value">{? $blogs[i].up_time ?}|date:Y-m-d H:i:s</span></div>
+<div class="c_description">{? $blogs[i].content ?}</div>
+<br />
+<div class="c_note">
+<a href="{? $jieqi_modules['space']['url'] ?}/blog.php?uid={?$uid ?}&cat_id={?$blogs[i].cat_id?}">类别:{? $blogs[i].cat_name ?}</a>
+{? if $space_hoster == 1 ?}
+ | <a href="{? $jieqi_modules['space']['url'] ?}/editblog.php?uid={?$uid ?}&act=edit&id={?$blogs[i].id?}">编辑 </a>
+ | <a href="{? $jieqi_modules['space']['url'] ?}/blog.php?uid={?$uid?}&act=del&id={?$blogs[i].id?}">删除</a>				       
+{?/if ?}   
+ | 评论:({? $blogs[i].review_num ?})
+ | 浏览:({? $blogs[i].hit_num ?})
+{? if $blogs[i].private == 1 ?}|该文章为私有{?/if?} 
+</div>
+<hr />
+{? /section ?}

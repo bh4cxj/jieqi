@@ -1,0 +1,70 @@
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/52mb/css/userinfo.css"/>
+
+
+<div class="main"><div class="user_info"><h3>用户信息</h3><ul class="ulitem">
+<li><a href="/userdetail.php">用户资料</a></li>
+<li><a href="/useredit.php">修改资料</a></li>
+<li><a href="/setavatar.php">设置头像</a></li>
+<li><a href="/passedit.php">修改密码</a></li>
+<li><a href="/logout.php">退出登录</a></li>
+</ul><ul class="ulitem">
+<li><a href="/message.php?box=inbox">收件箱</a></li>
+<li><a href="/message.php?box=outbox">发件箱</a></li>
+<li><a href="/newmessage.php">写新消息</a></li>
+<li><a href="/newmessage.php?tosys=1">写给管理员</a></li>
+</ul><ul class="ulitem">
+<li><a href="/myfriends.php">我的好友</a></li>
+<li><a href="/ptopics.php?uid=self">我的会客室</a></li>
+<li><a href="/mylink.php">我的链接</a></li>
+
+<li><a href="/modules/article/bookcase.php">我的书架</a></li>
+
+<li><a href="/modules/article/applywriter.php">申请作者</a></li>
+
+<li><a href="/online.php">在线用户</a></li>
+</ul>
+</div>
+
+<div class="bookcase">
+
+
+<form name="setavatar" id="setavatar" action="{?$jieqi_url?}/setavatar.php?do=submit" method="post" enctype="multipart/form-data">
+<table width="100%" class="" cellspacing="1" align="center">
+<caption>设置头像</caption>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">用户名</td>
+  <td class="even">{?$jieqi_username?}</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">当前头像</td>
+  <td class="even">
+{?if $avatartype > 0?}
+<img id="cut_img" src="{?$url_avatar?}?{?$jieqi_time?}" style="margin:0;padding:0;border:1px solid #000000;" />
+{?if $avatarcut == 1?}
+<img id="cut_img" src="{?$url_avatars?}?{?$jieqi_time?}" style="margin:0;padding:0;border:1px solid #000000;" />
+<img id="cut_img" src="{?$url_avatari?}?{?$jieqi_time?}" style="margin:0;padding:0;border:1px solid #000000;" />
+{?/if?}
+{?/if?}
+  </td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">上传头像</td>
+  <td class="even"><input type="file" class="text" size="30" name="avatarimage" id="avatarimage" /><br />
+  <span class="hottext">头像图片格式为 {?$need_imagetype?} ，文件大小不能超过 {?$max_imagesize?}K</span>
+  </td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">&nbsp;
+  <input type="hidden" name="action" id="action" value="upload" />
+  </td>
+  <td class="even"><input type="submit" class="button" name="submit"  id="submit" value="上传头像" /></td>
+</tr>
+</table>
+</form>
+
+</div>
+</div>

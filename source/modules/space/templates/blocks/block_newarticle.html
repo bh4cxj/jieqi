@@ -1,0 +1,7 @@
+<ul class="ultop">
+  {?section name=i loop=$blogs?}
+	<li class="cl"><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$blogs[i].uid?}&id={?$blogs[i].id?}" target="_blank">{?$blogs[i].title|truncate:18:".."?}</a>{?$blogs[i].up_time|date:m-d?}
+	</li>
+  {?/section?}
+</ul>
+<div class="more"><a href="{?$url_more?}">¸ü¶à...</a></div>

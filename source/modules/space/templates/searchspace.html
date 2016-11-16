@@ -1,0 +1,14 @@
+<div class="block">
+<div class="blocktitle">ËÑË÷½á¹û</div>
+<div class="blockcontent"><ul class="ultop">
+{?section name=i loop=$user_rows ?}
+<br />
+<li><a href="./space.php?uid={? $user_rows[i].uid ?}" target="_blank">{? $user_rows[i].name ?}</a></li>
+<br />
+{?/section?}
+{?if $have_res == 0 ?}
+{? $no_search_res ?}
+{? /if ?}
+</ul> 
+</div>  
+</div>

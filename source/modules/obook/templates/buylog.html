@@ -1,0 +1,21 @@
+{?set jieqi_blocks_module = "system"?}
+{?set jieqi_blocks_config = "userblocks"?}
+<table class="grid" width="100%" align="center">
+<caption>我的vip购买记录</caption>
+  <tr align="center">
+    <th width="20%">书名</th>
+    <th width="50%">章节</th>
+    <th width="15%">价格</th>
+    <th width="15%">购买日期</th>
+  </tr>
+  {?section name=i loop=$osalerows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$osalerows[i].obookid?}" target="_blank">{?$osalerows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$obook_static_url?}/reader.php?oid={?$osalerows[i].obookid?}&cid={?$osalerows[i].ochapterid?}" target="_blank">{?$osalerows[i].chaptername?}</a></td>
+    <td align="center" class="even">{?$osalerows[i].saleprice?}</td>
+    <td class="even" align="center">{?$osalerows[i].buytime?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>
+

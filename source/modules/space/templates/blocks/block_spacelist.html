@@ -1,0 +1,7 @@
+<ul class="ulrow">
+{?section name=i loop=$spaces?}
+  <li class="cl">
+ <span style="float:left"><img src="{?function jieqi_geturl : 'system' : 'avatar' : $spaces[i].uid : 's'?}" class="avatar_48" alt="头像"></span> <a href="{? $jieqi_modules['space']['url'] ?}/space.php?uid={? $spaces[i]['uid'] ?}" target="_blank" class="font14">{?$spaces[i]['space_title']?}</a><br />人气：{?$spaces[i].visit_num?}  </li>
+{?/section?}
+</ul>
+<div class="more"><a href="{?$url_more?}">更多...</a></div> 

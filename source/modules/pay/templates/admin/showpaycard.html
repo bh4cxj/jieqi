@@ -1,0 +1,40 @@
+<form name="frmsearch" method="post" action="showpaycard.php">
+<table class="grid" width="100%" align="center">
+    <tr>
+      <td class="odd">批号：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50"> <input name="paytype" type="radio" class="radio" value="0" checked>
+            全部卡号
+            <input type="radio" name="paytype" class="radio" value="1">
+            已充值卡 
+			<input type="radio" name="paytype" class="radio" value="2">
+			未充值卡 
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+        &nbsp;</td>
+    </tr>
+</table>
+</form>
+<br />
+<div class="gridtop">查询结果{?if $totalrows > 0?}（共 {?$totalrows?} 条）{?/if?}</div>
+<table class="grid" width="100%" align="center">
+  <tr align="center">
+    <th width="10%">序号</th>
+    <th width="17%">卡号</th>
+    <th width="17%">密码</th>
+    <th width="10%">金额</th>
+    <th width="16%">充值人</th>
+    <th width="20%">充值时间</th>
+    <th width="10%">充值状态</th>
+  </tr>
+  {?section name=i loop=$cardrows?}
+  <tr>
+    <td class="odd">{?$cardrows[i].order?}</td>
+    <td class="odd">{?$cardrows[i].cardno?}</td>
+    <td class="even">{?$cardrows[i].cardpass?}</td>
+    <td class="odd">{?$cardrows[i].payemoney?}</td>
+    <td class="even"><a href="{?function jieqi_geturl:'system':'user':$cardrows[i].payuid?}" target="_blank">{?if $cardrows[i].payname == 0?}充值人{?else?}{?$cardrows[i].payname?}{?/if?}</a></td>
+    <td class="odd" align="center">{?$cardrows[i].paytime?}</td>
+    <td class="odd" align="center">{?if $cardrows[i].ispay == 0?}未充值{?else?}<span class="hottext">已充值</span>{?/if?}</td>
+  </tr>
+  {?/section?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>

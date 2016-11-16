@@ -1,0 +1,34 @@
+<?php
+$jieqiLang['quiz']['list']=1; //表示本语言包已经包含
+$jieqiLang['quiz']['notusertitle']='请先登录！';
+$jieqiLang['quiz']['notuser']='您还没有登录！正转向登录页面';
+$jieqiLang['quiz']['scoretitle']='悬赏分有误！';
+$jieqiLang['quiz']['score']='悬赏分有误，必须是大于0的整数！请重新输入';
+$jieqiLang['quiz']['scoreless']='悬赏分高于您的积分！请重新输入';
+$jieqiLang['quiz']['type']='您没有选择类别！';
+$jieqiLang['quiz']['typeerror']='您没有选择类别，请重新选择该问题所属类别，方便用户回答';
+$jieqiLang['quiz']['checkcode']='验证码有误！';
+$jieqiLang['quiz']['checkcodecontent']='验证码有误！请重新输入';
+$jieqiLang['quiz']['sucess']='提问成功！';
+$jieqiLang['quiz']['sucesscontent']='提问成功,请等待回答,问题有效期为%d天!';
+$jieqiLang['quiz']['problemserror']='显示问题出错！';
+$jieqiLang['quiz']['problemscontent']='显示问题出错,没有参数或者参数不正确!';
+$jieqiLang['quiz']['answererror']='回答问题出错！';
+$jieqiLang['quiz']['answercontent']='回答问题出错,没有参数或者参数不正确!';
+$jieqiLang['quiz']['answersucess']='回答问题成功！';
+$jieqiLang['quiz']['answersucessc']='回答问题成功,正在返回该问题页面!';
+$jieqiLang['quiz']['answeronce']='回答问题失败！';
+$jieqiLang['quiz']['answeroncec']='您不可以重复回答,通过补充来完善还处于正常状态的问题!';
+$jieqiLang['quiz']['answeradd']='补充问题成功！';
+$jieqiLang['quiz']['answeraddc']='补充问题成功,即将返回该问题页面';
+$jieqiLang['quiz']['answerclose']='该问题已经关闭！';
+$jieqiLang['quiz']['answerclosec']='该问题已经关闭,正在返回该问题页面！';
+$jieqiLang['quiz']['closeerror']='该问题关闭失败！';
+$jieqiLang['quiz']['closeerrorc']='该问题关闭时,出现错误！请联系管理员';
+$jieqiLang['quiz']['answerbest']='最佳答案设置成功！';
+$jieqiLang['quiz']['answerbestc']='您已经成功设置最佳答案,即将返回该问题页面！';
+$jieqiLang['quiz']['besterror']='最佳答案设置失败！';
+$jieqiLang['quiz']['besterrorc']='最佳答案设置时,出现错误！请联系管理员！';
+$jieqiLang['quiz']['addanswer']="[答案补充] %s 于 %s ";
+$jieqiLang['quiz']['addproblem']="[问题补充] %s 于 %s ";
+?>

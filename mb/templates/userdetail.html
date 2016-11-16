@@ -1,0 +1,143 @@
+{?set jieqi_blocks_module = "system"?}
+{?set jieqi_blocks_config = "userblocks"?}
+
+
+
+<link rel="stylesheet" type="text/css" href="/52mb/css/userinfo.css"/>
+
+
+<div class="main"><div class="user_info"><h3>用户信息</h3><ul class="ulitem">
+<li><a href="/userdetail.php">用户资料</a></li>
+<li><a href="/useredit.php">修改资料</a></li>
+<li><a href="/setavatar.php">设置头像</a></li>
+<li><a href="/passedit.php">修改密码</a></li>
+<li><a href="/logout.php">退出登录</a></li>
+</ul><ul class="ulitem">
+<li><a href="/message.php?box=inbox">收件箱</a></li>
+<li><a href="/message.php?box=outbox">发件箱</a></li>
+<li><a href="/newmessage.php">写新消息</a></li>
+<li><a href="/newmessage.php?tosys=1">写给管理员</a></li>
+</ul><ul class="ulitem">
+<li><a href="/myfriends.php">我的好友</a></li>
+<li><a href="/ptopics.php?uid=self">我的会客室</a></li>
+<li><a href="/mylink.php">我的链接</a></li>
+
+<li><a href="/modules/article/bookcase.php">我的书架</a></li>
+
+<li><a href="/modules/article/applywriter.php">申请作者</a></li>
+
+<li><a href="/online.php">在线用户</a></li>
+</ul>
+</div>
+
+<div class="bookcase">
+<table class="" width="100%" align="center">
+<caption>用户信息</caption>
+  <tr align="left">
+    <td width="20%"  class="odd">用户ID：</td>
+    <td width="40%" class="even">{?$uid?}</td>
+    <td width="40%" rowspan="11" class="even" align="center">
+	<img src="{?function jieqi_geturl:'system':'avatar':$uid:'l':$avatar?}" class="avatar" alt="头像"><br />
+	{?if $jieqi_modules['badge']['publish'] > 0?}
+	<br />
+    {?if $jieqi_group_imageurl != ""?}<img src="{?$jieqi_group_imageurl?}" border="0" title="{?$jieqi_groupname?}"><br />{?/if?}
+	{?if $jieqi_honor_imageurl != ""?}<img src="{?$jieqi_honor_imageurl?}" border="0" title="{?$jieqi_honor?}"><br />{?/if?}
+    {?section name=i loop=$jieqi_badgerows?}<img src="{?$jieqi_badgerows[i].imageurl?}" border="0" title="{?$jieqi_badgerows[i].caption?}">{?/section?}
+    {?/if?}
+	</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">用户名：</td>
+    <td class="even">{?$uname?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">昵称：</td>
+    <td class="even">{?$name?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">等级：</td>
+    <td class="even">{?$group?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">头衔：</td>
+    <td class="even">{?$honor?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">性别：</td>
+    <td class="even">{?$sex?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">Email：</td>
+    <td class="even"><a href="mailto:{?$email?}">{?$email?}</a></td>
+  </tr>
+  <tr align="left">
+    <td class="odd">QQ：</td>
+    <td class="even">{?$qq?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">MSN：</td>
+    <td class="even"><a href="mailto:{?$msn?}">{?$msn?}</a></td>
+  </tr>
+  <tr align="left">
+    <td class="odd">网站：</td>
+    <td class="even"><a href="{?$url?}" target="_blank">{?$url?}</a></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="foot">积分相关</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">注册日期：</td>
+    <td colspan="2" class="even">{?$regdate?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">贡献值：</td>
+    <td colspan="2" class="even">{?$credit?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">经验值：</td>
+    <td colspan="2" class="even">{?$experience?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">现有积分：</td>
+    <td colspan="2" class="even">{?$score?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">最多好友数：</td>
+    <td colspan="2" class="even">{?$system_maxfriends?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">信箱最多消息数：</td>
+    <td colspan="2" class="even">{?$system_maxmessages?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">书架最大收藏量：</td>
+    <td colspan="2" class="even">{?$article_maxbookmarks?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">每天允许推荐次数：</td>
+    <td colspan="2" class="even">{?$article_dayvotes?}</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="foot">VIP信息</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">VIP类型：</td>
+    <td colspan="2" class="even">{?if $isvip <= 0?}非vip会员{?else?}VIP会员{?/if?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">{?$egoldname?}：</td>
+    <td colspan="2" class="even">{?if $jieqi_silverusage==1?}{?$emoney?}{?else?}{?$egold?}{?/if?}</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="foot">其他信息</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">用户签名：</td>
+    <td colspan="2" class="even">{?$sign?}</td>
+  </tr>
+  <tr align="left">
+    <td class="odd">个人简介：</td>
+    <td colspan="2" class="even">{?$intro?}</td>
+  </tr>
+</table></div>
+</div>

@@ -1,0 +1,44 @@
+<form name="frmsearch" method="get" action="">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="0" maxlength="50"> 
+			<input name="keytype" type="radio" class="radio" value="0" checked>
+            问题名称
+			<input type="radio" name="keytype" class="radio" value="1">
+            发表者 &nbsp;&nbsp;
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+            &nbsp;&nbsp;&nbsp; <a href="{?$jieqi_modules['quiz']['url']?}/admin/quiz_list.php">显示全部问题</a></td>
+    </tr>
+</table>
+</form>
+<br />
+<form action="{?$url_article?}" method="post" name="checkform" id="checkform">
+<table class="grid" width="98%" align="center">
+<caption>{?$articletitle?}</caption>
+  <tr align="center" valign="middle">
+    <th width="32%">问题名称
+    <th width="18%">提问人
+    <th width="13%">提问时间
+    <th width="10%">类别
+    <th width="15%">操作
+  </tr>
+  {?section name=i loop=$quizrows?}
+  <tr>
+    <td class="even">{?$quizrows[i].title.value?}</td>
+    <td class="odd">{?$quizrows[i].username.value?}</td>
+    <td class="even">{?$quizrows[i].addtime.value | date: Y-m-d H:i?}</td>
+    <td class="even" align="center">{?$quizrows[i].typeid.value?}</td>
+    <td class="odd" align="center"><a href="?action=delete&id={?$quizrows[i].quizid.value?}">删除</a>/<a href="?action=answer&id={?$quizrows[i].quizid.value?}">回复管理</a></td>
+  </tr>
+  {?/section?}
+</table>
+</form>
+<table width="100%"  border="0" cellspacing="2" cellpadding="3">
+  <tr>
+    <td width="12%" align="right"><!--<input type="submit" name="Submit" value="批量删除" class="button">
+                <input name="batchdel" type="hidden" value="1">--></td>
+    <td width="88%" align="right">{?$pages?}</td>
+  </tr>
+</table>
+

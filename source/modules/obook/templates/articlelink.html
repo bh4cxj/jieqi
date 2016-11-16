@@ -1,0 +1,47 @@
+<table border="0" align="center" cellpadding="3" cellspacing="1" class="acss">
+  {?section name=i loop=$indexrows?}
+  {?if $indexrows[i].ctype == "volume"?}
+  <tr>
+    <td colspan="4" class="vcss">
+	{?if $indexrows[i].vname == ""?}
+    &nbsp;   
+    {?else?}
+    {?$indexrows[i].vname?}
+    {?/if?}
+	</td>
+  </tr>
+  {?else?}
+  <tr>
+    <td class="ccss">
+	{?if $indexrows[i].cname1 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$indexrows[i].curl1?}">{?$indexrows[i].cname1?}</a>
+    {?/if?}
+	</td>
+    <td class="ccss">
+	{?if $indexrows[i].cname2 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$indexrows[i].curl2?}">{?$indexrows[i].cname2?}</a>
+    {?/if?}
+    </td>
+    <td class="ccss">
+	{?if $indexrows[i].cname3 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$indexrows[i].curl3?}">{?$indexrows[i].cname3?}</a>
+    {?/if?}
+    </td>
+	<td class="ccss">
+	{?if $indexrows[i].cname4 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$indexrows[i].curl4?}">{?$indexrows[i].cname4?}</a>
+    {?/if?}
+    </td>
+  </tr>
+  {?/if?}
+  {?/section?}
+</table>
+

@@ -1,0 +1,40 @@
+<table class=grid cellSpacinb=1 width="68%" align=center>
+<tbody>
+	<tr>
+		<td class="title" colspan="5">博客分类</td>
+	</tr>
+	<tr vAlign=center align=center>
+		<td class=odd width="10%"  maxlength="2">排序</td>
+		<td class=odd width="40%">博客分类</td>
+		<td class=odd width="30%" colspan="2">操作</td>
+	</tr>
+
+	{?section name=i loop=$bcats?}
+	<tr vAlign=center align=center>
+		<form name="bcatid{?$bcats[i].bcatid?}"  method="post" action="">
+		<input type="hidden" name="action" value="editbcat" />
+		<input type="hidden" name="bcatid" value="{?$bcats[i].bcatid?}" />
+		<td class=odd width="10%"><input name="bcatorder" size="6" value="{?$bcats[i].bcatorder?}" /></td>
+		<td class=odd width="40%"><input name="bcatname" size="20"  value="{?$bcats[i].bcatname?}" /></td>
+		<td class=odd width="15%"><a href="#" onclick="document.bcatid{?$bcats[i].bcatid?}.submit()">更新</a></td>
+		<td class=odd width="15%"><a href="javascript:if(confirm('确定要删除该分类吗？') )  document.location='?bcatid={?$bcats[i].bcatid?}&action=delbcat' ">删除</a></td>
+		</form>
+	</tr>
+	{?/section?}
+
+	<tr>
+		<td class="title" colspan="5">增加博客分类</td>
+	</tr>
+	<tr vAlign=center align=center>
+		<form  action="" method="post">
+		<input type="hidden" name="action" value="newbcat" />
+		<td class=odd width="10%"><input name="bcatorder" size="6"  /></td>
+		<td class=odd width="40%"><input name="bcatname" size="20"  /></td> 
+		<td class=odd colspan="3" width="50%"><input type='submit' class='button' name='submit'  id='submit' value='添 加' /></td>
+		</form>
+	</tr>		
+</tbody>	
+</table>
+
+
+

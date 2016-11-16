@@ -1,0 +1,41 @@
+<script language="javascript">
+function trim(string)
+    {
+        return string.replace(/(^\s*)|(\s*$)/g, "");
+    }
+function add(i)
+{
+	var name=prompt('请输入分类名称','');
+	name=trim(name);
+	if(name!='')
+	{
+		if(i=='')
+		{
+			window.location.href="?action=add&name="+name;
+		}
+		else
+		{
+			window.location.href="?action=add&name="+name+"&key1="+i;
+		}
+	}
+}
+</script>
+<table width="80%" align="center" class="grid">
+  <caption>
+    问答频道分类管理 (<a href="#" onclick="add('')" class="hotlink">添加主分类</a>)
+  </caption>
+  <tr>
+    <th width="25%">主分类</th>
+    <th width="75%">子分类</th>
+  </tr>
+ {?section name=i loop=$sort?} 
+  <tr>
+    <td align="center">{?$sort[i].caption?}<br />(<a href="?action=del&key1={?$i.key?}" class="hotlink">删除</a>  <a href="#" onclick="add({?$i.key?})" class="hotlink">添加</a>)</td>	
+    <td>
+	{?section name=a loop=$sort[i]['types']?} 
+	{?$sort[i]['types'][a]?}<a href="?action=del&key1={?$i.key?}&key2={?$a.key?}" class="hotlink">(删除)</a>　　
+	{?/section?}
+	</td>
+  </tr>
+ {?/section?}
+</table>

@@ -1,0 +1,39 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+
+
+<div class="articlemenu">
+    <ul class="toplist"><li><a href="/top/allvisit.html">总排行榜</a></li>
+        <li><a href="/top/monthvisit.html">月排行榜</a></li>
+        <li><a href="/top/weekvisit.html">周排行榜</a></li>
+        <li><a href="/top/dayvisit.html">日排行榜</a></li>
+        <li><a href="/top/allvote.html">总推荐榜</a></li>
+        <li><a href="/top/monthvote.html">月推荐榜</a></li>
+        <li><a href="/top/weekvote.html">周推荐榜</a></li>
+        <li><a href="/top/lastupdate.html">最近更新</a></li>
+        <li><a href="/top/postdate.html">最新入库</a></li>
+        <li><a href="/top/goodnum.html">收藏榜</a></li>
+        <li><a href="/top/size.html">字数榜</a></li>
+        <li><a href="/top/toptime.html">站长推荐榜</a></li>
+    </ul>
+</div>
+
+<div id="articlelist">
+
+<h3><span>List</span>{?$articletitle?}</h3>
+
+<ul>
+	<li><span class="l1">类别</span><span class="l2">书名</span><span class="l3">作者</span><span class="l4">最新章节</span><span class="l5">总字数</span><span class="l6">喜欢</span><span class="l7">更新日期</span></li>
+</ul>
+
+<ul>
+  {?section name=i loop=$articlerows?}
+
+<li><span class="l1"><a href="/mulu/{?$articlerows[i].sortid?}-1.html">{?$articlerows[i].sort?}</a></span><span class="l2">《<a target="_blank" href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}全文阅读">{?$articlerows[i].articlename?}全文阅读</a>》</span><span class="l3"><a href="/modules/article/authorarticle.php?author={?$articlerows[i].author?}">{?$articlerows[i].author?}</a></span><span class="l4"><a href="{?$articlerows[i].url_lastchapter?}" target="_blank">{?$articlerows[i].lastchapter?}</a></span><span class="l5">{?$articlerows[i].size_c?}</span><span class="l6">{?$articlerows[i].allvote?}</span><span class="l7">{?$articlerows[i].uptime|date:"y-m-d"?}</span></li>
+
+  {?/section?}
+
+</ul>
+
+</div>
+

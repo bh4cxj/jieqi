@@ -1,0 +1,26 @@
+
+<form name="form1" id="form1" action="{? $action_url ?}" method="post">
+<input type="hidden" name="action" value="doset">
+  <table width="100%" cellspacing="1" class="grid">
+  <caption>基本设置</caption>
+  <tr>
+    <td>空间名称</td>
+    <td><input type="text" class="text" name="title" id="var1" size="25" maxlength="30" value="{? $set_spacetitle ?}" /></td>
+  </tr>
+  <tr>
+    <td>空间简介</td>
+    <td><textarea class="textarea" name="brief" id="var2" rows="6" cols="60" value="">{? $set_spacebrief ?}</textarea></td>
+  </tr>
+  <tr><td colspan="2"   style="padding-left:200px;" ><input type="submit" class="button" name="submit" id="submit" value="提 交" /></td></tr>
+</table>
+
+
+<ul style="width:100%;">
+  {? section  name=i loop=$themes ?}
+  <li style="float:left;width:300px;height:400px; border:1px; margin:10px;overflow:hidden">
+  <image src="{? $themes[i].demo ?}">
+  <p align="center"><input type="radio" name="theme" value="{? $themes[i].name ?}" {? $themes[i].checked ?} >{? $themes[i].name ?}</p>
+  </li>
+  {? /section ?}
+ </ul>
+</form>

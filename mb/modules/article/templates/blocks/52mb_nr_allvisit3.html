@@ -1,0 +1,3 @@
+{?section name=i loop=$articlerows?}
+    <a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}" >{?$articlerows[i].articlename?}</a>
+{?/section?}

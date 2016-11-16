@@ -1,0 +1,8 @@
+<table class="grid" width="80%" align="center">
+<caption>管理组权限设置</caption>
+<tr ><th>名称</td><th>基本设置</td><th>管理权限</td></tr>
+{? section name=i loop=$admingroups ?}
+<tr ><td class="odd">{? $admingroups[i].membergtitle ?}</td><td class="odd"><a href="./membergroup.php?action=powerset&membergid={? $admingroups[i].membergid ?}">编辑</a></td><td class="odd"><a href="./admingroup.php?action=powerset&admingid={? $admingroups[i].admingid ?}&membergtitle={? $admingroups[i].encodemgtitle ?}">编辑</a></td></tr>
+{? /section ?}
+</table>
+

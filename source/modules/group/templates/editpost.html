@@ -1,0 +1,97 @@
+<script type="text/javascript" src="./include/common.js"></script>
+<script type="text/javascript" >
+var mark = {? $optionscount ?};
+function addpollopt(){
+	var optrow='<input type="hidden" name="polloptionid['+ mark +']" value="0"><input class="text" type="text" name="displayorder['+ mark +']" value="0" size="2">&nbsp;<input class="text" type="text" name="polloptions['+ mark +']" value="" size="50"><br />';
+	$('addpolloptindex').innerHTML = $('addpolloptindex').innerHTML + optrow;
+	mark++;
+}
+</script>
+<div class="g_main">
+<div class="g_center">
+	<div class="gridtop">编辑话题</div>
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+<form name="newparty" method="post" action="" enctype="multipart/form-data" onsubmit="return check_form()">
+<input type='hidden' name='gid' value={? $gid ?} >
+<input type='hidden' namne='gname' value={? $gname ?}>
+<tr>
+<td class="odd" width="15%" >标题:</td>
+<td class="odd">
+<input class="text" type="text" name="postsubject" value="{? $postsubject ?}" >
+</td>
+</tr>
+
+{? if $special == 1 ?}
+<tr>
+<td class="odd"><label for="expiration">投票期限:</label></td>
+<td class="odd"><input class="text" type="text" name="expiration" id="expiration" value="{? $expiration ?}" size="6" tabindex="4" /></td>
+</tr>
+
+<tr>
+<td class="odd" valign="top">
+选项: <br />
+<br />
+<input type="checkbox" name="multiplepoll" value="1"   {? if $box_type=="checkbox"  ?}checked{? /if ?}  onclick="this.checked?$('maxchoicescontrol').style.display='':$('maxchoicescontrol').style.display='none';" />多选
+<br />
+<br />
+<span id="maxchoicescontrol" {? if $box_type == "radio"  ?} style="display: none" {? /if ?}  >
+最多可选项: <br />
+<input class="text" type="text" name="maxchoices" value="{? $maxchoices ?}" size="2"><br />
+</span>
+</td>
+
+<td class="odd">
+显示顺序|<a href="#" onclick="addpollopt()" >增加投票</a><br />
+
+{? section  name=i loop=$options ?}
+<input class="text" type="text" name="displayorder[]" value="{? $options[i].displayorder ?}"  size="2">
+<input class="text" type="text"  name="polloptions[]"  value="{? $options[i].value ?}"  size="50"> <br />
+<input class="text" type="hidden" name="polloptionid[]"  value="{? $options[i].polloptionid ?}" >
+{? /section ?}
+
+<span id="addpolloptindex"></span>
+</td>
+
+</tr>
+{? /if ?}
+
+
+<tr>
+<td class="odd" valign="top" >{? $content_lang ?}:</td>
+<td class="odd"><textarea name="posttext" cols="60" rows="10">{? $posttext  ?}</textarea>
+<br />  
+{? $attachs_html ?}
+</td>
+</tr>
+
+<tr>
+<td class="odd">附件一:</td>	
+<td class="odd"><input class="text"  type="file" name="attachfile[]"></td>
+</tr>
+
+<tr>
+<td class="odd">附件二:</td>	
+<td class="odd"><input class="text"  type="file" name="attachfile[]"></td>
+</tr>
+<tr>
+<td class="odd">附件三:</td>	
+<td class="odd"><input class="text"  type="file" name="attachfile[]"></td>
+</tr>
+
+<tr>
+<td class="odd">附件四:</td>	
+<td class="odd"><input class="text"  type="file" name="attachfile[]"></td>
+</tr>
+
+<tr>
+<td class="odd">附件五:</td>	
+<td class="odd"><input class="text"  type="file" name="attachfile[]"></td>
+</tr>
+
+<tr><td class="odd" align="center" colspan=2><input class="button" type="submit" value="提 交"></td></tr>
+<input type="hidden" name="newpost" value="newpost">
+</form>
+</table>
+
+</div>
+</div>

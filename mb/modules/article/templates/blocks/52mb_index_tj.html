@@ -1,0 +1,22 @@
+{?section name=i loop=$articlerows?}
+<div class="baojian">
+	<div class="baojian_cover">
+        <a href="{?$articlerows[i].url_articleinfo?}" target="_blank" title="{?$articlerows[i].articlename?}无弹窗广告">
+        <img src="{?$articlerows[i].url_image?}" alt="{?$articlerows[i].articlename?}" width="200" height="270" /></a>
+    </div>
+    <div class="baojian_info">
+    <h1><a href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename?}</a></h1>
+    <p class="author"><span><script>qqtix({?$articlerows[i].articleid?},"{?$articlerows[i].articlename?}","{?$articlerows[i].uptime|date:"y-m-d"?}");addbookcase({?$articlerows[i].articleid?});</script></span>
+    作者：<a href="/modules/article/authorarticle.php?author={?$articlerows[i].author?}">{?$articlerows[i].author?}</a></p>
+    <p id="intro">
+    	{?$articlerows[i].intro?}
+    </p>
+    <div class="read"><a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}{?$articlerows[i].lastchapterid?}.html" title="{?$articlerows[i].articlename?} {?$articlerows[i].author?}最新章节" id="startedbtn" target="_blank">开始阅读</a>
+    <a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}" title="{?$articlerows[i].articlename?}最新章节列表" id="diralinks">目录</a>
+    <a href="/down/txt{?$articlerows[i].articleid?}.html" title="{?$articlerows[i].articlename?}txt电子书下载" target="_blank" id="down_txt">txt下载</a></div>
+    <div class="lastrecord">《{?$articlerows[i].articlename?}》最新章节({?$articlerows[i].uptime|date:"m-d"?})：<strong><a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}{?$articlerows[i].lastchapterid?}.html" id="newchapter" target="_blank">{?$articlerows[i].lastchapter?}</a></strong>
+    <div id="jian"></div>
+
+</div>
+</div>
+</div>{?/section?}

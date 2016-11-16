@@ -1,0 +1,49 @@
+{?set jieqi_page_template = "modules/space/empty.html"?}
+<LINK href="include/popup/comm.css" type=text/css rel=stylesheet>
+<SCRIPT>
+<!--
+
+function checkform(id){
+	ele=document.getElementById(id);
+	if(ele.value==''){
+	    alert('’’∆¨√Ë ˆ≤ª≥‰–ÌŒ™ø’!');
+		return false;
+	}else{	
+		return true;
+	}
+	
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3243" name=GENERATOR></HEAD>
+<BODY>
+<FORM onSubmit="return checkform('intro');" action='{? $post_href ?}' method=post>
+<input type="hidden" name="doedit" value="1">
+<SCRIPT>
+        document.getElementById("spRefURL").value = window.location.href;
+</SCRIPT>
+ 
+<DIV class=dialog>
+<DIV class=box>
+<TABLE class=formarea cellSpacing=0 cellPadding=0 border=0>
+  <TR>
+    <TD class=itn vAlign=top align=right width=80>’’∆¨‘§¿¿£∫</TD>
+    <TD vAlign=top><img src="{? $src ?}" onload="if(this.width>screen.width*0.50) {this.resized=true; this.width=screen.width*0.50;}" onmouseover="if(this.resized) this.style.cursor='hand';"  onclick="if(this.resized) window.open('{? $src ?}');" ></TD></TR>
+  <TR>
+    <TD class=itn align=right>’’∆¨√Ë ˆ£∫</TD>
+    <TD><INPUT style="WIDTH: 220px" name="intro" type="text" value="{? $intro ?}"></TD></TR>
+  <TR>
+    <TD class=itn align=right>À˘ Ùœ‡≤·£∫</TD>
+    <TD><SELECT style="WIDTH: 145px" name="newalbumid">
+	    {? section name=i loop=$image_cats ?}
+	
+        <OPTION  value="{?$image_cats[i].id?}" {? if $image_cats[i].id==$albumid ?}selected="selected"{?/if?}>{? $image_cats[i].name ?}</OPTION>
+        
+		{? /section ?}
+		</select>
+		</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD 
+class=sbt><INPUT type=submit value=±£¥Ê–ﬁ∏ƒ name=tj></TD></TR></TBODY></TABLE><BR></DIV></DIV></FORM></BODY>

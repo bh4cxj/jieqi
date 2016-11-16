@@ -1,0 +1,5 @@
+<ul class="ultop">
+{?section name=i loop=$obookrows?}
+  <li>[{?$obookrows[i].sort?}] <a href="{?$obookrows[i].url_obookinfo?}" target="_blank">{?$obookrows[i].obookname?}</a></li>
+{?/section?}
+</ul>

@@ -1,0 +1,50 @@
+{? if $space_hoster==1 ?}
+<script type="text/javascript" src="include/popup/popup.js"></script>
+<script language="javascript">
+function photodel(str)
+{
+	var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+	pop.setContent("title","删除照片");
+	pop.setContent("confirmCon","您确定要彻底删除该照片吗？");
+	pop.setContent("callBack",delCallback);
+	pop.setContent("parameter",{fid:str,popup:pop});
+	pop.build();
+	pop.show();
+	return false;
+}
+function delCallback(para)
+{
+	var o_pop=para["popup"];
+	o_pop.config.contentType=1;
+	o_pop.setContent("contentUrl","photo.php");
+	o_pop.reBuild();
+	G(para["fid"]).target=o_pop.iframeIdName;
+	setTimeout(function(){eval("document."+para["fid"]).submit();},500);
+}
+function editPhoto(url)
+{
+	var pop=new Popup({ contentType:1, isReloadOnClose:false, width:420, height:400 });
+	pop.setContent("title","编辑照片");
+	pop.setContent("contentUrl",url);
+	pop.build();
+	pop.show();
+	return false;
+}
+
+</script>
+{?/if?}
+<div class="c_navigation">
+	<div class="fl">当前相册：<span>{?$image['name']?}</span></div>
+	<div class="fr">{? if $space_hoster==1 ?} <a href="{? $space_album_upload_url?}&catid={?$catid?}">上传新照片</a> | <a href="{?$space_album_create_url?}">创建新相册</a>{? /if ?}</div>
+</div>
+<div class="c_subject">
+{? section name=i loop=$image_cats columns=4?}
+	{?if $i['column'] == 1?}<ul class="c_photo">{?/if?}
+	{?if $image_cats[i].name!=''?}<form style='display:none;' action='editphoto.php?action=delete&catid={? $image_cats[i].catid?}&uid={?$uid?}' name='photoform{?$i['key']?}' id='photoform{?$i['key']?}' method='post'><input type='hidden' name='attachid' value='{? $image_cats[i].attachid?}'></form>
+    <li><a href="{?$jieqi_url?}{?$image_cats[i].url?}" target="_blank"><img src="{?$jieqi_url?}{? $image_cats[i].url|str_replace:'b_':'' ?}" border="0" /></a><br />{? $image_cats[i].other ?}<br /> <span style="width:150 px;word-break:break-all;">{?$image_cats[i].filebak ?}</span>{? if $space_hoster==1 ?}<br> <a href="#" onClick="editPhoto('editphoto.php?attachid={? $image_cats[i].attachid?}&uid={?$uid?}&catid={? $image_cats[i].catid?}');return false;">编辑</a> | <a href="#" onClick="photodel('photoform{?$i['key']?}');return false;">删除</a>{?/if?}</li>
+{?/if?}
+	{?if $i['column'] == $i['columns']?}</ul>{?/if?}
+{? /section ?}
+</div>
+
+<div class="pages">{?$url_jumppage?}</div>

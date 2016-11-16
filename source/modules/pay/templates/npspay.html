@@ -1,0 +1,47 @@
+<table class="grid" width="600" align="center">
+  <caption>nps银行在线支付</caption>
+  <tr>
+    <td class="even"><form name="frmbank" method="post" action="{?$jieqi_modules['pay']['url']?}/nps.php">
+      <table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%">&nbsp;</td>
+          <td width="44%" valign="middle"><table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="left">请选择购买类别</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="10000" class="radio">
+            10000点{?$egoldname?}（100元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="5000" class="radio">
+            5000点{?$egoldname?}（50元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="3000" class="radio">
+            3000点{?$egoldname?}（30元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="2000" class="radio">
+            2000点{?$egoldname?}（20元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="1000" class="radio">
+            1000点{?$egoldname?}（10元）</td>
+              </tr>
+              <tr>
+                <td><input type="submit" name="Submit" value="进入下一步" class="button" >
+                    <input type="hidden" name="action" value="bankpay"></td>
+              </tr>
+          </table></td>
+          <td width="4%" valign="top">&nbsp;</td>
+          <td width="48%" valign="top">操作说明：<br />
+              <br />
+&nbsp;&nbsp;&nbsp;&nbsp;......<font color=red><br />
+     </font></td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+</table>
+<br /><br />

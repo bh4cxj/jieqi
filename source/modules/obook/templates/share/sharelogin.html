@@ -1,0 +1,30 @@
+<br /><br /><br /><br />
+<form name="frmlogin" method="post" action="{?$url_login?}">
+ <table class="grid" width="250" align="center">
+    <caption>代理共享平台登陆</caption>
+    <tr align="center">
+      <td class="odd"><table width="100%"  border="0" cellspacing="0" cellpadding="5">
+        <tr>
+          <td align="right" valign="middle">出版商：</td>
+          <td>
+              <select name="publishid">
+			  {?section name=i loop=$publishrows?}
+                <option value="{?$publishrows[i].id?}">{?$publishrows[i].name?}</option>
+			  {?/section?}
+              </select>
+         </td>
+        </tr>
+        <tr>
+          <td align="right" valign="middle">密　码：</td>
+          <td><input type="password" class="text" size=15 maxlength=30 name="password"></td>
+        </tr>
+{?if $show_checkcode == 1?}{?/if?}
+  <tr align="center">
+    <td colspan="2"><input type="hidden" name="action" value="login">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" class="button" value="&nbsp;登&nbsp;&nbsp;录&nbsp;" name="submit"></td>
+  </tr>
+      </table></td>
+    </tr>
+  </table>
+</form><br /><br />

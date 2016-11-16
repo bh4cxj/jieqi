@@ -1,0 +1,285 @@
+@charset "gb2312";
+/* CSS Document */
+
+* { margin:0; padding:0}
+body{ font:12px "Î¢ÈíÑÅºÚ", "ËÎÌå"; background-image:url(../images/xiegang_bg.jpg);}
+.clear {clear:both;}
+ol,ul { list-style:none;}
+img {border:none;}
+a {outline:none; text-decoration:none; color:#333333}
+table { border-collapse:collapse; border-spacing:0;}
+#box,#nav{
+  -moz-border-radius:2px; /* Firefox */
+  -webkit-border-radius:2px; /* Safari and Chrome */
+  border-radius:2px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+ 
+  -moz-box-shadow:0px 1px 3px rgba(0, 0, 0, 0.2); /* Firefox */
+  -webkit-box-shadow:0px 1px 3px rgba(0, 0, 0, 0.2); /* Safari and Chrome */
+  box-shadow:0px 1px 3px rgba(0, 0, 0, 0.2); /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
+ 
+  /* behavior: url(http://building-dreams.com/mywork/ie-css3.htc); This lets IE know to call the script on all elements which get the 'box' class */
+  background-color:white;
+}
+#top {
+    height:30px;
+    background:url(../images/top_bg_02.gif) repeat-x top center;
+    }
+.top_inner {
+    width:960px;
+    margin:0 auto;
+    text-align:right;
+    }
+.top_inner a {
+    line-height:30px;
+    padding-left:20px;
+    color:#666666;}
+#header {
+    width:960px;
+    height:100px;
+    margin:0 auto;
+    }
+.header_l,.header_m {
+    float:left;
+}
+h1 {
+    margin-top:21px;
+    background:url(../images/logo_06.png) no-repeat left top;
+    width:229px;
+    height:57px;
+    text-indent:-1000px;
+}
+.header_m {
+    margin:32px 0 0 45px;
+}
+.header_r {
+float:right;
+width:247px;
+height:69px;
+padding-top:18px;
+}
+.search-l {
+    width:360px;
+    height:25px;
+    border:none;
+    background:url(../images/search_l_09.gif) no-repeat left top;
+    text-indent:1em;
+    color:#999999;
+    *float:left;
+    line-height:25px;
+}
+.search-r {
+    width:25px;
+    height:25px;
+    border:none;
+    vertical-align:bottom;
+}
+.remensousuo {
+    color:#ab1430;
+    line-height:28px;
+}
+#nav {
+    height:40px;
+    //width:960px;
+    margin:0 auto;
+    background:url(../images/nav_bg_03.png) repeat-x top left;
+    font: bold 15px/40px "Î¢ÈíÑÅºÚ", "ËÎÌå";
+}
+.nav_ul {
+    width:960px;
+    margin:0 auto;
+}
+.nav_ul li {
+    float:left;
+    display:block;
+    height:40px;
+    
+}
+.nav_ul li a{
+    padding:0 15px 0 15px;
+    float:left;
+    display:block;
+    color:#fff2e2;
+    cursor:pointer;
+}
+.nav_ul .zuozhefuli a{
+    color:#FF0;
+}
+.nav_ul .shouye a { 
+    color:#571b09;
+    background:url(../images/nav_bg_05.png) repeat-x top left;
+    }
+.nav_ul li a:hover { 
+    color:#571b09;
+    background:url(../images/nav_bg_05.png) repeat-x top left;
+    }
+
+.sub_nav_inner {
+    padding-left:15px;
+    width:945px;
+    margin:0 auto;
+    height:34px;
+    color:#ab1430;
+    border-bottom:1px solid #cdcdcd;
+    background:#fdfaed;
+    font: bold 12px/35px "Î¢ÈíÑÅºÚ", "ËÎÌå";
+}
+.sub_nav a {
+    font-weight:normal;
+    padding-left:5px;
+    color:#666;
+    }
+.sub_nav a:hover {
+    color:#ab1430;
+    text-decoration:underline;
+    }
+#main {
+    margin-top:10px;
+    /*background-color:#f1f4f9;*/
+}
+.main_inner {
+    width:960px;
+    margin:0 auto;
+}
+
+.grey {
+    color:#999999;
+    padding-right:5px;
+}
+.red {
+    color:red;
+    padding-right:2px;
+}
+.dianji a{
+    display:block;
+    text-indent:2em;
+    padding-top:5px;
+    color:red;
+}
+.maincon {
+    width:960px;
+    height:565px;
+    background:url(../images/main_bg_03.jpg) no-repeat left top;
+}
+.maincon_l {
+    float:left;
+    width:580px;
+    height:auto;
+}
+.zhuce_title {
+    background:url(../images/mianfeizhuce.jpg) no-repeat 30px 40px;
+    width:200px;
+    height:100px;
+}
+.zc_title,.kuang,.tishi,.dl_title,.kuang2,.yanzhengma{
+    float:left;
+}
+.zhucexinxi {
+    padding-top:20px;
+}
+.zhucexinxi li,.dengluxinxi li{
+    height:47px;
+    line-height:47px;
+*vertical-align:bottom;
+}
+.zc_title{
+    width:105px;
+    text-align:right;
+    font-size:14px;
+    color:#4d4d4d;
+    font-weight:bold;
+}
+.kuang {
+    width: 152px;
+    height: 25px;
+    margin: 11px 22px 0px 22px;
+    line-height:25px;
+}
+.tishi {
+    color:#999999;
+}
+.yanzhengma {
+    padding:14px 10px 0px 0px;
+    
+}
+.lijizhuce {
+    margin:25px 0px 0px 128px;
+    float:left;
+    border:0px; 
+    width:152px; 
+    height:44px;
+    background:url(../images/lijizhuce_14.jpg) no-repeat left top; 
+cursor:pointer;
+}
+.ztdh {
+    display:block;
+    float:left;
+    padding:32px 0px 0px 18px;
+}
+.maincon_r {
+    float:right;
+    width:340px;
+    height:auto;
+}
+.denglu_title {
+    background:url(../images/yiyouzhanghao.jpg) no-repeat 17px 57px;
+    width:175px;
+    height:83px;
+}
+.dengluxinxi {
+    padding-top:20px;
+}
+.dl_title{
+    width:70px;
+    text-align:right;
+    font-size:14px;
+    color:#4d4d4d;
+    font-weight:bold;
+}
+.kuang2 {
+    width: 120px;
+    height: 25px;
+    margin: 11px 22px 0px 22px;
+    line-height:25px;
+}
+.lijidenglu {
+    margin:10px 0px 0px 90px;
+    border:0px; 
+    width:102px; 
+    height:30px; 
+    background:url(../images/lijidenglu_07.jpg) no-repeat left top;
+    cursor:pointer;
+}
+.book {
+    padding:20px 0px 0px 25px;
+}
+#footer {
+    width:960px;
+    margin:0 auto;
+}
+.youqinglianjie {
+    width:928px;
+    height:70px;
+    border:1px solid #d3d3d3;
+    margin-top: 10px;
+    background:url(../images/yqlj_75.png) no-repeat 15px 15px;
+    padding:53px 15px 0 15px;
+    line-height:28px;
+    color:#666666;
+    letter-spacing:2px;
+}
+.copyright {
+    margin:0 auto; margin-top:10px;
+    width:960px;
+    text-align:center;
+    line-height:25px;
+    color:#999999;
+}
+#checkmname img {
+float:left; margin-top:17px;
+}
+#checkpassword img {
+float:left; margin-top:17px;
+}
+#checkpassword2 img {
+float:left; margin-top:17px;
+}

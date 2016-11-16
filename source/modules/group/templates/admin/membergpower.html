@@ -1,0 +1,56 @@
+<table class="grid" width="80%" align="center">
+  <form action="{? $href_submit ?}" method="post">
+    <tr>
+      <td class="title" colspan="2">用户组权限设置:{? $membergtitle ?}</td>
+    </tr>
+	
+    <tr >
+      <td class="odd"width="50%">用户头衔</td>
+      <td class="odd"><input type="text" name="membergtitle" value="{? $membergtitle ?}" ></td>
+    </tr>
+    <tr >
+      <td class="odd"width="50%">发表话题:</td>
+      <td class="odd"><input value="1"  type="radio" name="allowposttopic" {? $allowposttopic_checked_1 ?} >
+        是&nbsp;&nbsp;
+        <input type="radio" name="allowposttopic" {? $allowposttopic_checked_0 ?} >
+        否</td>
+    </tr>
+    <tr >
+      <td class="odd"width="50%">回复话题:</td>
+      <td class="odd"><input value="1"  type="radio" name="allowreplytopic" {? $allowreplytopic_checked_1 ?} >
+        是&nbsp;&nbsp;
+        <input type="radio" name="allowreplytopic" {? $allowreplytopic_checked_0 ?} >
+        否</td>
+    </tr>
+	
+    <tr >
+      <td class="odd"width="50%">发表活动:</td>
+      <td class="odd"><input value="1"  type="radio" name="allowpostparty" {? $allowpostparty_checked_1 ?} >
+        是&nbsp;&nbsp;
+        <input type="radio" name="allowpostparty" {? $allowpostparty_checked_0 ?} >
+        否</td>
+    </tr>
+    <tr >
+      <td class="odd"width="50%">回复活动:</td>
+      <td class="odd"><input value="1"  type="radio" name="allowreplyparty" {? $allowreplyparty_checked_1 ?} >
+        是&nbsp;&nbsp;
+        <input type="radio" name="allowreplyparty" {? $allowreplyparty_checked_0 ?} >
+        否</td>
+    </tr>
+
+    <tr >
+      <td class="odd"width="50%">上传图片:</td>
+      <td class="odd"><input value="1"  type="radio" name="allowpostpic" {? $allowpostpic_checked_1 ?} >
+        是&nbsp;&nbsp;
+        <input type="radio" name="allowpostpic" {? $allowpostpic_checked_0 ?} >
+        否</td>
+    </tr>
+    <tr align='center'>
+	
+      <td class="odd" colspan="2"><br>
+        <input class="button" type="reset" value="重置">
+        &nbsp;&nbsp;
+        <input class="button" type="submit" value="提交" ></td>
+    </tr>
+  </form>
+</table>

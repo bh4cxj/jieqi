@@ -1,0 +1,43 @@
+<br />
+<form method="post" name="post" action="{?$url_pay?}">
+ <table class="grid" width="600" align="center">
+    <caption>欢迎使用在线支付系统</caption>
+    <tr class="odd"> 
+      <td>
+	  <br />
+	  您好，{?$buyname?}!
+	  <br /><br />
+	  您选择的交易类型为：
+	  <br /><br />
+	  <span class="hottext">
+	  * 购买{?$egold?}点{?$egoldname?}，合计人民币：{?$money?}元</span>
+	  <br /><br />
+	  确认购买请点击“进入下一步”。
+	  <br />
+	  <br />
+	  </td>
+    </tr>
+    <tr class="even"> 
+      <td height="30" valign="middle">
+	  <input type="hidden" name="inputCharset" value="{?$inputCharset?}">
+	  <input type="hidden" name="pageUrl" value="{?$pageUrl?}">
+	  <input type="hidden" name="version" value="{?$version?}">
+	  <input type="hidden" name="language" value="{?$language?}">
+	  <input type="hidden" name="signType" value="{?$signType?}">
+	  <input type="hidden" name="merchantAcctId" value="{?$merchantAcctId?}">
+	  <input type="hidden" name="payerName" value="{?$payerName?}">
+	  <input type="hidden" name="orderId" value="{?$orderId?}">
+	  <input type="hidden" name="orderAmount" value="{?$orderAmount?}">
+	  <input type="hidden" name="payType" value="{?$payType?}">
+	  <input type="hidden" name="fullAmountFlag" value="{?$fullAmountFlag?}">
+	  <input type="hidden" name="orderTime" value="{?$orderTime?}">
+	  <input type="hidden" name="productName" value="{?$productName?}">
+	  <input type="hidden" name="ext1" value="{?$ext1?}">
+	  <input type="hidden" name="ext2" value="{?$ext2?}">
+	  <input type="hidden" name="signMsg" value="{?$signMsg?}">
+      <input type="submit" class="button" value=" 进入下一步 " name="v_action">
+	  </td>
+    </tr>
+  </table>
+</form>
+<br /><br />

@@ -1,0 +1,23 @@
+div { display: block; margin: 0; padding: 0; border: 0 none; outline: 0; background: transparent; font-weight: normal; font-style: normal; }
+#inner { width: 508px; }
+.hot-event { padding: 220px 0 0; position: relative; }
+    .hot-event .switch-tab { text-align: center; padding: 10px 0; display:none;}
+        .hot-event .switch-tab a, .hot-event .switch-tab .current { margin: 0 2px; display: inline-block; width: 15px; height: 15px; background-image: url(../images/bg.png); background-position: -161px 0; font: 0/0 arial; color: transparent; overflow: hidden; vertical-align: top; }
+        .hot-event .switch-tab .current { background-image: url(../images/bg.png); background-position: -195px 0; }
+    .hot-event .switch-nav { position: absolute; right: 5px; top: 226px; z-index: 2; }
+        .hot-event .switch-nav .i-prev { background-image: url(../images/bg.png); background-position: -127px 0; }
+        .hot-event .switch-nav .prev { border-radius: 3px 0 0 3px; border-width: 1px; }
+        .hot-event .switch-nav .next { border-radius: 0 3px 3px 0; border-width: 1px 1px 1px 0; }
+        .hot-event .switch-nav .i-next { background-image: url(../images/bg.png); background-position: -144px 0; }
+        .hot-event .switch-nav a { display: inline-block; padding: 3px 10px; background:#cecece; border-style: solid; border-color: rgba(255,255,255,.6); }
+            .hot-event .switch-nav a:hover { background:#ef5f00; }
+    .hot-event .event-item { height: 220px; width: 508px; position: absolute; z-index: 1; left: 0; top: 0; }
+        .hot-event .event-item .inner { display: block; }
+        .hot-event .event-item img { -webkit-box-reflect: below 0 -webkit-gradient(linear,0 0,0 100%,from(transparent),color-stop(85%,transparent),to(rgba(255,255,255,.2))); border: 0;  -moz-border-radius:2px 2px 0px 0px; /* Firefox */
+  -webkit-border-radius:2px 2px 0px 0px; /* Safari and Chrome */
+  border-radius:2px 2px 0px 0px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */}
+.hide-clip { position: absolute!important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); padding: 0!important; border: 0!important; height: 1px!important; line-height: 0!important; width: 1px!important; overflow: hidden;}
+a { color: #999999; }
+a { text-decoration: none; }
+    a .ico { cursor: pointer; }
+.ico { display: inline-block; width: 16px; height: 16px; vertical-align: middle; overflow: hidden; }

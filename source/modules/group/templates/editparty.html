@@ -1,0 +1,156 @@
+<script langueage="javascript">
+
+
+function check_form(){
+	if(document.newparty.ptitle.value == ""){
+		alert("活动标题不能空");
+		return false;
+	}
+	
+	if(document.newparty.pcontent.value == ""){
+		alert("活动内容为空");	
+	}
+}
+
+
+//is numeric ?
+function is_numeric(t_text)
+{
+        var valid_chars = "0123456789";
+        var res=true;
+        var char;
+
+        for (i = 0; i < t_text.length && res == true; i++)
+        {
+                char = t_text.charAt(i);
+                if (valid_chars.indexOf(char) == -1)
+                {
+                        res = false;
+                }
+        }
+        return res;
+}
+
+
+//is right month ?
+function check_mon(t_text,mid){
+        if(is_numeric(t_text) == true && t_text > 0 && t_text < 13){
+                return true;
+        }else{
+                alert('月份不合法');
+                document.getElementById(mid).focus();
+                return false;
+        }
+}
+
+//is right  year?
+function check_year(t_year,yid){
+        if( is_numeric(t_year) == true && t_year>1970 && t_year < 2050){
+                return true;
+        }else{
+                alert('年份不合法');
+                document.getElementById(yid).focus();
+                return false;
+        } 
+}
+
+//is right day ?
+function check_day(t_day,did){
+        if(is_numeric(t_day) == true && t_day >0 && t_day <32 ){
+                return true;
+        }else{
+                alert("日期不合法");
+                document.getElementById(did).focus();
+                return false;
+        }
+}
+
+//is right hour ?
+function check_hour(t_hour,hid){
+        if(is_numeric(t_hour) == true && t_hour > -1 && t_hour < 25 ){
+                return true;
+        }else{
+                alert('时间格式不合法');
+                document.getElementById(hid).focus();
+                return false;
+        }
+}
+
+
+//is right minute?
+function check_min(t_min,mid){
+        if(is_numeric(t_min) == true && t_min >-1 && t_min <61 ){
+                return true;
+        }else{
+                alert('分钟格式不合法');
+                document.getElementById(mid).focus();
+                return false;
+        }
+}
+
+</script>
+<div class="g_main">
+<div class="g_center">
+	<div class="gridtop">编辑活动</div>
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+<form name="newparty" method="post" action="{? $submit_href ?}" enctype="multipart/form-data" onsubmit="return check_form()">
+<input type='hidden' name='gid' value={? $gid ?} >
+<input type='hidden' namne='gname' value={? $gname ?}>
+	<tr>
+		<td class="odd" width="15%" >活动标题:</td>
+		<td class="odd">
+			<input class="text" type="text" name="ptitle" value="{? $ptitle  ?}" >
+		</td>
+	</tr>
+	<tr>
+		<td class="odd">活动说明:</td>
+		<td class="odd"><textarea name="pcontent" cols="60" rows="10">{? $pcontent ?}</textarea></td>
+	</tr>
+
+	<tr>
+		<td class="odd">活动地点:</td>	
+		<td class="odd"><input class="text" size=70 type="text" name="pplace" value={? $pplace ?}></td>
+	</tr>
+	<tr>
+		<td class="odd">开始报名:</td>
+		<td class="odd">
+			<input class="text" size=4 type="text" name="year1" value="{? $year1 ?}" id="year1"  onblur="check_year(this.value,this.id);" > 
+			年
+			<input class="text" size=2 type="text" name="month1" value="{? $month1 ?}" id="month1"  onblur="check_mon(this.value,this.id);" > 
+			月
+			<input class="text" size=2 type="text" name="day1" value="{? $day1 ?}" id="day1"  onblur="check_day(this.value,this.id);" > 
+			日
+			<input class="text" size=2 type="text" name="hour1" value="{? $hour1 ?}"  id="hour1"  onblur="check_hour(this.value,this.id);" > 
+			时
+			<input class="text" size=2 type="text" name="minute1" value="{? $minute1 ?}" id="minute1"  onblur="check_min(this.value,this.id);" > 
+			分
+		</td>
+	</tr>
+
+	<tr>
+		<td class="odd">结束报名:</td>	
+		<td class="odd">
+			<input class="text" size=4 type="text" name="year2" value="{? $year2 ?}"  id="year2"  onblur="check_year(this.value,this.id);" > 
+			年
+			<input class="text" size=2 type="text" name="month2" value="{? $month2 ?}"  id="month2"  onblur="check_mon(this.value,this.id);" > 
+			月
+			<input class="text" size=2 type="text" name="day2" value="{? $day2 ?}"  id="day2"  onblur="check_day(this.value,this.id);" > 
+			日
+			<input class="text" size=2 type="text" name="hour2" value="{? $hour2 ?}"  id="hour2"  onblur="check_hour(this.value,this.id);" > 
+			时
+			<input class="text" size=2 type="text" name="minute2" value="{? $minute2 ?}"  id="minute2"  onblur="check_min(this.value,this.id);" > 
+			分
+		</td>	
+	</tr>
+
+	<tr>
+		<td class="odd">人数限制:</td>
+		<td class="odd"><input class="text" size="4"  type="text" name="pmaxnums" value="{? $pmaxnums ?}" onblur="if(!is_numeric(this.value) ) alert('请输入数字');"></td>
+	</tr>
+	
+	<tr><td class="odd" align="center" colspan=2><input class="button" type="submit" value="提 交"></td></tr>
+</form>
+</table>
+
+</div>
+</div>

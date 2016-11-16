@@ -1,0 +1,101 @@
+{?set jieqi_blocks_module = "system"?}
+
+{?set jieqi_blocks_config = "defaultblocks"?}
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+    <tr>
+
+        <td height="25" valign="middle"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+            <tr>
+
+              <td><a href="{?$jieqi_url?}/modules/group/index.php?g={? $gid ?}">首页</a>{?$forumguide?} </td>
+
+              <td align="right">{?$forummaster?}&nbsp;</td>
+
+            </tr>
+
+          </table></td>
+
+    </tr>
+
+    <tr>
+
+        <td><table width="100%"  border="0" cellspacing="2" cellpadding="3">
+
+            <tr>
+
+                <td width="15%" align="left">{?$url_action?}<a href="{?$jieqi_modules['group']['url']?}/post.php?g={?$gid?}"><img src="{?$jieqi_modules['group']['url']?}/images/newpost.gif" border="0" alt="发表新主题"></a></td>
+
+                <td width="85%" align="right">{?$url_jumppage?}</td>
+
+            </tr>
+
+        </table></td>
+
+    </tr>
+
+</table>
+
+<table class="grid" width="100%" align="center">
+  <tr height="26" align="center">
+    <th colspan="3" class="title">主题</th>
+    <th width="12%" class="title">发表人</th>
+    <th width="13%" class="title">回复/查看</th>
+    <th width="25%" class="title">最后发表</th>
+  </tr>
+  {?if $page==1?}
+  {?section name=i loop=$forumtops?}
+  <tr height="26">
+    <td width="3%" align="center" valign="middle" class="odd"><img src="{?$jieqi_modules['group']['url']?}/images/topic_top.gif" border="0"></td>
+    <td width="3%" align="center"  valign="middle" class="even"><img src="{?$jieqi_modules['group']['url']?}/images/icon_topics.gif" border="0"></td>
+    <td width="44%" valign="middle" class="odd"><a href="{?$jieqi_modules['group']['url']?}/topic.php?g={?$gid?}&tid={?$forumtops[i].topicid?}"><span class="hottext">{?$forumtops[i].title?}</span></a>&nbsp;</td>
+    <td align="center" valign="middle" class="even"><a href="{?$jieqi_user_url?}/userinfo.php?id={?$forumtops[i].posterid?}" target="_blank">{?$forumtops[i].poster?}</a></td>
+    <td align="center" valign="middle" class="odd">{?$forumtops[i].replies?}/{?$forumtops[i].views?}</td>
+    <td valign="middle" class="even">{?$forumtops[i].topictime|date:"m-d H:i"?} <a href="{?$jieqi_user_url?}/userinfo.php?id={?$forumtops[i].replierid?}" target="_blank">{?$forumtops[i].replier?}</a> 发表</td>
+  </tr>
+  {?/section?}
+  {?/if?}
+  {?section name=i loop=$topicrows?}
+  <tr height="26">
+    <td width="3%" align="center" valign="middle" class="odd">
+	{?if $topicrows[i].istop > 0?}
+	<img src="{?$jieqi_modules['group']['url']?}/images/topic_top.gif" border="0">
+	{?elseif $topicrows[i].islock > 0?}
+	<img src="{?$jieqi_modules['group']['url']?}/images/topic_lock.gif" border="0">
+	{?elseif $topicrows[i].isgood > 0?}
+	<img src="{?$jieqi_modules['group']['url']?}/images/topic_good.gif" border="0">
+	{?else?}
+	<img src="{?$jieqi_modules['group']['url']?}/images/topic_normal.gif" border="0">
+	{?/if?}
+	</td>
+    <td width="3%" align="center"  valign="middle" class="even"><img src="{?$jieqi_modules['group']['url']?}/images/icon_topics.gif" border="0"></td>
+    <td width="44%" valign="middle" class="odd"><a href="{?$jieqi_modules['group']['url']?}/topic.php?g={?$gid?}&tid={?$topicrows[i].topicid?}&page={?$page?}">{?$topicrows[i].title?}</a>&nbsp;</td>
+    <td align="center" valign="middle" class="even"><a href="{?$jieqi_user_url?}/userinfo.php?id={?$topicrows[i].posterid?}" target="_blank">{?$topicrows[i].poster?}</a></td>
+    <td align="center" valign="middle" class="odd">{?$topicrows[i].replies?}/{?$topicrows[i].views?}</td>
+    <td valign="middle" class="even">
+	{?if $topicrows[i].replytime > 0?}
+	{?if $topicrows[i].replierid > 0?}
+	{?$topicrows[i].replytime|date:"m-d H:i"?} <a href="{?$jieqi_user_url?}/userinfo.php?id={?$topicrows[i].replierid?}" target="_blank">{?$topicrows[i].replier?}</a> 发表
+	{?else?}
+	{?$topicrows[i].replytime|date:"m-d H:i"?} <i>游客</i> 发表
+	{?/if?}
+	{?/if?}</td>
+  </tr>
+  {?/section?}
+</table>
+
+<table width="100%"  border="0" cellspacing="2" cellpadding="3">
+
+    <tr>
+
+        <td width="15%" align="left">{?$url_action?}</td>
+
+        <td width="85%" align="right">{?$url_jumppage?}</td>
+    </tr>
+
+</table>
+
+<br />
+</br>

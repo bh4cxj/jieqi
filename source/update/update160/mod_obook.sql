@@ -1,0 +1,9 @@
+INSERT INTO `jieqi_system_blocks` (`bid`, `blockname`, `modname`, `filename`, `classname`, `side`, `title`, `description`, `content`, `vars`, `template`, `cachetime`, `contenttype`, `weight`, `showstatus`, `custom`, `canedit`, `publish`, `hasvars`) VALUES(0, '电子书推荐', 'obook', 'block_obookcommend', 'BlockObookObookcommend', 0, '电子书推荐', '&nbsp;&nbsp;&nbsp;&nbsp;本区块根据参数里面的ID，显示推荐的电子书。<br>&nbsp;&nbsp;&nbsp;&nbsp;区块允许设置推荐的电子书序号作为参数，不同参数之间用英文“|”分隔。比如： “123|234|456|678” ', '', '', 'block_obookcommend.html', 0, 4, 50200, 0, 0, 0, 0, 2);
+
+INSERT INTO `jieqi_system_blocks` (`bid`, `blockname`, `modname`, `filename`, `classname`, `side`, `title`, `description`, `content`, `vars`, `template`, `cachetime`, `contenttype`, `weight`, `showstatus`, `custom`, `canedit`, `publish`, `hasvars`) VALUES(0, '分类阅读', 'obook', 'block_sort', 'BlockObookSort', 0, '分类阅读', '', '', '', '', 0, 0, 51100, 0, 0, 0, 0, 0);
+
+INSERT INTO `jieqi_system_blocks` (`bid`, `blockname`, `modname`, `filename`, `classname`, `side`, `title`, `description`, `content`, `vars`, `template`, `cachetime`, `contenttype`, `weight`, `showstatus`, `custom`, `canedit`, `publish`, `hasvars`) VALUES(0, '电子书搜索', 'obook', 'block_search', 'BlockObookSearch', 1, '电子书搜索', '', '', '', '', 0, 0, 51200, 0, 0, 0, 0, 0);
+
+UPDATE `jieqi_system_power` SET ptitle='发布电子书不需要审查' WHERE modname='obook' AND pname='needcheck';
+
+INSERT INTO `jieqi_system_configs` (`cid`, `modname`, `cname`, `ctitle`, `cvalue`, `cdescription`, `cdefine`, `ctype`, `options`, `catorder`, `catname`) VALUES (0, 'obook', 'obkwaterformat', '文字水印格式', '', '这里设置的文字水印，在实际显示时候<{$userid}>会替换成雨用户ID，<{$username}>替换成用户名', 0, 1, '', 31060, '阅读设置');

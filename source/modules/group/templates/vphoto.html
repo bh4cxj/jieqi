@@ -1,0 +1,35 @@
+<style  type="text/css">
+/*随笔*/
+.c_navigation{border-top: #ffffff 1px solid;border-left: #ffffff 1px solid;	border-bottom: #83b0e1 1px solid;font-weight: bold;font-size: 14px;background: #e0edff;color: #054e86; 
+	line-height: 26px;height:26px; padding-left: 10px;}
+.c_navigation span{ font-size:12px; font-weight:normal; color:#333333}
+.c_navigation .fr{ font-size:12px; font-weight:normal; margin-right:10px}
+.c_navigation .fr a{ color: #333333}
+
+.c_subject{ font-size:14px;}
+
+/*相册*/
+.c_img{ border-bottom:1p dashed #CCCCCC; clear:both; height:160px;}
+.c_img li{ float:left; margin:30px; text-align:center}
+.pagelink{ float:left!important; margin:10px auto; margin-left:75px}
+</style>
+<div class="c_navigation">
+	<div class="fl"><a href="{?$jieqi_modules['group']['url']?}/photo.php?g={? $gid ?}&albumid={? $albumid ?}">{? $albumname ?}</a></div><div class="fr"> <a href="{?$jieqi_modules['group']['url']?}/upload.php?g={?$gid?}&albumid={? $albumid ?}">上传新照片</a> | <a href="{?$jieqi_modules['group']['url']?}/manalbum.php?g={?$gid?}">创建新相册</a></div>
+</div>
+<div class="g_main">
+<div class="g_center">
+<table width="100%" cellpadding="0" cellspacing="1">
+	<tr><td>{? $url_jumppage  ?}		</td>	</tr>
+	<tr>
+			<td align="center" class="even">
+				<img src="{? $src ?}" onload="if(this.width>screen.width*0.50) {this.resized=true; this.width=screen.width*0.50;}" onmouseover="if(this.resized) this.style.cursor='hand';"  onclick="if(this.resized) window.open('{? $src ?}');" >
+				<div style="float:center;text-align:center;font-size:11px;font-family:Arial">{? $intro ?}<div>
+			</td>
+	</tr>
+	<tr>
+		<td>{? $url_jumppage  ?}		</td>
+	</tr>
+
+</table>
+</div>
+</div>

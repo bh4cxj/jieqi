@@ -1,0 +1,110 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+{?set $jieqi_pagetitle = "$articlename - $author - $jieqi_sitename"?}
+{?set $meta_keywords = "$articlename $author"?}
+<link rel="stylesheet" type="text/css" href="/52mb/css/info.css"/>
+
+<div class="txt_nav">您的位置：<a href="{?$jieqi_url?}">{?$jieqi_sitename?}</a>  &gt; <a href="/mulu/{?$sortid?}-1.html">{?$sort?}</a> &gt; <span>{?$articlename?}（作品信息）</span></div>
+
+<div class="xiaoshuo_txt">
+
+	<div class="novel_info_txt">
+		<div class="con_txt"><script>fullflag("{?$fullflag?}");</script>
+      
+        	<div class="con_limg">
+	<img src="{?$url_simage?}" alt="{?$articlename?}"></div>
+<div class="info">
+    <h1><a href="{?$url_read|str_replace:"index.html":""?}">{?$articlename?}</a></h1>
+    <p class="author"><span><script>qqtix({?$articleid?},"{?$articlename?}","2014-06-13");addbookcase({?$articleid?});</script></span>作者：<a href="/modules/article/authorarticle.php?author={?$author?}">{?$author?}</a></p>
+    <div class="r_cons">{?$intro?}</div>
+    <div class="r_tools">
+        <a href="{?$url_lastchapter?}" id="startedbtn" target="_blank">开始阅读</a>
+        <a href="{?$url_read|str_replace:"index.html":""?}" title="{?$articlename?}最新章节目录" id="diralinks">目录</a>
+        <a href="/down/txt{?$articleid?}.html" target="_blank" id="down_txt">txt下载</a>
+    </div>
+	<div class="lastrecord">最新章节({?$lastupdate?})：<strong><a href="{?$url_lastchapter?}" id="newchapter" target="_blank">{?$lastchapter?}</a></strong><div id="jianj"></div>
+</div>
+</div>
+</div>
+</div>
+<!--b-->
+<div class="new_novel_txt"><h2><a href="/top/lastupdate.html">最近更新</a></h2>
+
+    <div class="ritembox">
+    
+	{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="lastupdate,7,class,0,0,0" template="52mb_info_lastupdate.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+
+    </div>
+
+</div>
+<!--end-->
+</div>
+
+<div class="xiaoshuo_bbs">
+    <div class="comment">
+        <h3><a href="/book/reviews-{?$articleid?}.html" target="_blank">《{?$articlename?}》网友评论</a></h3>
+        <div class="comment_content">
+            <div class="discuss">
+                <div class="reviewer"><img src="/52mb/css/sysuser.gif" /><a href="{?$jieqi_url?}">{?$jieqi_sitename?}</a></div>
+                <div class="booktext">·你想对{?$author?}说点什么？<br>·你感觉《{?$articlename?}》写得怎么样？<br>·请发表您最想说的话和您对本书最真诚的评价！登陆或者注册后就可以发表！<br>·{?$author?}写《{?$articlename?}》不容易，请不要发表攻击性语言！</div>
+             </div>
+
+        {?section name=i loop=$reviewrows?}
+        <div class="discuss" id="">
+        	<div class="reviewer"><img src="{?function jieqi_geturl:'system':'avatar':$replyrows[i].userid:'l':$replyrows[i].avatar?}">{?if $reviewrows[i].posterid > 0?}{?$reviewrows[i].poster?}{?else?}游客{?/if?}</div>
+            <div class="booktext">
+                {?$reviewrows[i].posttext?}<br />
+                <p>评论时间：{?$reviewrows[i].replytime|date:y-m-d H:i?}
+                <a href="/book/comment-{?$reviewrows[i].topicid?}.html" target="_blank">回复数：{?$reviewrows[i].replies?}</a></p>
+            </div>
+        </div>
+                
+    {?/section?}
+                
+            
+        </div>
+        
+<div class="comment_form">
+    <form action="/modules/article/reviews.php?aid={?$articleid?}" method="post" name="frmreview" target="_blank"  onsubmit="return jieqiFormValidate_frmreview();">
+        <p>评论标题：<input name='ptitle' type='text' class='title_input' value="{?$author?}加油，《{?$articlename?}》写得好棒！" onclick="this.value=''" /></p>
+        <p><textarea name="pcontent" id="pcontent" class="re_textarea"></textarea></p>
+        <p id="re_submit">
+            <!--<img src="/checkcode.php" style="cursor:pointer;" onclick="this.src='/checkcode.php?rand='+Math.random();">
+            验证码:<input type="text" class="text" name="checkcode" id="checkcode" size="8" maxlength="8" value="" />-->
+            <input value="发表评论" class="coment_sub" type="submit" name="submit">
+        </p>
+    </form>
+</div>
+
+</div>
+
+
+
+<div class="hot_txt_xiazai">
+
+	<h2><a href="/top/allvisit.html">热门排行</a></h2>
+    
+	{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="allvisit,13,class,0,0,0" template="52mb_info_allvisit.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+
+</div>
+
+</div>
+<div class="good_xiaoshuo">
+<h2>猜你喜欢</h2>
+
+
+<div class="imgitems">
+
+	{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="allvote,7,class,0,0,0" template="52mb_info_allvote.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+
+</div>
+
+
+<ul class="book_top_list">
+
+{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="allvote,35,class,0,0,0" template="52mb_info_allvote_2.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+
+
+
+</ul>
+</div>

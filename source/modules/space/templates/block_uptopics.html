@@ -1,0 +1,9 @@
+<table class="hide fix" width="100%" align="center">
+  {?section name=i loop=$ptopicrows?}
+  <tr>
+    <td width="50%">{?if $ptopicrows[i].istop == 1?}<span class="hottext">[¶¥]</span>{?/if?}{?if $ptopicrows[i].isgood == 1?}<span class="hottext">[¾«]</span>{?/if?}<a href="{?$jieqi_url?}/ptopicshow.php?tid={?$ptopicrows[i].ptopicid?}">{?$ptopicrows[i].title?}</a></td>
+    <td width="30%"><a href="{?$jieqi_user_url?}/userinfo.php?id={?$ptopicrows[i].posterid?}" target="_blank">{?$ptopicrows[i].poster?}</a></td>
+    <td width="20%">{?$ptopicrows[i].posttime|date:"Y-m-d H:i:s"?}</td>
+  </tr>
+  {?/section?}
+</table>

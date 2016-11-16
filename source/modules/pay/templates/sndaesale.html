@@ -1,0 +1,38 @@
+<br />
+<form method="post" name="post" action="{?$url_pay?}">
+ <table class="grid" width="600" align="center">
+    <caption>欢迎使用在线支付系统</caption>
+    <tr class="odd"> 
+      <td>
+	  <br />
+	  您好，{?$buyname?}!
+	  <br /><br />
+	  您选择的交易类型为：
+	  <br /><br />
+	  <span class="hottext">
+	  * 购买{?$egold?}点{?$egoldname?}，合计人民币：{?$money?}元</span>
+	  <br /><br />
+	  确认购买请点击“进入下一步”。
+	  <br />
+	  <br />
+	  </td>
+    </tr>
+    <tr class="even"> 
+      <td height="30" valign="middle">
+	  <input name="sdorderno" type="hidden" id="sdorderno" value="{?$sdorderno?}">
+	  <input name="amount" type="hidden" id="amount" value="{?$amount?}">
+	  <input name="merid" type="hidden" id="merid" value="{?$merid?}">
+	  <input name="bizcode" type="hidden" id="bizcode" value="{?$bizcode?}">
+	  <input name="orderdate" type="hidden" id="orderdate" value="{?$orderdate?}">
+	  <input name="callbackaddr" type="hidden" id="callbackaddr" value="{?$callbackaddr?}">
+	  <input name="callbacktype" type="hidden" id="callbacktype" value="{?$callbacktype?}">
+	  <input name="signmsg" type="hidden" id="signmsg" value="{?$signmsg?}">
+	  <input name="token" type="hidden" id="token" value="{?$token?}">
+	  <input name="ex1" type="hidden" id="ex1" value="{?$ex1?}">
+	  <input name="ex2" type="hidden" id="ex2" value="{?$ex2?}">
+      <input type="submit" class="button" value=" 进入下一步 " name="v_action">
+	  </td>
+    </tr>
+  </table>
+</form>
+<br /><br />

@@ -1,0 +1,9 @@
+{?section name=i loop=$articlerows?}
+<li>
+<p class="update_l">
+<span class="grey" style="float:left">[{?$articlerows[i].sort?}]</span>
+<a href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename?}</a>
+<p class="date">{?$articlerows[i].update?}</p>
+<a href="{?$articlerows[i].url_lastchapter?}" title="{?$articlerows[i].lastchapter?}"><span class="green">{?$articlerows[i].lastchapter?}</span></a></p>
+</li>
+{?/section?}

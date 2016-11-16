@@ -1,0 +1,1 @@
+ALTER TABLE `jieqi_space_blogcat` CHANGE `image` `image` VARCHAR( 100 ) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '/modules/space/templates/images/default.gif' 

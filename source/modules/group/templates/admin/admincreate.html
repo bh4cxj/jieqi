@@ -1,0 +1,102 @@
+<script language="javascript" src="{? $provincejs_href ?}" ></script>
+<script language="javascript">
+function check_form(){
+	if(document.basicform.gname.value == ''){
+		alert("圈子名不能为空");
+		document.basicform.gname.focus();
+		return false;
+	} 
+
+
+	if(document.basicform.gbrief.value == ''){
+		alert("请填写圈子简介");
+		document.basicform.gbrief.focus();
+		return false;
+	}
+	return true;
+}
+
+//创建http_request
+function create_http_request(){
+	http_request = false;
+	//开始初始化XMLHttpRequest对象
+	if(window.XMLHttpRequest) { //Mozilla 浏览器
+		http_request = new XMLHttpRequest();
+		if (http_request.overrideMimeType) {//设置MiME类别
+			http_request.overrideMimeType('text/xml');
+		}
+	}else if (window.ActiveXObject) { // IE浏览器
+		try {
+			http_request = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try {
+				http_request = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e) {}
+		}
+	}
+	if (!http_request) { // 异常，创建对象实例失败
+		window.alert("不能创建XMLHttpRequest对象实例.");
+		　return false;
+	}else{
+		return http_request;
+	}
+
+}
+
+
+
+//检测圈子名所用到的函数
+function checkgname(obj){
+	//调用ajax函数,向服务器端发送查询
+	selectgname(obj.value); 
+}
+
+function selectgname(data){  
+	xmlhttp = create_http_request();
+	xmlhttp.open("get","../selectgname.php?gname="+data);
+	xmlhttp.send(null);
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState == 4){
+			if (xmlhttp.status == 200 ){
+				document.getElementById("gnameTxt").innerHTML=xmlhttp.responseText;
+			}else{
+				alert("发生错误!");
+			}
+		}else{
+			//In mozilla and IE7 .........
+			//alert(xmlhttp.readyState); 
+		}
+	}
+}
+</script>
+
+
+<table class="grid" width="68%" cellspacing=1 align='center'>
+<caption>创建圈子</caption>
+<form name="basicform" method="post" action="" enctype="multipart/form-data" onsubmit="return check_form()">
+<tr>
+<td class="odd" width="15%" >圈子名称:</td>
+<td class="odd"><input class="text" type="text" name="gname"  onblur="checkgname(this)" ><div id="gnameTxt"></div></td>
+</tr>
+<tr>
+<td class="odd">圈子类别:</td>
+<td class="odd">
+<select name='gcatid' id='gcatname'>
+  {?section name=i loop=$gcatsarr?}
+  <option value="{?$gcatsarr[i]['id']?}">{?$gcatsarr[i]['name']?}</option>
+  {?/section?}
+</select>
+</td>
+</tr>
+
+<tr>
+<td>用户id</td><td><input type="text" name="id"></td>
+</tr>
+<tr>
+<td>用户名</td><td><input type="text" name="username"></td>
+</tr>
+<tr><td class="odd" align="center" colspan=2><input class="button" type="submit" value="提 交"></td></tr></form>
+</table>
+
+
+

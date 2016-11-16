@@ -1,0 +1,13 @@
+Array
+(
+    [Filedata] => Array
+        (
+            [name] => obookpic0.jpg
+            [type] => application/octet-stream
+            [tmp_name] => /tmp/php6YHshu
+            [error] => 0
+            [size] => 8765
+        )
+
+)
+ /website/www/paradise/test/files/space/attachment/image/215662/b_772.jpg[8765]

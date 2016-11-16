@@ -1,0 +1,85 @@
+﻿.top_commend{margin:10px 0}
+.top_commend .baojian{border:1px solid #ddd;background:#fff url(mark.png) no-repeat right top;padding:15px 18px 15px 10px;float:left;width:686px}
+.top_commend .commends{border:1px solid #ddd;background:#fff;float:left;width:714px;padding:10px 0;margin-top:10px}
+.commends .book{text-align:center;float:left;height:180px;width:142px}
+.commends .book img{height:150px;width:120px;padding:1px;border:1px solid #dedede}
+.commends .book h2{height:25px;line-height:25px;font-size:14px;font-size:14px;text-align:center;font-weight:normal}
+.xiaoshuotuijian{float:left;width:716px}
+.baojian_cover{float:left}
+.baojian img{width:200px;height:270px}
+.baojian_info h1{height:35px;white-space:nowrap;font-size:30px;display:inline-block;vertical-align:middle;padding-right:25px;line-height:30px}
+.top_commend .toplist{float:right;height:497px;border:1px solid #dedede;width:225px;background:#fff;padding:10px}
+.toplist h3 a{color:#fc8620}
+.toplist h3{font-size:16px;font-weight:bold;text-align:center;border-bottom:1px solid #dedede;height:25px}
+.toplist ul{padding:3px 10px}
+.toplist li{font-size:13px;height:25px;border-bottom:1px dashed #dfdfdf;line-height:25px}
+.toplist li span{float:right;color:#999}
+.baojian_info{width:470px;float:right}
+.baojian_info h1{height:35px;white-space:nowrap;font-size:30px;display:inline-block;vertical-align:middle;padding-right:25px;line-height:30px}
+.baojian_info .author{color:#B0B0B0;border-bottom:1px dashed #DCDCDC;line-height:25px;padding-bottom:5px}
+.baojian_info #intro{padding:10px 0}
+.read a{color:#019A02;vertical-align:middle;display:inline-block;height:39px;line-height:300px;margin-right:6px;background:url(txt_read.gif) no-repeat}
+#startedbtn{width:120px;background-position:0 -45px}
+#diralinks{width:67px;height:39px;background-position:0 0}
+#down_txt{background-position:0 -99px;width:120px;height:39px}
+.lastrecord{color:red;font-weight:800;background:#FFFFEB;border:1px solid #FCC078;position:relative;height:25px;line-height:25px;padding-left:8px;margin-top:10px;overflow:visible}
+.lastrecord a{color:red}
+#jian{position:absolute;top:-6px;height:6px;background:url(fav_info.gif) no-repeat;width:9px;left:42px;background-position:-74px -101px}
+.author span{float:right}
+.author span a{display:inline-block;width:71px;height:24px;float:left;line-height:24px;padding-left:27px;color:#D05D00;text-decoration:none;background:url(fav_info.gif) no-repeat}
+.author a.fxcs{background-position:0 -30px;z-index:2}
+.author #qqtix{background-position:0 -60px;color:#FFF}
+.vote_book{padding:10px 5px;float:left;width:968px;border:1px solid #e12160;margin:10px 0;background-color:#fff}
+.vote_book .book{float:left;width:111px;margin-left:9px;text-align:center}
+.info_cover{position:relative}
+.vote_book .book img{border-color:#ddd;box-shadow:0 1px 1px rgba(0,0,0,0.07);width:105px;height:140px;padding:2px;border:1px solid #CCC}
+.info_cover:hover img{background-color:#e12160}
+.book .info_cover span{width:105px;height:20px;display:block;background-color:#000;color:#000;position:absolute;left:3px;bottom:5px;filter:alpha(opacity=60);opacity:0.6;z-index:1}
+.book .info_cover strong{width:100px;padding-right:5px;height:20px;line-height:20px;display:block;color:#FFF;font-size:12px;position:absolute;left:3px;bottom:5px;text-align:right;z-index:2;color:#fff;white-space:nowrap}
+.vote_book .book h3{width:111px;height:22px;line-height:22px;font-size:14px;margin-top:4px;font-size:14px;text-align:center;font-weight:normal}
+.tuijian_top{width:978px;border:1px solid #eee;background-color:#FFF}
+.ranking-list li{height:32px;line-height:32px;overflow:hidden;border-top:1px dotted #ddd}
+.ranking-list span{float:right;color:#999;font-size:11px}
+.ranking-list em{color:#666;margin-right:7px;font-style:italic;font-weight:700}
+.ranking-list span.score{color:#e12160;font-size:12px}
+.ranking-list em.stress{color:#e12160}
+.ui-ranking{width:213px;padding:0 15px}
+#list-focus .ui-ranking,#channel-box .ui-ranking{width:226px;padding-bottom:5px;border-bottom:1px solid #eee}
+.ui-ranking h3{font-size:14px;font-weight:700;height:38px;line-height:38px;overflow:hidden;color:#333}
+.wudu-bar{width:243px;float:left;border-right:1px solid #eee;background-color:#fcfcfc;padding-top:47px;background:url(tuijian.gif) no-repeat 35px 10px}
+.wudu-box{width:724px;float:right}
+.novelslist{margin-right:10px;float:right;width:710px}
+.novelslist .content{width:232px;padding:7px 0;height:277px;float:left}
+.novelslist .border{margin:0 3px;padding:7px 3px;border-RIGHT:#a6d3e8 1px dotted;border-left:#a6d3e8 1px dotted}
+.novelslist .content h2{border-bottom:solid 1px #A6D3E8;font-size:14px;font-weight:bold;padding-left:5px;height:18px;padding-bottom:4px;overflow:hidden;text-align:center}
+.novelslist .content .image{padding:10px 0px 0px 5px;float:left;width:71px}
+.novelslist .content .image img{width:67px;height:82px;border:solid 1px #DDDDDD;padding:1px;background-color:white}
+.novelslist .content .image:hover img{border:solid 1px ##C30;background-color:#C30}
+.novelslist .content dl{padding:10px 0px 0px 0px;float:right;width:150px;margin-left:5px}
+.novelslist .content dl dt{font-weight:bold}
+.novelslist .content dl dd{color:#999}
+.novelslist .content ul{padding:10px 0px 0px 0px}
+.novelslist .content ul li{color:#B3B3B3;height:24px;line-height:24px;font-size:12px;overflow:hidden;float:left;width:110px;list-style:none}
+.novelslist .content ul li a{font-size:13px}
+.toptime{float:left;width:196px;margin:10px 0 10px 10px;display:inline;border:1px solid #eaeaea;padding:10px;height:398px}
+.article_center{width:978px;border:1px solid #eee;background-color:#FFF;margin:10px auto;border-top:3px solid #1f87cb}
+.new_article{width:243px;float:left;border-right:1px solid #eee;background-color:#fcfcfc}
+.new_article h2 a{width:243px;height:0px;padding-top:38px;background:url(new_book.gif) no-repeat 18px 8px;display:block;text-indent:-9999;overflow:hidden}
+.new_article ul{padding:0 10px 10px 10px}
+.new_article ul li{color:#B3B3B3;padding:5px 0px 0px 0px;border-bottom:solid 1px #DDDDDD;height:25px;line-height:25px;overflow:hidden}
+.new_article ul li em{margin-right:5px}
+.monthvote{border:1px solid #ddd;width:978px;background-color:#fff}
+.monthvote h3{height:35px;line-height:33px;overflow:hidden;font-weight:700;font-size:14px;padding:0 10px;color:#333;border-bottom:1px solid #eee;background-color:#f5f5f5}
+.monthvote ul{padding:10px}
+.monthvote ul li{width:95px;height:32px;line-height:32px;float:left;font-size:12px;color:#aaa;border-bottom:1px dotted #e0e0e0}
+.last_update{width:714px;float:right;padding-right:10px}
+.last_update h2{height:30px;line-height:30px;font-size:14px;font-weight:bold;border-bottom:solid 1px #DDDDDD;text-indent:25px}
+.last_update li{padding:5px 0px 0px 0px;border-bottom:dotted 1px #DDDDDD;height:22px;line-height:22px}
+.last_update li span,.last_update li strong,.last_update li em{float:left;display:inline-block}
+.last_update li .txt_down{width:75px}
+.last_update li strong{width:165px}
+.last_update li em{width:300px}
+.last_update li .author{color:#B3B3B3;width:90px;text-align:right}
+.last_update li .update_time{color:#B3B3B3;float:right;text-align:right}
+#firendlink{margin:5px 0;padding:7px;line-height:20px;border:1px solid;border-color:#fff #efefef #d3d3d3 #efefef;box-shadow:0 1px 1px #efefef;background:#fff}
+#firendlink strong{float:left;background:#333;color:#fff;margin-right:10px;padding:1px 10px}

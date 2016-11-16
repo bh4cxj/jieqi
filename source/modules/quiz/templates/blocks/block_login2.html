@@ -1,0 +1,18 @@
+ <h4>用户登录</h4>
+<ul class="ulrow">
+  <li>用户名：{?$jieqi_username?}</li>
+  <li><a href="{?$linkurl?}/ask.php">我要提问</a></li>
+  <li><a href="{?$linkurl?}/quiz_user.php?action=myproblems">我发起的提问</a></li>
+  <li><a href="{?$linkurl?}/quiz_user.php?action=myanswer">我参与过的问题</a></li>
+  <!--<li>等　级：{?$jieqi_groupname?}</li>
+  <li>头  衔：{?$jieqi_honor?}</li>-->
+  <!--{?if $jieqi_avatar > 0?}<li><img src="{?$jieqi_avatarurl?}" border="0" alt="我的头像"></li>{?/if?}-->
+  {?if $jieqi_use_badge == 1?}
+  <li>{?if $jieqi_group_imageurl != ""?}<img src="{?$jieqi_group_imageurl?}" border="0" alt="{?$jieqi_groupname?}">{?/if?}</li>
+  <li>
+  {?section name=i loop=$jieqi_badgerows?}<img src="{?$jieqi_badgerows[i].imageurl?}" border="0" alt="{?$jieqi_badgerows[i].caption?}">{?/section?}
+  </li>
+  {?/if?}
+  <li>[<a href="{?$jieqi_url?}/userdetail.php">基本资料</a>]&nbsp;[<a href="{?$jieqi_modules['article']['url']?}/bookcase.php">我的书架</a>]</li>
+  <li>[<a href="{?$jieqi_url?}/message.php?box=inbox">查看短信</a>]&nbsp;[<a href="{?$jieqi_user_url?}/logout.php">退出登陆</a>]</li>
+</ul>

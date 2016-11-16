@@ -1,0 +1,60 @@
+<table class="grid" width="600" align="center">
+  <caption>骏网一卡通在线支付</caption>
+  <tr>
+    <td class="even"><form name="frmbank" method="post" action="{?$jieqi_modules['pay']['url']?}/jcard.php">
+      <table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%">&nbsp;</td>
+          <td width="44%" valign="middle"><table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="left">请选择购买类别</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="8250" class="radio">
+            8250点{?$egoldname?}（100元俊网一卡通面额）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="4100" class="radio">
+            4100点{?$egoldname?}（50元俊网一卡通面额）</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="egold" value="2450" class="radio">
+            2450点{?$egoldname?}（30元俊网一卡通面额）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="1200" class="radio">
+            1200点{?$egoldname?}（15元俊网一卡通面额）</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="egold" value="790" class="radio">
+            790点{?$egoldname?}（10元俊网一卡通面额）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="420" class="radio">
+            420点{?$egoldname?}（6元俊网一卡通面额）</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="egold" value="380" class="radio">
+            380点{?$egoldname?}（5元俊网一卡通面额）</td>
+              </tr>
+              <tr>
+                <td>
+				<input type="hidden" name="paytype" value="b">
+				<input type="hidden" name="action" value="bankpay">
+				<input type="submit" name="Submit" value="进入下一步" class="button" >
+                </td>
+              </tr>			  
+          </table></td>
+          <td width="4%" valign="top">&nbsp;</td>
+          <td width="48%" valign="top">操作说明：<br />
+              <br />
+&nbsp;&nbsp;&nbsp;&nbsp;1、请从左边的面额列表点击相应的充值面额进行充值。
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;2、支付时您在我们网站上选择的面额必须和充值网站上所选择的面额以及您俊网一卡通的面值一致，否则将支付不成功。</td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+</table>
+<br /><br />
+

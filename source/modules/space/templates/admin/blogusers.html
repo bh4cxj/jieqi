@@ -1,0 +1,47 @@
+<form name="frmquery" method="post" action="{?$jieqi_url?}/admin/blogusers.php">
+<table width="100%" align="center" cellpadding="0" cellspacing="1"  class="grid">
+    <tr>
+        <td class="odd"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="58%" valign="middle">&nbsp;</td>
+            <td width="42%" align="right" valign="middle">用户名称：
+            <input name="username" type="text" class="text" id="username" size="20" maxlength="30">
+            <input type="submit" name="Submit" value="搜 索" class="button">&nbsp;&nbsp;</td>
+          </tr>
+        </table></td>
+    </tr>
+</table>
+</form>
+<br />
+<form action="{?$url_userlist?}" method="post" name="checkform" id="checkform">
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+  <tr align="center">
+    <td colspan="6" class="title">博客用户列表</td>
+    </tr>
+  <tr align="center" class="head">
+    <td width="25%" valign="middle">用户名</td>
+    <td width="15%" valign="middle">申请日期</td>
+    <td width="10%" valign="middle">博客文件</td>
+    <td width="10%" valign="middle">状态</td>
+    <td width="10%" valign="middle">删除</td>
+  </tr>
+  {?section name=i loop=$userrows?}
+  <tr valign="middle">
+    <td class="even">{?$userrows[i].name?}</td>
+    <td align="center" class="odd">{?$userrows[i].blogtime?}</td>
+    <td align="center" class="odd">{?$userrows[i].bgdomain?}</td>
+    <td align="center" class="even"><a href="?bgswitch={?$userrows[i].bgswitch?}&uid={? $userrows[i].uid ?}&page={? $page ?}">{?$userrows[i].bgswitch?}</a></td>
+    <td align="center" class="odd"><a href="javascript:if(confirm('确定删除该用户?') ) document.location='?delid={? $userrows[i].uid ?}&page={? $page ?}'">删除</a></td>
+  </tr>
+  {?/section?}
+</table>
+</form>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">{?$url_jumppage?}</td>
+  </tr>
+</table>
+

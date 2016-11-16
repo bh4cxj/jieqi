@@ -1,0 +1,47 @@
+<script language="javascript">
+function CheckAll(fmobj) {
+  for (var i=0;i<fmobj.elements.length;i++) {
+    var e = fmobj.elements[i];
+    if ( (e.name != 'checkall') && (e.type=='checkbox') && (!e.disabled) ) {
+      e.checked = fmobj.checkall.checked;
+    }
+  }
+}
+</script>
+<table class=grid cellSpacing=1 width="68%" align=center>
+<tbody>
+	<tr>
+		<td class="title" colspan="3">成员组管理</td>
+	</tr>
+	<tr vAlign=center align=center>
+		<td class=odd width="20%">删除</td>
+		<td class=odd width="40%">头衔</td>
+		<td class=odd width="40%" >编辑</td>
+	</tr>
+  
+  	<form name="membergroups" action="?action=allset" method="post">
+	<input type="hidden" name="membergroups['{? $defaultgid ?}']" value="{? $defaultgid ?}" >
+	<tr vAlign=center align=center>
+		<td class=odd width="">--</td>
+		<td class=odd wtitleth=""><input type="text" name="membergtitle[{? $defaultgid ?}]" value="{? $defaultgtitle ?}"></td>
+		<td class=odd width=""><a href="?action=powerset&membergid={? $defaultgid ?}">编辑</a></td>
+	</tr>
+	{?section name=i loop=$membergroups ?}
+	<input type="hidden" name="membergroups[{? $membergroups[i].membergid ?}]" value="{? $membergroups[i].membergid ?}" >
+	<tr vAlign=center align=center>
+		<td class=odd width=""><input type="checkbox" name="delete[{? $membergroups[i].membergid ?}]" value="1" /></td>
+		<td class=odd width=""><input type="text" name="membergtitle[{? $membergroups[i].membergid ?}]" value="{? $membergroups[i].membergtitle ?}"></td>
+		<td class=odd width=""><a href="?action=powerset&membergid={? $membergroups[i].membergid ?}">编辑</a></td>
+	</tr>
+	{?/section?}
+	<tr vAlign=center align=center>
+		<td class=odd > <input type="checkbox" name="checkall" onclick=CheckAll(this.form)>全选</td>
+		<td class=odd colspan=2>增加∶<input name="newmembergtitle" size="20"  /></td>
+	</tr>		
+	<tr align="center">
+		<td class=odd colspan=3> <input type='reset' class='button' value='重置' />&nbsp;&nbsp;&nbsp;<input type='submit' class='button' name='submit'  id='submit' value='提交' /></td>
+	</tr>
+</tbody>	
+</table>
+</form>
+

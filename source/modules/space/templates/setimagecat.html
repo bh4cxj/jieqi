@@ -1,0 +1,52 @@
+<script language="javascript">
+var new_line = {? $new_line ?};
+function addRow(){
+	var newTr = cattable.insertRow(new_line);
+	newTr.id = new_line;
+	var newTd1 =  newTr.insertCell();
+	var newTd2 =  newTr.insertCell();
+	var newTd3 =  newTr.insertCell();
+	var newTd4 =  newTr.insertCell();
+	newTd1.innerHTML = "<input type='text' class='text' name=new_name[] size=16 value=''>";
+	newTd2.innerText = '';
+	newTd3.innerHTML = "<input type='text' class='text' name=new_order[] size=3>";
+	new_line++;
+}
+</script>
+
+
+<form name="form1" id="form1" action="{? $action_url ?}" method="post">
+<input type="hidden" name="action" value="do_edit">
+  <table id="cattable" width="100%" cellspacing="1" class="grid">
+  <caption>相册列表</caption>
+  <tr>
+        <td colspan=5><font color="red">***</font>删除分类下的照片将转移到默认分类</td>
+  </tr>
+ <tr>
+        <th>分类名</th><th>照片数</th><th>排序</th><th>删除</th>
+ </tr>
+  {? section name=i loop=$blog_cats ?}
+        <tr>  
+                {? if $blog_cats[i].default_cat!=1 ?}
+                <input type="hidden" name=old_id[] value="{? $blog_cats[i].id ?}">
+                <td><input type="text" class='text' name=old_name[] value="{? $blog_cats[i].name ?}" size=16 ></td>
+                <td>{? $blog_cats[i].num ?}</td>
+                <td><input type='text' class='text' name=old_order[]  value="{? $blog_cats[i].cat_order ?}" size=3></td>
+                <td><input type='checkbox' class='checkbox' name=delete_checkbox[] value="{? $blog_cats[i].id ?}"</td>
+                {? else ?}
+                <td>{? $blog_cats[i].name ?}</td>
+				 <td>{? $blog_cats[i].num ?}</td>
+                <td colspan='2'>&nbsp;</td>
+                {?/if?}           </tr>
+  {? /section ?}
+  <tr>
+        <td colspan="5"><input  onclick="addRow()" type="button" class="button" value="添加更多 "></td>
+  </tr>
+  <tr>
+        <td colspan="6"  style="padding-left:200px;" ><input  class="button" type="submit" value=" 确 认 ">
+		  <input type="hidden" name="type" value="{?$type?}" />		</td>
+    </tr>
+  </table>
+</form>
+<br />
+

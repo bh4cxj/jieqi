@@ -1,0 +1,99 @@
+body{
+	font-family: 宋体,新细明体,Verdana,Arial,sans-serif;
+	font-size: 14px; margin:5px 0px 0px 0px
+}
+
+a{
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+#top{
+border-bottom:1px solid #666666; height:23px}
+.adtop{
+    text-align: center;
+}
+
+.adbottom{
+    text-align: center;
+}
+
+
+.linkall{
+    float: left;
+    width: 100%;
+	text-align: left;
+}
+
+.linkleft{
+    float: left;
+    width: 50%;
+	text-align: left;
+	margin-bottom:0px; height:20px
+
+}
+
+.linkright{
+    float: right;
+    width: 50%;
+	text-align: right;margin-bottom:0px; height:20px
+}
+
+.title{
+    text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 200%;
+}
+
+.info{
+    text-align: center;
+	line-height: 200%;
+}
+
+.pagelink{
+	text-align: center;
+	margin: 3px;
+}
+
+.acss{
+    width: 90%;
+    text-align: left;
+	background: #000000; 
+}
+
+.vcss{
+	font-size: 16px;
+    background: #e4e1d8; 
+    text-align: center;
+}
+
+.ccss{
+    font-size: 14px;
+    background: #f0f0f0; 
+    width: 25%;
+	text-align: leftr;
+}
+
+#loadinginfo{
+	position:absolute;
+	z-index:1;
+	top:200px;
+	left:0px;
+	width:100%;
+	font-size:16px;
+	color:blue;
+	text-align:center;
+}
+
+#readdiv{
+	text-align: center;
+}
+
+#readimage{
+	cursor: hand;
+}

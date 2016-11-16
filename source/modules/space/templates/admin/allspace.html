@@ -1,0 +1,53 @@
+<form name="frmsearch" method="post" action="{?$url_allspace?}">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50">
+             <input name="keytype" type="radio" class="radio" value="title" checked>空间标题 
+            <input type="radio" name="keytype" class="radio" value="uid">作者ID 
+			<input type="radio" name="keytype" class="radio" value="name">作者名字
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+            &nbsp;&nbsp;<a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php">全部空间</a> | <a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php?state=open">开放空间</a> |  <a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php?state=close">关闭空间</a> | <a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php?sort=hot">热门</a> | <a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php?state=cool">冷门</a>|  <a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php?state=comm">推荐</a> |<a href="{?$jieqi_modules['space']['url']?}/admin/allspace.php?state=nocomm">未荐</a>              
+        </td>
+    </tr>
+</table>
+</form>
+<br />
+
+<table class="grid" width="100%" align="center">
+<caption>全部空间	</caption>
+  <tr align="center">
+    <th width="14%">空间名</th>
+    <th width="24%">简介</th>
+    <th width="10%">作者</th>
+    <th width="8%">文章数</th>
+    <th width="8%">点击量</th>
+    <th width="12%">更新</th>
+    <th width="30%">操作</th>
+  </tr>
+  {?section name=i loop=$spaces?}
+  <tr>
+    <td class="even"><a href="{?$jieqi_modules['space']['url']?}/space.php?uid={?$spaces[i].uid?}" target="_blank">{?$spaces[i].title?}</a></td>
+    <td class="odd">{?$spaces[i].brief?}</td>
+    <td class="odd" align="center"><a href="{?$jieqi_modules['space']['url']?}/archives.php?uid={?$spaces[i].uid?}" target="_blank">{?$spaces[i].name?}</a></td>
+    <td class="odd" align="center">{?$spaces[i].blog_num?}</td>
+    <td class="odd" align="center">{?$spaces[i].visit_num?}</td>
+    <td class="even" align="center">{?$spaces[i].update_time|date:m-d H:i:s?}</td
+	>
+    <td class="odd" align="center">
+	{?if $spaces[i].sp_commend<1?}
+	<a href="{? $jieqi_modules['space']['url'] ?}/admin/spaceset.php?uid={?$spaces[i].uid?}&act=comm&page={$page}">推荐</a>
+	{?else?}
+	<a href="{? $jieqi_modules['space']['url'] ?}/admin/spaceset.php?uid={?$spaces[i].uid?}&act=nocomm&page={$page}">不荐</a>
+	{?/if?}&nbsp;&nbsp;&nbsp;&nbsp;
+	{?if $spaces[i].sp_open<1?}
+	<a href="{? $jieqi_modules['space']['url'] ?}/admin/spaceset.php?uid={?$spaces[i].uid?}&act=open&page={$page}">打开</a>
+	{?else?}
+	<a href="{? $jieqi_modules['space']['url'] ?}/admin/spaceset.php?uid={?$spaces[i].uid?}&act=close&page={$page}">关闭</a>
+	{?/if?}
+	</td>
+  </tr>
+  {?/section?}
+</table>
+</form>
+<div class="pages">{?$url_jumppage?}</div>

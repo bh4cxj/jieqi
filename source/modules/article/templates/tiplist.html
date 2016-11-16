@@ -1,0 +1,24 @@
+<table class="grid" cellspacing="1" width="100%" align="center">
+<form name="chapterdel" id="chapterdel" action="{?$url_chaptersdel?}" method="post">
+ <caption>打赏记录(合计{?$count?}{?$egoldname?})</caption>
+ <tr align="center">
+    <th width="25%">文章名称</th>
+    <th width="25%">打赏用户</th>
+    <th width="25%">数量</th>
+    <th width="25%">打赏时间</th>
+  </tr>
+  
+{?if $tiprows != ""?}
+{?section name=i loop=$tiprows?}
+<tr align="center">
+    <td class="even"><a href="/modules/article/articleinfo.php?id={?$articleid?}" target="_blank">{?$articlename?}</a></td>
+    <td class="odd"><a href="/userinfo.php?id={?$tiprows[i].uid?}">{?$tiprows[i].name?}</a></td>
+    <td class="even">{?$tiprows[i].nums?}</td>
+    <td class="odd" align="center">{?$tiprows[i].dateline|date:'Y-m-d H:i:s'?}</td>
+  </tr>
+{?/section?}
+{?$page?}
+{?else?}
+<tr><td>还没有打赏记录</td></tr>
+{?/if?}
+</table>

@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>{?$article_title?}-{?$sortname?}-{?$jieqi_sitename?}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+<meta name="keywords" content="{?$meta_keywords?}" />
+<meta name="description" content="{?$meta_description?}" />
+<meta name="author" content="{?$meta_author?}" />
+<meta name="copyright" content="{?$meta_copyright?}" />
+<meta name="generator" content="jieqi.com" />
+<link rel="stylesheet" type="text/css" media="all" href="{?$jieqi_url?}/configs/obook/page.css" />
+{?$jieqi_head?}
+</head>
+<body bgcolor="#f0f0f0">
+<table width="95%"  border="0" align="center" cellpadding="3" cellspacing="0">
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td width="50%"><a href="{?$dynamic_url?}">{?$jieqi_sitename?}</a>-&gt;<a href="{?$url_obookroom?}">VIP书库</a>-&gt;<a href="{?$url_obookinfo?}">{?$obookname?}</a></td>
+        <td width="50%" align="right"><a href="{?$dynamic_url?}/addbookcase.php?oid={?$obookid?}&cid={?$ochapterid?}" target="_blank">加入书架</a> | <a href="{?$dynamic_url?}/bookcase.php">打开书架</a> | <a href="{?$url_obookinfo?}">返回书页</a></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center"><div id="title">{?$obookname?}</div></td>
+  </tr>
+  <tr>
+    <td align="center"><div id="info">作者：{?$author?}</div></td>
+  </tr>
+  <tr>
+    <td align="center"><table align="center" cellpadding="3" cellspacing="1" width="100%" class="acss">
+  {?section name=i loop=$ochapterrows?}
+  {?if $ochapterrows[i].ctype == "volume"?}
+  <tr>
+    <td colspan="4" class="vcss">
+	{?if $ochapterrows[i].vname == ""?}
+    &nbsp;   
+    {?else?}
+    {?$ochapterrows[i].vname?}
+    {?/if?}
+	</td>
+  </tr>
+  {?else?}
+  <tr>
+    <td width="25%" class="ccss">
+	{?if $ochapterrows[i].cname1 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$ochapterrows[i].curl1?}">{?$ochapterrows[i].cname1?}</a>
+    {?/if?}
+	</td>
+    <td width="25%" class="ccss">
+	{?if $ochapterrows[i].cname2 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$ochapterrows[i].curl2?}">{?$ochapterrows[i].cname2?}</a>
+    {?/if?}
+    </td>
+    <td width="25%" class="ccss">
+	{?if $ochapterrows[i].cname3 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$ochapterrows[i].curl3?}">{?$ochapterrows[i].cname3?}</a>
+    {?/if?}
+    </td>
+	<td width="25%" class="ccss">
+	{?if $ochapterrows[i].cname4 == ""?}
+    &nbsp;   
+    {?else?}
+    <a href="{?$ochapterrows[i].curl4?}">{?$ochapterrows[i].cname4?}</a>
+    {?/if?}
+    </td>
+  </tr>
+  {?/if?}
+  {?/section?}
+</table></td>
+  </tr>
+  <tr>
+    <td align="center">{?$copy_info?}</td>
+  </tr>
+</table>
+</body>
+</html>

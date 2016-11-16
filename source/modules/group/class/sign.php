@@ -1,0 +1,38 @@
+<?php
+// $Id: forumcat.php 2004-03-04 $
+//  ------------------------------------------------------------------------ 
+//                                ½ÜÆæÍøÂç                                     
+//                    Copyright (c) 2004 jieqi.com                         
+//                       <http://www.jieqi.com/>                           
+//  ------------------------------------------------------------------------
+//  Éè¼Æ£ºÐì·ç(juny)
+//  ÓÊÏä: 377653@qq.com
+//  ------------------------------------------------------------------------
+jieqi_includedb();
+//group sign
+
+class Jieqisign extends JieqiObjectData
+{
+    //¹¹½¨º¯Êý
+    function Jieqisign()
+    {
+        $this->JieqiObjectData();
+        $this->initVar('signid', JIEQI_TYPE_INT, 0, 'ÐòºÅ', false, 6);
+    }
+}
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+//ÄÚÈÝ¾ä±ú
+class JieqisignHandler extends JieqiObjectHandler
+{
+	function JieqisignHandler($db='')
+	{
+	    $this->JieqiObjectHandler($db);
+	    $this->basename='sign';
+	    $this->autoid='signid';	
+	    $this->dbname=JIEQI_MODULE_NAME.'_sign';
+	}
+}
+?>

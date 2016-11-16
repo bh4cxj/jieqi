@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" media="all" href="/templates/admin/style.css" />
+<style>
+	.even textarea{font-size:12px;}
+</style>
+<div id="content">
+<form name="frmsearch" method="post" action="/modules/article/admin/cuigeng.php">
+<table class="grid" width="100%" align="center">
+    <tr>
+      <td class="odd">
+        <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td width="65%">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="0" maxlength="50"> <input name="keytype" type="radio" class="radio" value="0" checked>
+            文章名称 
+            <input type="radio" name="keytype" class="radio" value="1">
+            催更人 &nbsp;&nbsp;
+       <input type="submit" name="btnsearch" class="button" value="搜 索"></td>
+         </tr>
+       </table></td>
+    </tr>
+</table>
+</form>
+
+
+<form name="frmcollect" id="frmcollect" action="/modules/article/admin/cuigeng.php" method="post">
+<table class="grid" width="100%" align="center">
+<div id="content"><div class="gridtop">催更记录</div>
+
+  <tr align="center">
+  	<td width="5%" class="title"><input type="checkbox" id="checkall" name="checkall" value="checkall" onclick="javascript: for (var i=0;i<this.form.elements.length;i++){ if (this.form.elements[i].name != 'checkkall') this.form.elements[i].checked = form.checkall.checked; }"></th>
+    <td width="45%" class="title">书名</td>
+    <td width="12%" class="title">催更金额</td>
+    <td width="12%" class="title">催更人</td>
+    <td width="17%" class="title">催更时间</td>
+	<td width="7%" class="title">操作</td>
+  </tr>
+  {?php foreach($cuigenglist $value){?}
+  <tr>
+  	<td class="even" align="center"><input type="checkbox" id="checkid[]" name="checkid[]" value="{?php echo $value[id]?}"></td>
+    <td class="odd"><a href="/modules/article/articleinfo.php?id={?$cuigenglist[i].id?}" target="_blank">{?$cuigenglist[i].articlename?}<br />
+</a></td>
+    <td align="center" class="odd">0/0</td>
+    <td class="even"><a href="http://fyzw.com/userpage.php?uid={?$cuigenglist[i].uid?}" target="_blank">{?$cuigenglist[i].uname?}</a></td>
+    <td align="center" class="odd">{?$cuigenglist[i].dateline|date:"Y-m-d, H:i:s"?}</td>
+	<td align="center" class="even"><a href="javascript:if(confirm('确实要结算么？')) document.location='http://fyzw.com/modules/article/admin/reviews.php?action=del&rid={?$cuigenglist[i].id?}';">结算</a></td>
+  </tr>
+  {?php } ?}
+</table>
+</font>
+</div>

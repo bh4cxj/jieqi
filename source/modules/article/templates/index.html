@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{?$article_title?}-{?$sortname?}-{?$jieqi_sitename?}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+<meta name="keywords" content="{?$meta_keywords?}" />
+<meta name="description" content="{?$meta_description?}" />
+<link href="/themes/chaoliu/css/reset.css" rel="stylesheet"/>
+<link href="/themes/chaoliu/css/index2.css" rel="stylesheet"/>
+<script type="text/javascript" src="/themes/chaoliu/js/content.js"></script>
+<script type="text/javascript">
+<!--
+var preview_page = "{?$preview_page?}";
+var next_page = "{?$next_page?}";
+var index_page = "{?$index_page?}";
+var article_id = "{?$article_id?}";
+var chapter_id = "{?$chapter_id?}";
+
+function jumpPage() {
+  if (event.keyCode==37) location=preview_page;
+  if (event.keyCode==39) location=next_page;
+  if (event.keyCode==13) location=index_page;
+}
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+<body>
+<div id="wrap"> 
+	<div class="page_head">
+		<p class="nav"><a href="{?$jieqi_main_url?}/">{?$jieqi_sitename?}</a> > <a href="{?$url_bookroom?}">书库首页</a> >  <a href="/modules/article/articleinfo.php?id={?$articleid?}">{?$article_title?}</a>&nbsp;</p>
+		
+		<div class="clear"></div>
+	</div>
+	
+	<div class="page_main">
+		<h1 class="index_title">{?$article_title?}</h1>
+		<p class="index_info"><span>作者：{?$author?}</span></p>
+		{?section name=i loop=$indexrows?}
+  {?if $indexrows[i].ctype == "volume"?}
+  </ul><p class="section_title">
+	{?if $indexrows[i].vname == ""?}
+    &nbsp; 
+    {?else?}
+    {?$indexrows[i].vname?}
+    {?/if?}
+	</p><div class="clear"></div><ul class="section_list">
+
+  {?else?}
+
+	{?if $indexrows[i].cname1 == ""?}
+    &nbsp;   
+    {?else?}
+	<li><a href="{?$indexrows[i].curl1?}">{?$indexrows[i].cname1?}</a></li>
+    {?/if?}
+	{?if $indexrows[i].cname2 == ""?}
+    &nbsp;   
+    {?else?}
+	<li><a href="{?$indexrows[i].curl2?}">{?$indexrows[i].cname2?}</a></li>
+    {?/if?}
+	{?if $indexrows[i].cname3 == ""?}
+    &nbsp;   
+    {?else?}
+	<li><a href="{?$indexrows[i].curl3?}">{?$indexrows[i].cname3?}</a></li>
+    {?/if?}
+	{?if $indexrows[i].cname4 == ""?}
+    &nbsp;   
+    {?else?}
+	<li><a href="{?$indexrows[i].curl4?}">{?$indexrows[i].cname4?}</a></li>
+    {?/if?}
+  {?/if?}
+  
+  {?/section?}
+  <div class="clear"></div>
+  </ul>
+	<script type="text/javascript" src="{?$jieqi_local_url?}/configs/article/indexbottom.js"></script>
+
+	</div>
+	
+</div>
+<link href="/themes/chaoliu/css/index.css" rel="stylesheet" />
+{?include file="themes/chaoliu/footer.html"?}

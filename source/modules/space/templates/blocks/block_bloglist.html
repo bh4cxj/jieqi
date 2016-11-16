@@ -1,0 +1,19 @@
+<style type="text/css">
+<!--
+.ul_space{ clear:both}
+.ul_space li{height:24px; border-bottom:1px dashed #CCCCCC; width:100%; color: #333333}
+.space_title{ float:left; width:300px; font-size:13px;line-height:24px; text-align:left}
+.space_title a{ float:left}
+.space_author { float:left;line-height:24px; overflow:hidden}
+-->
+</style>
+<ul class="ul_space">
+  {?section name=i loop=$blogs?}
+	<li>
+		<span class="space_title"><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$blogs[i].uid?}&id={?$blogs[i].id?}" target="_blank" style=" float:left">{?$blogs[i].title|truncate:40:".."?}</a>
+</span>	
+		<span class="space_author">作者:<a href="{?$jieqi_modules['space']['url']?}/archives.php?uid={?$blogs[i].uid?}" target="_blank">{?$blogs[i].name?}</a> | {?$blogs[i].review_num?}回应 | {?$blogs[i].hit_num?}点击 |  {?$blogs[i].up_time|date:m-d H:i:s?}</span>
+	</li>
+  {?/section?}
+</ul>
+<div class="more"><a href="{?$url_more?}">更多...</a></div>

@@ -1,0 +1,16 @@
+	<ul class="ulitem">
+	<img src="{? $gpic ?}">
+	<li>圈子名:{? $gname ?}</a></li>
+	<li>圈&nbsp;&nbsp;主:{? $guname ?}</a></li>
+	<li>创建日期:{? $gtime?}</li>
+	<li><a href="{?$jieqi_url?}/modules/group/mangroup.php">我的圈子</a></li>
+	{?if $showpower['setbasic']==1?}<li><a href="{?$jieqi_url?}/modules/group/man.php?g={? $gid ?}">基本设置</a></li>{?/if?}
+	{?if $showpower['setout']==1?}
+	<li><a href="{?$jieqi_url?}/modules/group/join.php?g={? $gid ?}&quite=1">申请退出</a></li>
+	{?else?}
+	<li><a href="{?$jieqi_url?}/modules/group/join.php?g={? $gid ?}">申请加入</a></li>
+	{?/if?}
+	{?if $jieqi_create_group==1?}<li><a href="{?$jieqi_url?}/modules/group/create.php">创建圈子</a></li>{?/if?}
+	</ul>
+
+

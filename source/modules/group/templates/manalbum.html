@@ -1,0 +1,93 @@
+<script language=JavaScript>
+function CheckAll(fmobj) {
+  for (var i=0;i<fmobj.elements.length;i++) {
+    var e = fmobj.elements[i];
+    if ( (e.name != 'checkall') && (e.type=='checkbox') && (!e.disabled) ) {
+      e.checked = fmobj.checkall.checked;
+    }
+  }
+}
+
+
+var flag=false;
+function down_image(ImgD){
+	var image=new Image();
+	image.src=ImgD.src;
+	if(image.width>0 && image.height>0){
+		flag=true;
+		if(image.width/image.height>= 120/80){
+			if(image.width>120){  
+				ImgD.width=120;
+				ImgD.height=(image.height*120)/image.width;
+			}else{
+				ImgD.width=image.width;  
+				ImgD.height=image.height;
+			}
+			ImgD.alt=image.width+"×"+image.height;
+		}
+		else{
+			if(image.height>80){  
+				ImgD.height=80;
+				ImgD.width=(image.width*80)/image.height;     
+			}else{
+				ImgD.width=image.width;  
+				ImgD.height=image.height;
+			}
+			ImgD.alt=image.width+"×"+image.height;
+		}
+	}
+	/*else{
+	  ImgD.src="";
+	  ImgD.alt=""
+	  }*/
+} 
+
+function intro_value(arg1,arg2){
+	var mark1 = arg1.lastIndexOf("\\");
+	if(mark1 >= 0  &&  mark1 < arg1.length){
+		document.getElementById(arg2).value = arg1.substring(mark1 + 1, arg1.length);
+	}
+}
+
+</script>
+<div class="g_main">
+<div class="g_center" >
+
+<table align="center" width="68%" cellpadding="0" cellspacing="1" class="grid">
+<tr class="title" align="center" ><td align="center"  colspan=3 >管理相册</td></tr>
+<form name="newparty" method="post" action="{? $post_action  ?}" enctype="multipart/form-data" onsubmit="return check_form()">
+
+	<tr vAlign=center align=center>
+		<td class=odd width="20%">删除</td>
+		<td class=odd width="20%"  maxlength="2">顺序</td>
+		<td class=odd  >相册名</td>
+	</tr>
+
+	{?section name=i loop=$albums ?}
+	<tr vAlign=center align=center>
+		<td class=odd width=""><input type="checkbox" name="delete[{? $albums[i].albumid ?}]" value="1" /></td>
+		<td class=odd width=""><input class="text" type="text" name="albumsorder[{? $albums[i].albumid ?}]" value="{? $albums[i].albumorder ?}" size=2 > </td>
+		<td class=odd width=""><input class="text" type="text" name="albumsname[{? $albums[i].albumid ?}]" value="{? $albums[i].albumname ?}" ></td>
+	</tr>
+	{?/section?}
+
+	<tr vAlign=center align=center>
+		<td class=odd >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---增加:</td>
+		<td class=odd><input class="text" type="text" name="albumorder" size=2 ></td>
+		<td class=odd><input class="text" name="newalbum" size="20"  /></td>
+		</td>
+	</tr>		
+
+	<tr vAlign=center align=center>
+		<td class=odd colspan=3 align="left"  >
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" id="checkall" name="checkall" value="checkall" onclick='CheckAll(this.form)'>全选
+		</td>
+	</tr>		
+	<tr><td class="odd" align="center" colspan=3><input class="button"  type="submit" value="提 交"></td></tr>
+<input type="hidden" name="action" value="action">
+</form>
+
+</table>
+</div>
+</div>

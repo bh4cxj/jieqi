@@ -1,0 +1,49 @@
+<form name="frmsearch" method="post" action="{?$url_obook?}">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50"> 
+            <input name="keytype" type="radio" class="radio" value="0" checked>书名
+            <input type="radio" name="keytype" class="radio" value="1">作者 
+			<input type="radio" name="keytype" class="radio" value="2">发表者
+			&nbsp;&nbsp;
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{?$obook_dynamic_url?}/admin/obookshare.php">全部电子书</a> | <a href="{?$obook_dynamic_url?}/admin/obookshare.php?display=self">本站电子书</a> | <a href="{?$obook_dynamic_url?}/admin/obookshare.php?display=share">已共享电子书</a> | <a href="{?$obook_dynamic_url?}/admin/obookshare.php?display=unshare">未共享电子书</a>
+        </td>
+    </tr>
+</table>
+</form>
+<br />
+<form action="{?$url_obook?}" method="post" name="checkform" id="checkform">
+<table class="grid" width="100%" align="center">
+<caption>{?$obooktitle?}</caption>
+  <tr align="center">
+    <th width="20%">电子书名称</th>
+    <th width="28%">最新章节</th>
+    <th width="8%">作者</th>
+    <th width="16%">总销售额</th>
+    <th width="8%">更新</th>
+	<th width="10%">状态</th>
+    <th width="10%">操作</th>
+  </tr>
+  {?section name=i loop=$obookrows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$obookrows[i].obookid?}" target="_blank">{?$obookrows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$obookrows[i].url_lastchapter?}" target="_blank">{?$obookrows[i].lastvolume?} {?$obookrows[i].lastchapter?}</a></td>
+    <td class="even">{?if $obookrows[i].authorid == 0?}{?$obookrows[i].author?}{?else?}<a href="{?function jieqi_geturl:'system':'user':$obookrows[i].authorid?}" target="_blank">{?$obookrows[i].author?}</a>{?/if?}</td>
+    <td class="odd" align="center">{?$obookrows[i].sumemoney?}{?if $jieqi_silverusage==1?}({?$obookrows[i].sumegold?}/{?$obookrows[i].sumesilver?}){?/if?}</td>
+    <td class="even" align="center">{?$obookrows[i].lastupdate?}</td>
+	<td class="odd" align="center">{?if $obookrows[i].state == 1?}已共享{?else?}未共享{?/if?}</td>
+    <td class="even" align="center">{?if $obookrows[i].state == 1?}<a href="{?$obook_dynamic_url?}/admin/obookshare.php?action=unshare&id={?$obookrows[i].obookid?}&display={?$display?}">取消共享</a>{?else?}<a href="{?$obook_dynamic_url?}/admin/obookshare.php?action=share&id={?$obookrows[i].obookid?}&display={?$display?}">设为共享</a>{?/if?}</td>
+  </tr>
+  {?/section?}
+</table>
+</form>
+<table width="100%"  border="0" cellspacing="2" cellpadding="3">
+  <tr>
+    <td width="12%" align="right"><!--<input type="submit" name="Submit" value="批量删除" class="button">
+                <input name="batchdel" type="hidden" value="1">--></td>
+    <td width="88%" align="right">{?$url_jumppage?}</td>
+  </tr>
+</table>
+

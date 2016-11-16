@@ -1,0 +1,27 @@
+<style  type="text/css">
+/*随笔*/
+.c_navigation{border-top: #ffffff 1px solid;border-left: #ffffff 1px solid;	border-bottom: #83b0e1 1px solid;font-weight: bold;font-size: 14px;background: #e0edff;color: #054e86; 
+	line-height: 26px;height:26px; padding-left: 10px;}
+.c_navigation span{ font-size:12px; font-weight:normal; color:#333333}
+.c_navigation .fr{ font-size:12px; font-weight:normal; margin-right:10px}
+.c_navigation .fr a{ color: #333333}
+
+.c_subject{ font-size:14px;}
+
+/*相册*/
+.c_img{ border-bottom:1p dashed #CCCCCC; clear:both; height:160px;}
+.c_img li{ float:left; margin:30px; text-align:center}
+</style>
+<div class="c_navigation">
+	<div class="fl">相册列表</div><div class="fr"> <a href="{? $upload_href ?}">上传新照片</a> | <a href="{? $manalbum_href?}">创建新相册</a></div>
+</div>
+<div class="c_subject">
+	{? section name=i loop=$albums columns=5?}
+	{?if $i['column'] == 1?}<ul class="c_img">{?/if?}
+	{?if $albums[i].albumname!=''?}
+   		<li><a href="{? $albums[i].photo_href ?}"><img src="{? $albums[i].lastphoto ?}" border="0" /></a><br>{? $albums[i].albumname?}</li>
+{?/if?}
+		{?if $i['column'] == $i['columns']?}</ul>{?/if?}
+	{? /section ?}
+</div>
+<div class="pages">{?$url_jumppage?}</div>

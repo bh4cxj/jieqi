@@ -1,0 +1,86 @@
+{?set jieqi_blocks_module = "article"?}
+{?set jieqi_blocks_config = "guideblocks"?}
+{?set $jieqi_pagetitle = "$articlename txt电子书下载_全本|全集_完全_ $author txt电子书"?}
+{?set $meta_keywords = "$articlename txt下载,$articlename 全集下载,$author 作品"?}
+<link rel="stylesheet" type="text/css" href="/52mb/css/info.css"/>
+
+<div class="txt_nav">您的位置：<a href="{?$jieqi_url?}">{?$jieqi_sitename?}</a>  &gt; <a href="/mulu/{?$sortid?}-1.html">{?$sort?}</a> &gt; <a href="/down/txt{?$articleid?}.html" title="{?$articlename?}txt下载">{?$articlename?}txt下载页</a></div>
+
+<div class="txt_top">
+
+	<div class="read_chapter">
+        <h3><a href="/0/1/" title="{?$articlename?}最新章节" target="_blank">最新30章在线阅读</a></h3>
+        <ul>
+            {?$last9?}
+        </ul>
+    </div>
+
+<div class="xiazai">
+	<div class="txt_info">
+    	<div class="cover_txt" >
+        
+
+        
+        
+        <a href="/down/txt{?$articleid?}.html" title="{?$articlename?}txt电子书免费下载"><img src="{?$url_simage?}" alt="{?$articlename?}" id="cover"></a>
+        <a href="/modules/article/txtarticle.php?id={?$articleid?}" target="_blank"><img src="/52mb/css/down.gif" title="{?$articlename?}txt下载地址"></a>
+        </div>
+
+		<div class="show_num">
+        	<h1><a href="{?$url_read|str_replace:"index.html":""?}" title="{?$articlename?}全本txt免费下载">{?$articlename?}</a> / 文:{?$author?}</h1>
+            <ul>
+                <li>txt类型：<a href="/mulu/{?$sortid?}-1.html">{?$sort?}</a></li>
+                <li>已完成字数：{?$size_c?}</li>
+               <!-- <li>txt大小：5779k</li>
+                <li>今日下载：16</li>
+                <li>本周下载：30</li>
+                <li>本月下载：329</li>
+                <li>总下载数：347</li>-->
+                <li>今日推荐：{?$dayvote?}</li>
+                <li>本周推荐：{?$weekvote?}</li>
+                <li>本月推荐：{?$monthvote?}</li>
+                <li>总推荐数：{?$allvote?}</li>
+                <!--<li>章节总数：752</li>-->
+			</ul>
+        <div class="update">更新时间：{?$lastupdate?}</div>
+
+<div class="system">适合系统：win8/win7/vista/win2003/winxp/Android/iOS</div>
+
+<div class="intro"><h3>《{?$articlename?}》简介:</h3><p>{?$intro?}</p></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="txt_vote">
+	<!--广告位-->
+</div>
+
+<div class="xiazaitishi">
+	<p>1、<strong>下载{?$articlename?}txt</strong>可以使用迅雷地址、快车下载、旋风下载等下载工具！</p>
+    <p>2、可以用手机浏览器应用"二维码"扫描右边<a href="/down/txt{?$articleid?}.html"><strong>{?$articlename?}txt下载</strong></a>地址。</p>
+    <p>3、推荐使用手机浏览器（百度、QQ、UC、360等）自带的"<strong style="font-weight:bold;color:red">保存至网盘</strong>"功能，速度快且<strong style="font-weight:bold;color:green">不要手机流量</strong>。</p>
+    <p>4、用百度网盘、华为网盘等的离线下载技术，直接输入txt下载的地址就可以实现离线下载！</p>
+    <p>5、如果出现不能下载的情况，请告诉我们，我们会尽快修复txt下载地址。</p>
+    </div>
+
+</div>
+
+
+<div class="good_xiaoshuo"><h2>猜你喜欢</h2>
+	<div class="imgitems">
+		
+       
+	{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="allvote,7,class,0,0,0" template="52mb_info_allvote.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+
+</div>
+
+<ul class="book_top_list">
+{?block bid="0" module="article" filename="block_articlelist" classname="BlockArticleArticlelist" side="0" title="" vars="allvote,35,class,0,0,0" template="52mb_info_allvote_2.html" contenttype="2" custom="0" publish="3" hasvars="1"?}
+</ul
+></div>
+
+
+

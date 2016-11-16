@@ -1,0 +1,87 @@
+{?set jieqi_blocks_module = "system"?}
+{?set jieqi_blocks_config = "userblocks"?}
+
+
+
+<link rel="stylesheet" type="text/css" href="/52mb/css/userinfo.css"/>
+
+
+<div class="main"><div class="user_info"><h3>用户信息</h3><ul class="ulitem">
+<li><a href="/userdetail.php">用户资料</a></li>
+<li><a href="/useredit.php">修改资料</a></li>
+<li><a href="/setavatar.php">设置头像</a></li>
+<li><a href="/passedit.php">修改密码</a></li>
+<li><a href="/logout.php">退出登录</a></li>
+</ul><ul class="ulitem">
+<li><a href="/message.php?box=inbox">收件箱</a></li>
+<li><a href="/message.php?box=outbox">发件箱</a></li>
+<li><a href="/newmessage.php">写新消息</a></li>
+<li><a href="/newmessage.php?tosys=1">写给管理员</a></li>
+</ul><ul class="ulitem">
+<li><a href="/myfriends.php">我的好友</a></li>
+<li><a href="/ptopics.php?uid=self">我的会客室</a></li>
+<li><a href="/mylink.php">我的链接</a></li>
+
+<li><a href="/modules/article/bookcase.php">我的书架</a></li>
+
+<li><a href="/modules/article/applywriter.php">申请作者</a></li>
+
+<li><a href="/online.php">在线用户</a></li>
+</ul>
+</div>
+
+<div class="bookcase">
+
+<script type="text/javascript">
+<!--
+function frmnewmessage_validate(){
+  if(typeof(document.frmnewmessage.receiver) != "undefined"){
+    if(document.frmnewmessage.receiver.value == "" ){
+      alert("请输入收件人");
+	  document.frmnewmessage.receiver.focus();
+	  return false;
+    }
+  }
+  if(document.frmnewmessage.title.value == ""){
+    alert("请输入标题");
+	window.document.frmnewmessage.title.focus();
+	return false;
+  }
+}
+//-->
+</script>
+<form name="frmnewmessage" id="frmnewmessage" action="{?$jieqi_url?}/newmessage.php?do=submit" method="post" onsubmit="return frmnewmessage_validate();">
+<table width="580" class="" cellspacing="1" align="center">
+<caption>写新消息</caption>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">收件人</td>
+  <td class="even">
+  {?if $tosys > 0?}
+  网站管理员<input type="hidden" name="tosys" id="tosys" value="{?$tosys?}" />
+  {?else?}
+  <input type="text" class="text" name="receiver" id="receiver" size="30" maxlength="30" value="{?$receiver?}" />
+  {?/if?}
+  </td>
+</tr>
+  <tr valign="middle" align="left"><td class="odd" width="25%">标题</td>
+  <td class="even"><input type="text" class="text" name="title" id="title" size="30" maxlength="100" value="{?$title?}" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">内容</td>
+  <td class="even"><textarea class="textarea" name="content" id="content" rows="12" cols="60">{?$content?}</textarea></td>
+</tr>
+{?if $needscore == 1?}
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">提示</td>
+  <td class="even"><span class="hottext">您已经超出每天发送 {?$maxdaymsg?} 条消息的限制，如要继续发送，将消耗您的积分 {?$sendmsgscore?} 点</span></td>
+</tr>
+{?/if?}
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">&nbsp;</td>
+  <td class="even"><input type="submit" class="button" name="submit"  id="submit" value="发 送" /><input type="hidden" name="action" id="action" value="newmessage" /></td>
+</tr>
+</table>
+</form>
+
+</div>
+</div>

@@ -1,0 +1,7 @@
+<ul class="ulrow">
+  {? section name=i loop=$blog_cats ?}
+  <li>
+       <a href="{? $jieqi_modules['space']['url'] ?}/blog.php?uid={?$uid?}&cat_id={? $blog_cats[i].id ?}">{? $blog_cats[i].name ?}</a>({? $blog_cats[i].num ?})
+  </li>
+  {? /section ?}
+</ul>

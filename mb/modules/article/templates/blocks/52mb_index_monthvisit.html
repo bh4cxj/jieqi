@@ -1,0 +1,3 @@
+{?section name=i loop=$articlerows?}
+<li><a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}" target="_blank">{?$articlerows[i].articlename?}</a></li>
+{?/section?}

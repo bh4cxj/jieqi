@@ -1,0 +1,74 @@
+body{
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-family: 宋体, 新细明体, Verdana, Arial, sans-serif;
+  font-size: 14px;
+}
+
+form{
+  margin: 0;
+  padding: 0;
+}
+
+table{
+  text-align: left;
+}
+
+table td{
+  border-width: 0; 
+  font-family: 宋体, 新细明体, Verdana, Arial, sans-serif;
+  font-size: 14px;
+}
+
+a{
+  color: #3D5A83; 
+  text-decoration: none; 
+  background-color: transparent;
+}
+
+a:hover{
+  color: #FF6000;
+}
+
+hr{
+  height: 1px;
+}
+
+#title{
+    text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 200%;
+}
+
+#chaptercontent{
+  font-family: 宋体, 新细明体, Verdana, Arial, sans-serif;
+  font-size: 16px;
+  line-height:150%;
+  text-align:left;
+}
+
+#info{
+    text-align: center;
+	line-height: 200%;
+}
+
+.acss{
+    width: 90%;
+    text-align: left;
+	background: #000000; 
+}
+
+.vcss{
+	font-size: 16px;
+    background: #e4e1d8; 
+    text-align: center;
+}
+
+.ccss{
+    font-size: 14px;
+    background: #f0f0f0; 
+    width: 25%;
+	text-align: leftr;
+}

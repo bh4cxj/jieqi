@@ -1,0 +1,38 @@
+<div style="clear:both">{? $query_href ?}</div>
+<div style="clear:both; width:100%;">
+{? section name=i loop=$members ?}
+<div style="border:1px solid #A9C9E2; width:365px; float:left; padding:4px; margin:5px 3px;cursor:pointer; overflow:hidden;" onmouseover="this.style.background='#f6fdff'" onmouseout="this.style.background=''">
+	<div style="float:left; margin-right:10px; width:120px">
+		<ul>
+			<li>
+			{?if $members[i].avatar > 0?}
+			<img src="{?$members[i].avatarurl?}" border="0" alt="头像">{?else?}
+			<img src="{?$jieqi_url?}/images/noavatar.jpg" border="0" alt="头像" >{?/if?}
+			</li>
+		</ul>
+	</div>
+	<div style="width:230px; float:left;">
+		<ul>
+			<li>用户名：<strong>{?$members[i].username?}</strong>  用户组：{?$members[i].groupname?}</li>
+			<li>头衔：{?$members[i].honor?} / {? $members[i].membergtitle ?} </li>
+			<li>经验值：{?$members[i].experience?}</li>
+			<li> 积分：{?$members[i].score?}</li>
+			<li>注册日期：{?$members[i].regdate|date:"Y-m-d"?}</li>
+			<li> 加入时间：{? $members[i].mtime ?}</li>
+		</ul>
+	</div>
+	
+	<div style="clear:left; height:40px;overflow:hidden; width:365px ">
+		<ul>
+		<li style="margin-right:10px; width:120px; float:left;overflow:hidden; ">
+			{?if $jieqi_use_badge == 1?}
+				{?section name=j loop=$members[$i['key']]['badgerows']?}<img src="{?$members[$i['key']]['badgerows'][$j['key']]['imageurl']?}" border="0" alt="{?$members[$i['key']]['badgerows'][$j['key']]['caption']?}">{?/section?}
+		{?/if?}
+	</li>
+	<li style="width:230px; float:left; padding-top:5px">{? $members[i].man_href  ?}	</li>
+	</ul>
+	</div>
+</div>	
+{? /section ?}
+</div>
+<div class="pages">{? $jumppage ?}</div> 

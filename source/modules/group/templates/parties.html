@@ -1,0 +1,206 @@
+<script langueage="javascript">
+
+
+function check_form(){
+	if(document.newparty.ptitle.value == ""){
+		alert("活动标题不能空");
+		return false;
+	}
+	
+	if(document.newparty.pcontent.value == ""){
+		alert("活动内容为空");	
+	}
+}
+
+
+window.onload = function(){
+	var d_start = new Date();
+	var d_stop  = new Date();
+	d_stop.setDate(d_stop.getDate()+7 );
+        document.getElementById("year1").value=d_start.getFullYear();
+        document.getElementById("month1").value = d_start.getMonth()+1;
+        document.getElementById("day1").value = d_start.getDate();
+	document.getElementById("hour1").value= d_start.getHours();
+	document.getElementById("minute1").value = d_start.getMinutes(); 
+        document.getElementById("year2").value = d_stop.getFullYear();
+	document.getElementById("month2").value = d_stop.getMonth()+1;
+	document.getElementById("day2").value =  d_stop.getDate();
+        document.getElementById("hour2").value = d_stop.getHours();
+        document.getElementById("minute2").value= d_stop.getMinutes();
+}
+
+//is numeric ?
+function is_numeric(t_text)
+{
+        var valid_chars = "0123456789";
+        var res=true;
+        var char;
+
+        for (i = 0; i < t_text.length && res == true; i++)
+        {
+                char = t_text.charAt(i);
+                if (valid_chars.indexOf(char) == -1)
+                {
+                        res = false;
+                }
+        }
+        return res;
+}
+
+
+//is right month ?
+function check_mon(t_text,mid){
+        if(is_numeric(t_text) == true && t_text > 0 && t_text < 13){
+                return true;
+        }else{
+                alert('月份不合法');
+                document.getElementById(mid).focus();
+                return false;
+        }
+}
+
+//is right  year?
+function check_year(t_year,yid){
+        if( is_numeric(t_year) == true && t_year>1970 && t_year < 2050){
+                return true;
+        }else{
+                alert('年份不合法');
+                document.getElementById(yid).focus();
+                return false;
+        } 
+}
+
+//is right day ?
+function check_day(t_day,did){
+        if(is_numeric(t_day) == true && t_day >0 && t_day <32 ){
+                return true;
+        }else{
+                alert("日期不合法");
+                document.getElementById(did).focus();
+                return false;
+        }
+}
+
+//is right hour ?
+function check_hour(t_hour,hid){
+        if(is_numeric(t_hour) == true && t_hour > -1 && t_hour < 25 ){
+                return true;
+        }else{
+                alert('时间格式不合法');
+                document.getElementById(hid).focus();
+                return false;
+        }
+}
+
+
+//is right minute?
+function check_min(t_min,mid){
+        if(is_numeric(t_min) == true && t_min >-1 && t_min <61 ){
+                return true;
+        }else{
+                alert('分钟格式不合法');
+                document.getElementById(mid).focus();
+                return false;
+        }
+}
+
+</script>
+
+<div class="g_main">
+<div class="g_center">
+
+<div class="gridtop">
+<h4>共有{? $count  ?}个活动主题</h4>
+</div>
+
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+	<tr align='center'>
+		<td align="left"  class="head">活动主题</td>
+		<td width=25% class="head">开始报名&nbsp;&nbsp;|&nbsp;&nbsp;停止报名</td>
+		<td width=10% class="head">人数/限制</td>
+		<td width=5% class="head">回复</td>
+		<td width=10% class="head">发起人</td>
+		<td width=10% class="head">报名</td>
+	</tr>
+
+        {?section name=i loop=$parties ?}
+	<tr align='center'>
+		<td align="left" class="odd">{? $parties[i].ptop ?}{? $parties[i].ptitle ?}</td>	
+		<td class="even">{? $parties[i].pstart ?}|{? $parties[i].pstop ?}</td>	
+		<td class="odd">{? $parties[i].pnums ?}/{? $parties[i].pmaxnums?}</td>	
+		<td class="even">{? $parties[i].replies?}</td>	
+		<td class="odd">{? $parties[i].uname?}</td>	
+		<td class="even"><a href="{? $parties[i].sign_href ?}">报名</a></td>	
+	</tr> 
+	{?/section?}
+
+	<tr>
+		<td  align="right"  colspan=6 class="even">{? $jumppage  ?}</td>
+	</tr>
+</table>
+
+<br />
+
+<div class="gridtop">发起活动</div>
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+<form name="newparty" method="post" action="" enctype="multipart/form-data" onsubmit="return check_form()">
+<input type='hidden' name='gid' value={? $gid ?} >
+<input type='hidden' namne='gname' value={? $gname ?}>
+	<tr>
+		<td class="odd" width="15%" >活动标题:</td>
+		<td class="odd">
+			<input name="ptitle" type="text" class="text" value="" size="62" >
+		</td>
+	</tr>
+	<tr>
+		<td class="odd">活动说明:</td>
+		<td class="odd"><textarea name="pcontent" cols="60" rows="10"></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="odd">活动地点:</td>	
+		<td class="odd"><input size=70 type="text" class="text" name="pplace"></td>
+	</tr>
+	<tr>
+		<td class="odd">开始报名:</td>
+		<td class="odd">
+			<input size=4 type="text" name="year1" id="year1" class="text" onblur="check_year(this.value,this.id);" > 
+			年
+			<input size=2 type="text" name="month1" id="month1" class="text" onblur="check_mon(this.value,this.id);" > 
+			月
+			<input size=2 type="text" name="day1" id="day1" class="text" onblur="check_day(this.value,this.id);" > 
+			日
+			<input size=2 type="text" name="hour1" id="hour1" class="text" onblur="check_hour(this.value,this.id);" > 
+			时
+			<input size=2 type="text" name="minute1" id="minute1" class="text" onblur="check_min(this.value,this.id);" > 
+			分
+		</td>
+	</tr>
+
+	<tr>
+		<td class="odd">结束报名:</td>	
+		<td class="odd">
+			<input size=4 type="text" name="year2" id="year2" class="text" onblur="check_year(this.value,this.id);" > 
+			年	
+			<input size=2 type="text" name="month2" id="month2" class="text" onblur="check_mon(this.value,this.id);" > 
+			月
+			<input size=2 type="text" name="day2" id="day2" class="text" onblur="check_day(this.value,this.id);" > 
+			日
+			<input size=2 type="text" name="hour2" id="hour2" class="text" onblur="check_hour(this.value,this.id);" > 
+			时
+			<input size=2 type="text" name="minute2" id="minute2" class="text" onblur="check_min(this.value,this.id);" > 
+			分
+		</td>	
+	</tr>
+
+	<tr>
+		<td class="odd">人数限制:</td>
+		<td class="odd"><input size="4"  type="text" name="pmaxnums" class="text" value="20" onblur="if(!is_numeric(this.value) ) alert('请输入数字');"></td>
+	</tr>
+	
+	<tr><td class="odd" align="center" colspan=2><input class="button" type="submit" value="提 交"></td></tr>
+</form>
+</table>
+
+</div>
+</div>

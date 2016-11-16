@@ -1,0 +1,5 @@
+{?section name=i loop=$articlerows?}
+
+<li><span>{?$articlerows[i].allvote?}</span><em class="stress">{?$i['row']?}.</em><a href="{?$articlerows[i].url_articleinfo?}">{?$articlerows[i].articlename?}</a></li>
+
+{?/section?}

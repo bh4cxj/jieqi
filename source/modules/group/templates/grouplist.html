@@ -1,0 +1,18 @@
+<table class="grid" width="100%" align="center">
+<caption>所有圈子</caption>
+  <tr align="center">
+    <th width="20%">圈子名</td>
+	<th width="25%">圈子分类</td>
+    <th width="25%">创建者</td>
+    <th width="20%">话题数/会员数</td>
+  </tr>
+  {?section name=i loop=$grouprows?}
+	<tr>
+		<td class="odd"><a href="{?$jieqi_modules['group']['url']?}/?g={? $grouprows[i].gid ?}">{? $grouprows[i].gname ?}</a></td>
+		<td class="odd">{? $grouprows[i].catname ?} </td>
+		<td class="even"><a href="{?$jieqi_url?}/userinfo.php?id=2" target="_blank">{? $grouprows[i].guname ?}</a> </td>
+		<td class="odd">{? $grouprows[i].topicnum ?}/{? $grouprows[i].gmembers ?}</td>
+	</tr>
+  {?/section?}
+</table>
+{?$url_jumppage?}

@@ -1,0 +1,6 @@
+<ul class="ultop">
+{?section name=i loop=$quizarry?}
+  <li><a href="{?$linkurl?}/type_list.php?type={?$quizarry[i].typeid|urlencode?}"> [{?$quizarry[i].typeid ?}] </a><a href="{?$linkurl?}/problems.php?id={?$quizarry[i].quizid?}">{?$quizarry[i].title ?}</a> {?$quizarry[i].addtime |date:"Y-m-d H:i"?}</li>
+{?/section?}
+</ul>
+<div class="more"><a href="{?$url_more?}">¸ü¶à...</a></div> 

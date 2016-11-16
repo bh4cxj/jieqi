@@ -1,0 +1,13 @@
+{?section name=i loop=$articlerows?}
+<li>
+	<a href="{?$articlerows[i].url_articleinfo?}" target="_blank">
+		<img src="{?$articlerows[i].url_image?}"  width="91" height="122" title="{?$articlerows[i].articlename?}" alt="{?$articlerows[i].articlename?}">
+	</a>
+	<div class="rxwb_txt">
+	<p class="rxwb_txt_title"><a href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}">{?$articlerows[i].articlename?}</a></p>
+	<p class="rxwb_txt_con">{?$articlerows[i].intro|truncate:80:'..'?}</p>
+	<p class="dianji"><A href="{?$articlerows[i].url_articleinfo?}">µã»÷ÔÄ¶Á>></a></p>
+	</div>
+	<div class="clear"></div>
+</li>  
+{?/section?}

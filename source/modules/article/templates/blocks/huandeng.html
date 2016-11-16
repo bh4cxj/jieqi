@@ -1,0 +1,7 @@
+{?section name=i loop=$articlerows?}
+<div class="event-item" style="display: block;">
+    <a target="_blank" href="{?$articlerows[i].url_articleinfo?}" class="banner">
+        <img src="{?$articlerows[i].url_image?}" class="photo" style="width: 508px; height: 220px;" alt="{?$articlerows[i].articlename?}" />
+    </a>
+</div>
+{?/section?}

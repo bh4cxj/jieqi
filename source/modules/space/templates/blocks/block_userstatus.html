@@ -1,0 +1,15 @@
+<ul class="ulrow">
+  <li>用户名：{?$jieqi_username?}</li>
+  <li>等　级：{?$jieqi_groupname?}</li>
+  <li>头  衔：{?$jieqi_honor?}</li>
+  {?if $jieqi_avatar > 0?}<li><img src="{?$jieqi_avatarurl?}" border="0" alt="我的头像"></li>{?/if?}
+  {?if $jieqi_use_badge == 1?}
+  <li>{?if $jieqi_group_imageurl != ""?}<img src="{?$jieqi_group_imageurl?}" border="0" alt="{?$jieqi_groupname?}">{?/if?}{?if $jieqi_honor_imageurl != ""?}<img src="{?$jieqi_honor_imageurl?}" border="0" alt="{?$jieqi_honor?}">{?/if?}</li>
+  <li>
+  {?section name=i loop=$jieqi_badgerows?}<img src="{?$jieqi_badgerows[i].imageurl?}" border="0" alt="{?$jieqi_badgerows[i].caption?}">{?/section?}
+  </li>
+  {?/if?}
+  <li>
+  <input type="button"  value="查看我的空间" onclick="document.location.href='{? $jieqiModules[space]['url'] ?}?uid={? $uid ?}' " /> 
+  </li>
+</ul>

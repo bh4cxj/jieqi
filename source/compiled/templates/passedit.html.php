@@ -1,0 +1,110 @@
+<?php
+$GLOBALS['jieqiTset']['jieqi_blocks_module'] = 'system';
+echo '
+<link href="/css/nt.css" rel="stylesheet" type="text/css" />
+<!--正文部份-->
+	<div class="homecon">
+		<div class="homedh">
+			<div class="hometit1">
+				<ul>
+					<li class="homesy"><a href="/userdetail.php" class="size14">用户中心</a></li>
+					<li class="homesy2"><a target="_blank" href="/modules/article/applywriter.php"
+						class="size14">申请作者</a></li>
+				</ul>
+			</div>
+			<div class="cl">
+			</div>
+			<div>
+			</div>
+		</div>
+		<div class="homedown">
+			<!--会员左边-->
+			<div class="homeDL">
+	<div class="photo">
+		<div class="photo_pic">
+			<div>
+				<a href="touxiang.aspx">
+					<img style="width: 80px; height: 80px; border: 1px solid #ccc;" id="imagesrc" src="'.jieqi_geturl('system','avatar',$this->_tpl_vars['uid'],'l',$this->_tpl_vars['avatar']).'" /></a>
+			</div>
+			<div class="photo_name">'.$this->_tpl_vars['uname'].'
+			</div>
+		</div>
+	</div>
+	<div class="homeleft_dh">
+		<ul>
+			<li class="myaccount"><a href="/userdetail.php" title="账户">账户</a></li>
+			<li class="myaccount" style="background-position: 0px -705px;"><a href="/setavatar.php"
+				title="头像">头像</a></li>
+			<li class="mybookcase"><a href="/modules/article/bookcase.php" title="书架">书架</a></li>
+			<li class="mymsg"><a href="/message.php?box=inbox" title="消息">消息</a></li>
+			<li class="myfootmark"><a href="/ptopics.php?uid=self" title="会客">会客</a></li>
+			<li class="myhelp"><a target="_blank" href="/modules/forum/" title="交流">交流</a></li>
+			<li class="zuxiao"><a href="/logout.php" title="注销">注销</a></li>
+		</ul>
+	</div>
+</div>
+
+			<!--会员左边结束-->
+			<div class="homeDR">
+            <div class="homezhdh">
+					<ul>
+						<li><a href="/userdetail.php">个人中心</a></li><li><a href="/passedit.php">修改密码</a></li><li><a href="/useredit.php">修改资料</a></li>
+					</ul>
+				</div>
+				<div class="homeDRcon">
+					<div class="myinformation">
+<script language="javascript" type="text/javascript">
+<!--
+function frmpassedit_validate(){
+  if (document.frmpassedit.oldpass.value == ""){
+    alert( "请输入原密码！" );
+	document.frmpassedit.oldpass.focus();
+	return false;
+  }
+  if(document.frmpassedit.newpass.value == ""){
+    alert( "请输入新密码！" );
+	document.frmpassedit.newpass.focus();
+	return false;
+  }
+  if (document.frmpassedit.repass.value != document.frmpassedit.newpass.value){
+    alert( "两次新密码输入不同，请重新输入！" );
+	document.frmpassedit.repass.focus();
+	return false;
+  }
+}
+//-->
+</script>
+<form name="frmpassedit" id="frmpassedit" action="'.$this->_tpl_vars['url_passedit'].'" method="post" onsubmit="return frmpassedit_validate();">
+<table width="580" class="grid" cellspacing="1" align="center">
+<caption>用户密码修改</caption>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">用户名</td>
+  <td class="even">admin</td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">原密码</td>
+  <td class="even"><input type="password" class="text" name="oldpass" id="oldpass" size="25" maxlength="20" value="" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">新密码</td>
+  <td class="even"><input type="password" class="text" name="newpass" id="newpass" size="25" maxlength="20" value="" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">重复新密码</td>
+  <td class="even"><input type="password" class="text" name="repass" id="repass" size="25" maxlength="20" value="" /></td>
+</tr>
+<tr valign="middle" align="left">
+  <td class="odd" width="25%">&nbsp;<input type="hidden" name="action" id="action" value="update" /></td>
+  <td class="even"><input type="submit" class="button" name="submit"  id="submit" value="保 存" /></td>
+</tr>
+</table>
+</form>
+					</div>
+				</div>
+			</div>
+			<div class="cl">
+			</div>
+		</div>
+	</div>
+';
+?>

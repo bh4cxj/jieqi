@@ -1,0 +1,132 @@
+<script language="javascript" src="{? $provincejs_href ?}" ></script>
+<script language="javascript">
+function check_form(){
+	if(document.basicform.gname.value == ''){
+		alert("圈子名不能为空");
+		document.basicform.gname.focus();
+		return false;
+	} 
+
+	if (document.basicform.province.selectedIndex == '')
+	{
+		alert('请选择省份');
+		document.basicform.province.focus();
+		return false;
+	}
+
+	if (document.basicform.city.selectedIndex  == '')
+	{
+		alert('请选择地区');
+		document.basicform.city.focus();
+		return false;
+	}
+
+	if(document.basicform.gbrief.value == ''){
+		alert("请填写圈子简介");
+		document.basicform.gbrief.focus();
+		return false;
+	}
+	return true;
+}
+
+//创建http_request
+function create_http_request(){
+	http_request = false;
+	//开始初始化XMLHttpRequest对象
+	if(window.XMLHttpRequest) { //Mozilla 浏览器
+		http_request = new XMLHttpRequest();
+		if (http_request.overrideMimeType) {//设置MiME类别
+			http_request.overrideMimeType('text/xml');
+		}
+	}else if (window.ActiveXObject) { // IE浏览器
+		try {
+			http_request = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try {
+				http_request = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e) {}
+		}
+	}
+	if (!http_request) { // 异常，创建对象实例失败
+		window.alert("不能创建XMLHttpRequest对象实例.");
+		　return false;
+	}else{
+		return http_request;
+	}
+
+}
+
+
+
+//检测圈子名所用到的函数
+function checkgname(obj){
+	//调用ajax函数,向服务器端发送查询
+	selectgname(obj.value); 
+}
+
+function selectgname(data){  
+	xmlhttp = create_http_request();
+	xmlhttp.open("get","selectgname.php?gname="+data);
+	xmlhttp.send(null);
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState == 4){
+			if (xmlhttp.status == 200 ){
+				document.getElementById("gnameTxt").innerHTML=xmlhttp.responseText;
+			}else{
+				alert("发生错误!");
+			}
+		}else{
+			//In mozilla and IE7 .........
+			//alert(xmlhttp.readyState); 
+		}
+	}
+}
+</script>
+
+
+<table class="grid" width="100%" cellspacing=1>
+<caption>创建圈子</caption>
+<form name="basicform" method="post" action="" enctype="multipart/form-data" onsubmit="return check_form()">
+<tr>
+<td class="odd" width="15%" >圈子名称:</td>
+<td class="odd">
+<table>
+<tr>
+<td><input class="text" type="text" name="gname"  onblur="checkgname(this)" ></td>
+<td><div id="gnameTxt"></div></td>
+</tr>
+</table>			
+</td>
+</tr>
+<tr>
+<td class="odd">圈子类别:</td>
+<td class="odd">
+<select name='gcatid' id='gcatname'>
+  {?section name=i loop=$gcatsarr?}
+  <option value="{?$gcatsarr[i]['id']?}">{?$gcatsarr[i]['name']?}</option>
+  {?/section?}
+</select>
+</td>
+</tr>
+
+<tr>
+<td class="odd">加入权限:</td>
+<td class="odd"><input name="gaudit" type="radio" value="1" checked>需审核方可加入
+<input name="gaudit" type="radio" value="0">无需审核直接加入
+</td>
+</tr>
+<tr>
+<td class="odd">圈子说明:</td>
+<td class="odd"><textarea name="gbrief" cols="60" rows="10"></textarea></td>
+</tr>
+<tr><td class="odd" colspan=2>
+<p align="center">使用协议</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;用户不得建立包含破坏宪法和法律、破坏民族团结、捏造或者歪曲事实、宣扬封建迷信、淫秽、色情，及其他违反宪法和法律行政法规的圈子，否则不但该圈子将被删除，而且您在圈网的人际关系网络以及相关的留言图片乃至帐户都将被删除。用户因为违反规定而触犯中华人民共和国法律的，责任自负，本站不承担任何责任。 请大家一起努力维护圈网一个健康阳光的空间! </p>
+<br />
+</td>
+</tr>
+<tr><td class="odd" align="center" colspan=2><input type="submit" value="同意协议　提交表单"></td></tr></form>
+</table>
+
+
+

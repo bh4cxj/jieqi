@@ -1,0 +1,82 @@
+<script language="javascript">
+function CheckAll(fmobj) {
+  for (var i=0;i<fmobj.elements.length;i++) {
+    var e = fmobj.elements[i];
+    if ( (e.name != 'checkall') && (e.type=='checkbox') && (!e.disabled) ) {
+      e.checked = fmobj.checkall.checked;
+    }
+  }
+}
+</script>
+<div class="g_main">
+<div class="g_center">
+	<div class="gridtop">{? $ptitle ?}</div>
+<br />
+
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+	<tr>
+		<td class="even">活动简介:</td>
+		<td class="even">{? $pcontent ?}</td>
+	</tr>
+	<tr>
+		<td class="even">参加人数:</td>
+		<td class="even">{? $pnums ?}/{? $pmaxnums ?}</td>
+	</tr>
+	<tr>
+		<td class="even">活动地点:</td>
+		<td class="even">{? $pplace ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">发起人:</td>
+		<td class="even">{? $puname ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">开始报名:</td>
+		<td class="even">{? $pstart ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">截止报名:</td>
+		<td class="even">{? $pstop ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">发起时间:</td>
+		<td class="even">{? $ptime ?}</td>
+	</tr>	
+</table>
+<br />
+
+<div class="gridtop">
+已经报名人数:{? $pnums ?}&nbsp;
+通过的人数:{? $passnums ?}
+</div>
+
+<br />
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+<form name="newparty" method="post" action="" enctype="multipart/form-data" >
+<tr>   
+	<td class="even" width="35%">报名者</td>
+	<td class="even" width="30%">报名时间</td>
+	<td class="even" width="10%">人数</td>
+	<td class="even" width="10%">状态</td>
+	<td class="even" >管理</td>
+</tr>	
+
+{? section name=i loop=$signs ?}
+<tr>
+	<td class="even">{? $signs[i].uname  ?}</td>
+	<td class="even">{? $signs[i].signtime  ?}</td>
+	<td class="even">{? $signs[i].nums  ?}</td>
+	<td class="even">{? if $signs[i].signflag>0 ?}巳审核{?else?}未审核{?/if?}</td>
+	<td class="even"><input type="checkbox" name="mansigns[{? $signs[i].signid ?}]" value="{? $signs[i].signid ?}" /></td>
+</tr>	
+{? /section ?}
+
+<tr>
+ 	<td class="even" colspan=4 align="center" ><input calss="button" type="reset" value="重置" >&nbsp;&nbsp;<input calss="button" type="submit" name="passbu" value="通过">&nbsp;&nbsp;<input calss="button" type="submit" name="deletebu" value="删除">  </td>
+	<td class=odd > <input type="checkbox" name="checkall" onclick=CheckAll(this.form)>全选</td>
+</tr>
+
+</form>
+</table>
+</div>
+</div>

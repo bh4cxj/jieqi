@@ -1,0 +1,3 @@
+{?section name=i loop=$articlerows?}
+<li>	<div class="tlzp_l">	    <img src="{?$articlerows[i].url_image?}" alt='{?$articlerows[i].articlename?}' width=45 height=60 />	</div>	<div class="tlzp_r">		<h3 ><a href='{?$articlerows[i].url_articleinfo?}' target='_blank' style='color:rgb(85, 121, 83)' >{?$articlerows[i].articlename?}</a></h3>		<p>作者：{?$articlerows[i].author?}</p>		<p>类别：{?$articlerows[i].sort?}</p>	</div>	<div class="clear"></div></li>
+{?/section?}

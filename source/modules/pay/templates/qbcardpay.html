@@ -1,0 +1,48 @@
+<table class="grid" width="600" align="center">
+  <caption>QQ币卡支付在线支付</caption>
+  <tr>
+    <td class="even"><form name="frmbank" method="post" action="{?$jieqi_modules['pay']['url']?}/qbcard.php">
+      <table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%">&nbsp;</td>
+          <td width="44%" valign="middle"><table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="left">请选择购买类别</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="3850" class="radio">
+            3850点{?$egoldname?}（60元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="1900" class="radio">
+            1900点{?$egoldname?}（30元）</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="egold" value="930" class="radio">
+            930点{?$egoldname?}（15元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="600" class="radio">
+            600点{?$egoldname?}（10元）</td>
+              </tr>
+              <tr>
+                <td>
+				<input type="hidden" name="paytype" value="r">
+				<input type="hidden" name="action" value="bankpay">
+				<input type="submit" name="Submit" value="进入下一步" class="button" >
+                </td>
+              </tr>			  
+          </table></td>
+          <td width="4%" valign="top">&nbsp;</td>
+          <td width="48%" valign="top">操作说明：<br />
+              <br />
+&nbsp;&nbsp;&nbsp;&nbsp;1、使用QQ币卡支付支付必须在www.15173.com或者www.15173.net网站上实现支付，请确定网址正确，否则请终止支付，以免造成损失。
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;2、请选择您要购买的类别。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;3、支付时您在我们网站上选择的类别的金额必须和15173网站上所选择的金额以及实际卡的面值必须一致，否则将支付不成功。</td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+</table>
+<br /><br />

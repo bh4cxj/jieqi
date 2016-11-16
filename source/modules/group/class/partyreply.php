@@ -1,0 +1,38 @@
+<?php
+// $Id: forumcat.php 2004-03-04 $
+//  ------------------------------------------------------------------------ 
+//                                ½ÜÆæÍøÂç                                     
+//                    Copyright (c) 2004 jieqi.com                         
+//                       <http://www.jieqi.com/>                           
+//  ------------------------------------------------------------------------
+//  Éè¼Æ£ºÐì·ç(juny)
+//  ÓÊÏä: 377653@qq.com
+//  ------------------------------------------------------------------------
+jieqi_includedb();
+//group partyreply
+
+class Jieqipartyreply extends JieqiObjectData
+{
+    //¹¹½¨º¯Êý
+    function Jieqipartyreply()
+    {
+        $this->JieqiObjectData();
+        $this->initVar('rid', JIEQI_TYPE_INT, 0, 'ÐòºÅ', false, 6);
+    }
+}
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+//ÄÚÈÝ¾ä±ú
+class JieqipartyreplyHandler extends JieqiObjectHandler
+{
+	function JieqipartyreplyHandler($db='')
+	{
+	    $this->JieqiObjectHandler($db);
+	    $this->basename='partyreply';
+	    $this->autoid='rid';	
+	    $this->dbname=JIEQI_MODULE_NAME.'_partyreply';
+	}
+}
+?>

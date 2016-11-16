@@ -1,0 +1,50 @@
+<table class="grid" width="600" align="center">
+  <caption>财付通支付</caption>
+  <tr>
+    <td class="even"><form name="frmbank" method="post" action="{?$jieqi_modules['pay']['url']?}/tenpay.php">
+      <table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%">&nbsp;</td>
+          <td width="44%" valign="middle"><table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td align="left">请选择购买类别</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="10000" class="radio">
+            10000点{?$egoldname?}（100元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="5000" class="radio">
+            5000点{?$egoldname?}（50元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="3000" class="radio">
+            3000点{?$egoldname?}（30元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="2000" class="radio">
+            2000点{?$egoldname?}（20元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="1000" class="radio">
+            1000点{?$egoldname?}（10元）</td>
+              </tr>
+              <tr>
+                <td><input type="submit" name="Submit" value="进入下一步" class="button" >
+                    <input type="hidden" name="action" value="bankpay"></td>
+              </tr>
+          </table></td>
+          <td width="4%" valign="top">&nbsp;</td>
+          <td width="48%" valign="top">操作说明：<br />
+              <br />
+&nbsp;&nbsp;&nbsp;&nbsp;1、财付通是腾讯公司创办的中国领先的在线支付平台，致力于为互联网用户和企业提供安全、便捷、专业的在线支付服务。
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;2、使用财付通支付之前，必须 <a href="https://www.tenpay.com/zft/register_1.shtml" target="_blank">注册</a> 财付通帐号，并进行充值。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;3、如果您快钱帐号余额不足，支付将不成功。
+</td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+</table>
+<br /><br />

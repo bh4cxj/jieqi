@@ -1,0 +1,33 @@
+/*jiathis*/
+#ckepop div { border-color:#f2f2f2 !important; }
+.jiadiv_01 div { background-color:#f7f7f7 !important; }
+#ckepop div.jiadiv_01 { border-color:#ccc !important; }
+#ckelist, #jiathis_sers { background-color:#fff !important; }
+.ckepopBottom, .centerBottom { display:none !important; }
+#ckepop .jtico { text-align:left; overflow:hidden; display:block!important; height:16px!important; margin-right:15px; float:left; line-height:16px!important; padding-left:20px!important; background:url(../images/skin/jiathis_ico.png) no-repeat left; cursor:pointer; position:static; color:#666; }
+#ckepop .jtico:hover { color:#000; }
+#ckepop .jiathis_button_qzone { background-position:0 -64px; }
+#ckepop .jiathis_button_tsina { background-position:0 -96px; }
+#ckepop .jiathis_button_renren { background-position:0 -160px; }
+#ckepop .jiathis_button_kaixin001 { background-position:0 -176px; }
+#ckepop .jiathis_button_tqq { background-position:0 -144px; }
+#ckepop .jiathis_button_douban { background-position:0 -560px; }
+/*评价*/
+.level_01, .level_02, .level_03 { background-image:url(../images/bg/score_level.gif); background-repeat:repeat-x; float:left; height:20px; margin-top:5px; width:90px; }
+.level_01 { background-position:0 -24px; }
+.level_02 { background-position:0 -72px; }
+.level_03 { background-position:0 -120px; }
+.current_level1, .current_level2, .current_level3, .current_level4, .current_level5 { background:url(../images/bg/score_level.gif) repeat-x 0px 0px; display:block; height:20px; width:90px; }
+.current_level6, .current_level7, .current_level8, .current_level9, .current_level10 { background:url(../images/bg/score_level.gif) repeat-x scroll 0 -48px transparent; display:block; height:20px; width:90px; }
+.current_level11, .current_level12, .current_level13, .current_level14, .current_level15 { background:url(../images/bg/score_level.gif) repeat-x scroll 0 -96px transparent; display:block; height:20px; width:90px; }
+.current_level1, .current_level6, .current_level11 { width:20%; }
+.current_level2, .current_level7, .current_level12 { width:40%; }
+.current_level3, .current_level8, .current_level13 { width:60%; }
+.current_level4, .current_level9, .current_level14 { width:80%; }
+.current_level5, .current_level10, .current_level15 { width:100%; }
+/*作者调查*/
+.voteTitle { line-height:30px; background-color:#f0f0f0; margin-top:10px; height:30px; padding-left:5px; }
+.vote { overflow:hidden; }
+.vote ul li { margin:5px 0px; float:left; width:370px; line-height:24px; height:24px; }
+.vote ul li input { vertical-align:middle; margin-right:3px; }
+.voteBtnDiv { margin:10px 0px 15px; padding-left:370px; height:22px; }

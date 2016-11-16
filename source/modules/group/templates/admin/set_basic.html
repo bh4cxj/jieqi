@@ -1,0 +1,85 @@
+<script language="JavaScript" type="text/javascript" src="{? $provincejs_href ?} "></script>
+<script language="javascript">
+	function check_form(){
+		if(document.basicform.gname.value == ''){
+			alert("圈子名不能为空");
+			document.basicform.gname.focus();
+			return false;
+		} 
+
+
+		if(document.basicform.gbrief.value == ''){
+			alert("请填写圈子简介");
+		   document.basicform.gbrief.focus();
+		   return false;
+		}
+	}
+
+//创建http_request
+	function create_http_request(){
+		http_request = false;
+		//开始初始化XMLHttpRequest对象
+		if(window.XMLHttpRequest) { //Mozilla 浏览器
+			http_request = new XMLHttpRequest();
+			if (http_request.overrideMimeType) {//设置MiME类别
+			http_request.overrideMimeType('text/xml');
+			}
+		}else if (window.ActiveXObject) { // IE浏览器
+			try {
+				http_request = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				try {
+					http_request = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {}
+			}
+		}
+		if (!http_request) { // 异常，创建对象实例失败
+			 window.alert("不能创建XMLHttpRequest对象实例.");
+			　return false;
+		}else{
+			return http_request;
+		}
+
+	}
+
+</script>
+
+{? if $sbres=='s' ?}
+<script language="javascript">
+alert("设置成功\!");
+</script>
+{? /if ?}
+
+{? if $sbres=='f' ?}
+<script language='javascript'>
+alert("设置资料失败");
+</script>
+{? /if ?}
+
+
+<table class="grid" width="88%" cellspacing=1 align='center'>
+<caption>资料设置</caption>
+<form name="basicform" method="post" action="{? $setbasic_href ?}" enctype="multipart/form-data" onsubmit="return check_form()">
+<input type='hidden' name='docreate' value=1>
+<input type='hidden' name='gid' value={? $gid ?} >
+<input type='hidden' name='guid' value={? $guid ?} >
+<tr>
+<td class="odd" width="15%" >圈子名称:</td>
+<td class="odd"><input type="text" name="gname" size="20" readonly='' value={? $gname ?} backgrou="gray"><div id="gnameTxt"></div></td>
+<tr> <td>会长id</td><td><input type="text" name="id" value="{?$guid?}"></td> </tr> 
+<tr> <td>会长名</td><td><input type="text" name="username" value="{?$guname?}"></td> </tr>
+</tr>
+<tr>
+<td>圈子类别</td><td><select name='gcatid' id='gcatname'>{? $gcatsoption ?}</select></td>
+</tr>
+<tr>
+<td>加入权限</td><td><input name="gaudit" type="radio" value="1" {? $checked1 ?}>需审核方可加入
+			<input name="gaudit" type="radio" value="0" {? $checked0 ?}>无需审核直接加入</td>
+</tr>
+<tr>
+<td>圈子说明</td><td><textarea class="textarea"  name="gbrief" cols="80" rows="20">{? $gbrief ?}</textarea></td>
+</tr>
+<tr><td class="odd" align="center" colspan=2><input class="button" type="submit" value="提 交"></td></tr></form>
+</table>
+
+

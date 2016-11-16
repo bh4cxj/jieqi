@@ -1,0 +1,3 @@
+{?section name=i loop=$articlerows?}
+<li><span class="txt_down">[<a href="{?$articlerows[i].url_articleinfo?}">txtœ¬‘ÿ</a>]</span><strong><a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}">{?$articlerows[i].articlename?}</a></strong><em><a href="{?$articlerows[i].url_lastchapter?}" target="_blank">{?$articlerows[i].lastchapter?}</a></em><span class="author">{?$articlerows[i].author?}</span><span class="update_time">{?$articlerows[i].uptime|date:"m-d"?}</span></li>
+{?/section?}

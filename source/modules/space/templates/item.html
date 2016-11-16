@@ -1,0 +1,55 @@
+{?set jieqi_blocks_module = "space"?}
+{?set jieqi_blocks_config = "blogblocks"?}
+<div class="c_navigation">查看文章</div>
+<div class="c_title">{? $title ?}</div>
+<div class="c_head">
+  <span class="c_lebel">发表时间：</span><span class="c_value">{? $time ?}</span>
+</div>
+<hr />
+<div class="c_content">{? $content ?}</div>
+<div class="c_foot">
+类别:<a href="{? $cat_url ?}">{? $cat_name ?}</a>
+{? if $space_hoster == 1 ?}
+ | <a href="{? $jieqi_modules['space']['url'] ?}/editblog.php?uid={?$uid ?}&act=edit&id={?$id?}">编辑 </a>
+ | <a href="{? $jieqi_modules['space']['url'] ?}/blog.php?uid={?$uid?}&act=del&id={?$id?}">删除</a>				       
+{?/if ?}   
+ | 评论:({? $review_num ?})
+ | 浏览:({? $hit_num ?})
+{? if $private == 1 ?}|该文章为私有{?/if?} 
+</div>
+<br />
+<br />
+{? if $allow_com ==1 ?}
+<table class="grid" width="100%">
+<caption>文章评论</caption>
+{? section name=i loop=$reviews ?}
+	<tr>
+	<td width="20%">{? if $reviews[i].poster_id!=0 ?}<a href="{? $jieqi_modules['space']['url'] ?}/space.php?uid={? $reviews[i].poster_id ?}">{? $reviews[i].poster_name ?}</a>{?else?}{? $reviews[i].poster_name ?}{?/if?}</td>
+	<td>{? $reviews[i].time ?}{? if $space_hoster==1 ?}|&nbsp;<a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$uid?}&id={?$id?}&rid={? $reviews[i].id ?}&act=del_review">删除</a>{?/if?}<br /> <br /> {? $reviews[i].content ?}</td>
+	</tr>
+{? /section ?}
+</table>
+<div class="pages">{?$url_jumppage?}</div>			
+<br /><br />
+<form method="post" action="">
+<table class="grid" width="100%">
+<input type="hidden" name="act" value="add_review"> 
+<caption>发表评论：</caption>
+	{?if $poster_sess == ''?}
+	<tr>
+	<td class="odd" width="25%">名字</td>
+	<td class="even"><input class="text" type="text" name='poster_name' size="61"></td>
+	</tr>
+	{?/if?}
+	<tr>
+	<td class="odd" width="25%">内容</td>
+	<td class="even"><textarea class="textarea" name="content" id="pcontent" cols="70" rows="10"></textarea><script language="javascript" src="{?$jieqi_url?}/scripts/ubbeditor.js"></script><script language="javascript">UBBEditor.Create("pcontent");</script></td>
+	</tr>
+	<tr>
+	<td class="odd" width="25%">&nbsp;</td>
+	<td class="even"><input type="submit" name="Submit" class="button" value=" 发表评论 "></td>
+	</tr>
+</table>
+</form>
+{? /if ?}
+<br />

@@ -1,0 +1,45 @@
+<form name="frmsearch" method="post" action="{?$url_allblog?}">
+<table class="grid" width="100%" align="center">
+    <tr>
+        <td class="odd">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50">
+             <input name="keytype" type="radio" class="radio" value="title" checked>文章标题 
+            <input type="radio" name="keytype" class="radio" value="uid">作者ID 
+			<input type="radio" name="keytype" class="radio" value="name">作者名字
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+            &nbsp;&nbsp;<a href="{?$jieqi_modules['space']['url']?}/admin/allblog.php">全部文章</a> | <a href="{?$jieqi_modules['space']['url']?}/admin/allblog.php?state=hot">热门</a> | <a href="{?$jieqi_modules['space']['url']?}/admin/allblog.php?state=cool">冷门</a>|  <a href="{?$jieqi_modules['space']['url']?}/admin/allblog.php?state=comm">推荐</a> |<a href="{?$jieqi_modules['space']['url']?}/admin/allblog.php?state=nocomm">未荐</a>              
+        </td>
+    </tr>
+</table>
+</form>
+<br />
+
+<table class="grid" width="100%" align="center">
+<caption>全部文章	</caption>
+  <tr align="center">
+    <th width="14%">文章标题</th>
+    <th width="10%">作者</th>
+    <th width="8%">评论数</th>
+    <th width="8%">点击数</th>
+    <th width="12%">日期</th>
+    <th width="30%">操作</th>
+  </tr>
+  {?section name=i loop=$blogs?}
+  <tr>
+    <td class="even"><a href="{?$jieqi_modules['space']['url']?}/item.php?uid={?$blogs[i].uid?}&id={?$blogs[i].id?}" target="_blank">{?$blogs[i].title?}</a></td>
+    <td class="odd" align="center"><a href="{?$jieqi_modules['space']['url']?}/archives.php?uid={?$blogs[i].uid?}" target="_blank">{?$blogs[i].name?}</a></td>
+    <td class="odd" align="center">{?$blogs[i].review_num?}</td>
+    <td class="odd" align="center">{?$blogs[i].hit_num?}</td>
+    <td class="even" align="center">{?$blogs[i].time|date:m-d H:i:s?}</td>
+    <td class="odd" align="center">
+	{?if $blogs[i].ar_commend<1?}
+	<a href="{? $jieqi_modules['space']['url'] ?}/admin/blogset.php?uid={?$blogs[i].uid?}&id={?$blogs[i].id?}&act=comm&page={?$page?}">推荐</a>
+	{?else?}
+	<a href="{?$jieqi_modules['space']['url']?}/admin/blogset.php?uid={?$blogs[i].uid?}&id={?$blogs[i].id?}&act=nocomm&page={?$page?}">不荐</a>
+	{?/if?}
+	&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:if(confirm('确实要删除该文章吗？')) document.location='{?$jieqi_space_url?}/admin/allblog.php?action=del&id={?$blogs[i].id?}&page={?$page?}&state={?$state?}'">删除</a></td>
+  </tr>
+  {?/section?}
+</table>
+</form>
+<div class="pages">{?$url_jumppage?}</div>

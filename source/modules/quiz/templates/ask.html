@@ -1,0 +1,55 @@
+<div class="textbox">
+<script src='./templates/style/quiz_type.js'></script>
+  <form name="form1" id="form1" action="?action=add" onsubmit="return novalue('title|contents|score')" method="post">
+    <table width="80%" align="center" cellspacing="1" class="grid">
+      <caption>
+      我要提问
+      </caption> 
+      <tr>
+        <td>问题分类</td>
+        <td><select class="select" name="quiztype" id="quiztype" onchange="quizchange()">
+          <option value="０" selected="selected">请选择分类</option>		
+		{?section name=i loop=$jieqiSort['quiz']?}
+          <option value="{?$i['key']?}">{?$jieqiSort['quiz'][i].caption?}</option>
+    	{?/section?}
+		  
+        </select>
+		<span id="select">
+		<select class="select" name="select" >
+          <option value="0" selected="selected">请先选择分类</option>
+        </select>
+		</span>
+		</td>
+      </tr>
+	  <tr>
+        <td>问题名称</td>
+        <td><input type="text" class="text" name="title" id="title" size="25" maxlength="30" value="" /></td>
+      </tr>
+      <tr>
+        <td>问题内容</td>
+        <td><textarea class="textarea" name="contents" id="contents" rows="6" cols="60"></textarea></td>
+      </tr>
+      <tr>
+        <td>悬赏分</td>
+        <td><input name="score" type="text" id="score" size="5" maxlength="5" />
+          分 <span class="hottext">*必须是大于0的整数</span></td>
+      </tr>
+	        <tr>
+        <td>tag标签</td>
+        <td><input name="tag" type="text" id="tag" size="40" maxlength="100" />
+         <span class="hottext">* 多个tag用空格隔开</span> 　　　　　　　　　　　<span title="Tag（标签）是一种更为灵活、有趣的分类方式，您可以为每个问题添加一个或多个Tag（标签），然后您可以看到所有和您使用了相同Tag（标签）的问题，并且由此和其他用户产生更多的联系和沟通。" style="cursor:hand">什么是tag？</span></td>
+      </tr>
+	   {?if $jieqiConfigs['quiz']['usekey']==1?} 
+	   <tr>
+        <td>验证码</td>
+        <td><input type="text" class="text" size="8" maxlength="8" id="checkcode" name="checkcode">&nbsp;<img src="{?$url_checkcode?}"></td>
+      </tr>  
+	{?/if?}
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" class="button" name="submit" id="submit" value="提 交" /></td>
+      </tr>
+
+    </table>
+  </form>
+</div>

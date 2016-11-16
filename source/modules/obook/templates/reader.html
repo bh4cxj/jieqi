@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>{?$jieqi_pagetitle?}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={?$jieqi_charset?}" />
+<meta name="keywords" content="{?$meta_keywords?}" />
+<meta name="description" content="{?$meta_description?}" />
+<meta name="author" content="{?$meta_author?}" />
+<meta name="copyright" content="{?$meta_copyright?}" />
+<meta name="generator" content="jieqi.com" />
+<link href="/themes/chaoliu/css/reset.css" rel="stylesheet"/>
+<link href="/themes/chaoliu/css/content.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" media="all" href="{?$jieqi_url?}/configs/obook/page.css" />
+{?$jieqi_head?}
+<script type="text/javascript">
+<!--
+var preview_page = "{?$url_preview?}";
+var next_page = "{?$url_next?}";
+var index_page = "{?$index_page?}";
+var article_id = "{?$article_id?}";
+var chapter_id = "{?$chapter_id?}";
+
+function jumpPage() {
+  if (event.keyCode==37) location=preview_page;
+  if (event.keyCode==39) location=next_page;
+  if (event.keyCode==13) location=index_page;
+}
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+<body style="background-image:url(/themes/chaoliu/images/wood.jpg);background-attachment: fixed;" >
+
+<div id="wrap" > 
+    <div class="page_head">
+        <p class="nav pngFix"><a href="{?$dynamic_url?}">{?$jieqi_sitename?}</a>-&gt;<a href="{?$url_obookroom?}">电子书店</a>-&gt;<a href="{?$url_obookinfo?}">{?$obookname?}</a></p>
+        <div class="clear"></div>
+    </div>
+    <div class="page_main">
+        <h1 class="chapter_title">{?$chaptertitle?}</h1>
+        <div class="chapter_info">
+			<div class="prev_arrow"><a href="{?$url_preview?}" class='pngFix'></a></div>  <p class="chapter_info_mid"></p> <div class="next_arrow"><a href="{?$url_next?}" class='pngFix'></a></div>
+        </div>
+        <div class="chapter_con">
+        <p><div id="frontdiv" style="position:absolute;z-index:10;border:0px;"><img src="{?$jieqi_modules['obook']['url']?}/images/front.gif" id="frontimage"></div>
+	{?section name=i loop=$picrows?}
+	<img id="obookimage{?$picrows[i]?}" src="{?$url_obookimage?}&pic={?$picrows[i]?}" border="0" {?if $i['index']==0?}onload="showfront()" {?/if?}>
+	{?/section?}</p>
+        </div>
+<div class="chapter_info">
+			<div class="prev_arrow"><a href="{?$url_preview?}" class='pngFix'></a></div>  <p class="chapter_info_mid"><span>←可使用左右快捷键翻页→</span></p> <div class="next_arrow"><a href="{?$url_next?}" class='pngFix'></a></div>
+        </div>
+
+</div>
+
+
+<noscript>
+<iframe scr="*.htm"></iframe> 
+</noscript>
+</body>
+</html>
+<script language="javascript">
+function getx(e){ 
+  var l=e.offsetLeft; 
+  
+  while(e=e.offsetParent){ 
+    l+=e.offsetLeft; 
+  } 
+  return(l+'px'); 
+} 
+function gety(e){ 
+  var l=e.offsetTop; 
+  while(e=e.offsetParent){ 
+    l+=e.offsetTop; 
+  } 
+  return(l+'px'); 
+} 
+function showfront(){
+  var frontdiv=document.getElementById('frontdiv');
+  var frontimage=document.getElementById('frontimage');
+  var obookimage=document.getElementById('obookimage1');
+  var loadinginfo=document.getElementById('loadinginfo');
+  loadinginfo.style.visibility='hidden';
+  frontdiv.style.left=getx(obookimage);
+  frontdiv.style.top=gety(obookimage);
+  frontimage.width=obookimage.width;
+  frontimage.height=obookimage.height;
+}
+//window.onload=showfront;
+</script>

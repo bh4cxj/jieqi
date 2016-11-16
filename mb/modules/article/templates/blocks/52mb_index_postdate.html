@@ -1,0 +1,3 @@
+{?section name=i loop=$articlerows?}
+<li><em>[<a href="/mulu/{?$articlerows[i].sortid?}-3.html">{?$articlerows[i].sort?}</a>]</em><a href="{?$articlerows[i].url_index|str_replace:"index.html":""?}">{?$articlerows[i].articlename?}</a>/{?$articlerows[i].author?}</li>
+{?/section?}

@@ -1,0 +1,97 @@
+<table class="grid" width="600">
+  <caption>
+  15173在线支付
+  </caption>
+  <tr>
+    <td class="even"><form name="frmbank" method="post" action="{?$jieqi_modules['pay']['url']?}/15173.php">
+      <table class="hide" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%">&nbsp;</td>
+          <td width="44%" valign="middle">
+		  <fieldset>
+				<legend>请选择支付卡类型</legend>
+		  <table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td><input type="radio" name="paytype" value="a" class="radio">
+            神州行卡支付</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="paytype" value="b" class="radio">
+            俊网一卡通支付</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="paytype" value="c" class="radio">
+            盛大卡支付</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="paytype" value="d" class="radio">
+            征途游戏卡支付</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="paytype" value="n" class="radio">
+            搜狐一卡通支付</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="paytype" value="o" class="radio">
+            5173充值卡支付</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="paytype" value="q" class="radio">
+            久游一卡通支付</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="paytype" value="r" class="radio">
+            腾讯Q币卡支付</td>
+              </tr>
+          </table>
+		  </fieldset>
+		  <br />
+		  <fieldset>
+				<legend>请选择购买类别(支付卡金额)</legend>
+			<table class="hide" width="262" border="0" cellspacing="0" cellpadding="3">
+              <tr>
+                <td><input type="radio" name="egold" value="10000" class="radio">
+            10000点{?$egoldname?}（100元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="5000" class="radio">
+            5000点{?$egoldname?}（50元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="3000" class="radio">
+            3000点{?$egoldname?}（30元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="2000" class="radio">
+            2000点{?$egoldname?}（20元）</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="egold" value="1000" class="radio">
+            1000点{?$egoldname?}（10元）</td>
+              </tr>
+			  <tr>
+                <td><input type="radio" name="egold" value="100" class="radio">
+            100点{?$egoldname?}（1元）</td>
+              </tr>
+              <tr>
+                <td><input type="submit" name="Submit" value="进入下一步" class="button" >
+                    <input type="hidden" name="action" value="bankpay"></td>
+              </tr>
+          </table>
+		  </fieldset>
+		  </td>
+          <td width="4%" valign="top">&nbsp;</td>
+          <td width="48%" valign="top">操作说明：<br />
+              <br />
+&nbsp;&nbsp;&nbsp;&nbsp;1、15173的官方网站是<a href="http://www.15173.net/" target="_blank">http://www.15173.net/</a>和<a href="http://www.15173.com/" target="_blank">http://www.15173.com/</a><br />
+&nbsp;&nbsp;&nbsp;
+2、选择您使用的支付卡类型<br />
+&nbsp;&nbsp;&nbsp;&nbsp;3、选择您支付卡对应的金额，支付时必须与15173支付页面时选择的金额一致，并且与您实际支付时的卡或帐号的金额一致，否则支付不成功。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;4、如果您的支付卡余额不足，支付将不成功。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;5、输入卡号和密码后，支付后请耐心等待。</td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+</table>
+<br /><br />

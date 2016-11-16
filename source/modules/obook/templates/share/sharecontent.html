@@ -1,0 +1,46 @@
+<form name="frmsearch" method="post" action="{?$url_sharecontent?}">
+<table class="grid" width="100%" align="center">
+    <tr>
+      <td class="odd">关键字：
+            <input name="keyword" type="text" id="keyword" class="text" size="15" maxlength="50"> 
+            <input name="keytype" type="radio" class="radio" value="0" checked>书名
+            <input type="radio" name="keytype" class="radio" value="1">作者 
+			<input type="radio" name="keytype" class="radio" value="2">发表者
+			<input type="radio" name="keytype" class="radio" value="3">所有者
+			&nbsp;&nbsp;
+            <input type="submit" name="btnsearch" class="button" value="搜 索">
+        &nbsp;&nbsp;&nbsp;</td>
+    </tr>
+</table>
+</form>
+<br />
+<table class="grid" width="100%" align="center">
+<caption>共享电子书</caption>
+  <tr align="center">
+    <th width="20%">电子书名称</th>
+    <th width="28%">最新章节</th>
+    <th width="16%">作者</th>
+    <th width="16%">出版者</th>
+    <th width="10%">更新</th>
+    <th width="10%">章节列表</th>
+  </tr>
+  {?section name=i loop=$obookrows?}
+  <tr>
+    <td class="even"><a href="{?$obook_dynamic_url?}/obookinfo.php?id={?$obookrows[i].obookid?}" target="_blank">{?$obookrows[i].obookname?}</a></td>
+    <td class="odd"><a href="{?$obookrows[i].url_lastchapter?}" target="_blank">{?$obookrows[i].lastvolume?} {?$obookrows[i].lastchapter?}</a></td>
+    <td class="even">{?if $obookrows[i].authorid == 0?}{?$obookrows[i].author?}{?else?}<a href="{?function jieqi_geturl:'system':'user':$obookrows[i].authorid?}" target="_blank">{?$obookrows[i].author?}</a>{?/if?}</td>
+    <td class="odd" align="center">{?$obookrows[i].publisher?}</td>
+    <td class="odd" align="center">{?$obookrows[i].lastupdate?}</td>
+    <td class="odd" align="center"><a href="{?$obook_dynamic_url?}/share/shareclist.php?oid={?$obookrows[i].obookid?}">章节列表</a></td>
+  </tr>
+  {?/section?}
+</table>
+<table width="100%"  border="0" cellspacing="2" cellpadding="3">
+  <tr>
+    <td width="12%" align="right"><!--<input type="submit" name="Submit" value="批量删除" class="button">
+                <input name="batchdel" type="hidden" value="1">--></td>
+    <td width="88%" align="right">{?$url_jumppage?}</td>
+  </tr>
+</table>
+
+

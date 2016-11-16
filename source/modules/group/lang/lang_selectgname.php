@@ -1,0 +1,3 @@
+<?php 
+$jieqiLang['g']['name_already_been_registed']='ÒÑ¾­±»×¢²á';
+?>

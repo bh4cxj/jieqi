@@ -1,0 +1,49 @@
+<?php
+$GLOBALS['jieqiTset']['jieqi_blocks_module'] = 'article';
+echo '
+';
+$GLOBALS['jieqiTset']['jieqi_blocks_config'] = 'guideblocks';
+echo '
+';
+$this->_tpl_vars['jieqi_pagetitle'] = "我来催更 - {$this->_tpl_vars['jieqi_sitename']}";
+echo '
+';
+$this->_tpl_vars['meta_keywords'] = "{$this->_tpl_vars['articlename']} {$this->_tpl_vars['author']}";
+echo '
+<style>
+.articletitle{height:30px;text-align:center;line-height:30px;font-size:14px;font-weight:bold;margin-top:10px;text-align:left;padding:10px;}
+#formsubmit{margin-top:20px;}
+.hang{width:30%;float:left;margin-left:20px;height:100px;line-height:100px;margin-top:10px;}
+.wenzi{width:26%;float:left;margin-left:40px;padding-left:5px;height:25px;line-height:25px;margin-top:10px;}
+</style>
+<div style="border:1px #ccc solid;height:880px;margin-bottom:10px;">
+    <div class="articletitle"><font style="">《<a href="/modules/article/articleinfo.php?id='.$this->_tpl_vars['articleid'].'">'.$this->_tpl_vars['articlename'].'</a>》</font>这书写的实在是太好了，就是更新不过瘾，我来催更</div>
+    <div style="margin-left:10px;">您当前的剩余 '.$this->_tpl_vars['eggold'].' 潮流币，<a href="/modules/pay/buyegold.php">我要充值</a></div>
+    <div style="width:100%;display:block;">
+        <div class="hang"><a href="/modules/article/cuigeng.php?id='.$this->_tpl_vars['articleid'].'&nums=100"><img src="/images/1.gif" /></a></div>
+        <div class="hang"><a href="/modules/article/cuigeng.php?id='.$this->_tpl_vars['articleid'].'&nums=190"><img src="/images/2.gif" /></a></div>
+        <div class="hang"><a href="/modules/article/cuigeng.php?id='.$this->_tpl_vars['articleid'].'&nums=280"><img src="/images/3.gif" /></a></div>
+        <div class="wenzi">需要100潮流币</div>
+        <div class="wenzi">需要190潮流币</div>
+        <div class="wenzi">需要280潮流币</div>
+    </div>
+    <div style="clear:both;">
+    <div style="margin-top:10px;padding:10px;line-height:25px;text-align:left;">
+<font color="#ff0000" style="font-size:16px;"><b>催更功能说明</b></font><br>
+1、什么是催更：如果您对某作品的更新速度不满意，就可以使用催更来催促作品的更新，只要第二天作者的更新量能达到催更要求的更新量，催更就起作用了，同时作者也可以获得一定的收益。<br>
+2、获得途径：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;催更类型：按照字数标准，分为2000字，4000字6000字三种类型(2012年5月1日实行)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;催更最低投票要求：(2012年5月1日实行)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;字数要求2000字的催更最低投票要求为100个潮流币。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;字数要求4000字的催更最低投票要求为190个潮流币。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;字数要求6000字的催更最低投票要求为280个潮流币。<br>
+3、计算方式：投出催更票后，作者第二日如更新相应字数，即可获得读者投出的相应数字催更分成奖励。如果作者没有更新到有效字数，则会统一以潮流币的形式退还到帐号上。<br>
+4、显示位置：作品介绍页<br>
+5、作家查询位置：作家后台<br>
+6、注意事项：<br>
+·作者发布与作品正文无关的内容来充字数的情况，本站有权判定当天的催更无效。<br>
+·2012年5月1日实行起为新功能测试阶段，期间会根据具体情况作相应调整，具体规则会另行公布。<br>
+·本规则所有解释权归本站所有。
+    </div>
+</div>';
+?>

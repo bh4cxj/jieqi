@@ -1,0 +1,83 @@
+<div class="g_main">
+<div class="g_center">
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+<tr>
+	<td class="head" colspan="2">
+		{? $man_party   ?}
+	</td>
+</tr>
+</table>
+<br>
+<div class="gridtop">{? $ptitle ?}</div>
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+	<tr>
+		<td class="head">活动简介:</td>
+		<td class="head">{? $pcontent ?}</td>
+	</tr>
+	<tr>
+		<td class="even">参加人数:</td>
+		<td class="even">{? $pnums ?}/{? $pmaxnums ?}</td>
+	</tr>
+	<tr>
+		<td class="even">活动地点:</td>
+		<td class="even">{? $pplace ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">发起人:</td>
+		<td class="even">{? $puname ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">开始报名:</td>
+		<td class="even">{? $pstart ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">截止报名:</td>
+		<td class="even">{? $pstop ?}</td>
+	</tr>	
+	<tr>
+		<td class="even">发起时间:</td>
+		<td class="even">{? $ptime ?}</td>
+	</tr>	
+</table>
+<br />
+
+{? section name=i loop=$replies ?}
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+	<tr>
+		<td class="even" width="70%">{? $replies[i].rcontent ?}</td>
+		<td class="odd" align="right"  class="even">
+			{? $replies[i].uname ?}
+		</td>
+		<td  class="odd">
+			{? $replies[i].rtime ?}
+		</td> 
+		<td align="right" class="even">
+			{? $replies[i].delete  ?}
+		</td>
+	</tr>
+</table>
+{? /section  ?}
+<table width=90%>
+	<tr>
+		<td align="right">{? $jumppage ?}</td>
+	</tr>
+</table>
+
+<div class="gridtop">回复:</div>
+<table width="100%" cellpadding="0" cellspacing="1" class="grid">
+<form name="newparty" method="post" action="{? $submit_href ?}" enctype="multipart/form-data" >
+<tr>   
+	<td class="odd" width="370">
+		<textarea name='rcontent'cols="50" rows="8" >
+		</textarea>
+	</td>
+</tr>	
+<tr>
+	<td  align="center" class="even" valign="top">
+		<input class="button"  type="submit" value="提 交">
+	</td>
+</tr>
+</form>
+</table>
+</div>
+</div>

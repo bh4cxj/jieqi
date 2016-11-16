@@ -1,0 +1,37 @@
+.main{padding:10px 0;}
+.user_info{float: left;
+border: 1px solid #dedede;
+width: 195px;
+background: #fff;
+padding: 10px;}
+.user_info h3{font-size: 16px;
+font-weight: bold;
+text-align: center;
+border-bottom: 1px solid #dedede;
+height: 25px;color: #fc8620;
+}
+.user_info .ulitem{
+	font-size: 15px;
+	line-height: 25px;
+	padding: 10px 0;
+	border-bottom: 1px dashed #dedede;
+}
+.ulitem li{
+	background: url(ico-3.gif) no-repeat 10px 10px;
+	padding-left: 25px;
+}
+
+.bookcase,.online { text-align:center;
+border: 1px solid #ddd;
+float: right;background: #fff;padding:10px;
+width: 726px;
+}
+.bookcase .gridtop,.online h3{
+	border-bottom: 1px solid #dedede;
+	height: 25px;
+}
+.online{
+	line-height: 25px;
+}
+.grid tr{border-bottom: 1px solid #dedede;
+	height: 25px;}

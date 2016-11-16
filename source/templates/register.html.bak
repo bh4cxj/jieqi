@@ -1,0 +1,101 @@
+
+<link href="/themes/chaoliu/css/register.css" rel="stylesheet" />
+
+<div id="main">
+    <div class="main_inner">
+        <div class="maincon">
+            <div class="maincon_l">
+                <div class="zhuce_title"></div>
+                <form name="frmregister" id="register" method="post"  action="{?$form_action?}?do=submit">
+                <ul class="zhucexinxi">
+                    <li>
+                        <p class="zc_title"><span style="color:red;">*</span>用户名</p>
+                        
+                        <input type="text" size="35" maxlength="25" name="username" id="mname" value=""  class="kuang" onBlur="Ajax.Update('{?$check_url?}?item=u&username='+this.value, {outid:'usermsg', tipid:'usermsg', onLoading:'<img border=\'0\' height=\'16\' width=\'16\' src=\'{?$jieqi_url?}/images/loading.gif\' /> Loading...'});"  >
+                    
+                        <p class="tishi" id="usermsg">3-16字节的中英文、数字和下划线组合</p>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <p class="zc_title"><span style="color:red;">*</span>密码</p>
+                        <input type="password" size="35" maxlength="25" name="password" id="password" value="" class="kuang">
+                        <p class="tishi" id="passmsg">6-16位字母、数字组合</p>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <p class="zc_title"><span style="color:red;">*</span>确认密码</p>
+                        <input type="password" size="35" maxlength="25" name="repassword" id="password2" value="" class="kuang">
+                        <p class="tishi" id="repassmsg"></p>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <p class="zc_title"><span style="color:red;">*</span>邮箱地址</p>
+                        <input type="text" size="35" maxlength="25" name="email" id="email" value="" class="kuang">
+                      
+                        <p class="tishi" id="mailmsg">请输入您的常用邮箱</p>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <p class="zc_title"><span style="color:red;">*</span>QQ</p>
+                      
+                        <input type="text" size="35" maxlength="25" name="qq" id="qq" value=""  class="kuang">
+                        <p class="tishi" id="checkeqq">请输入您的QQ号码</p>
+                        <div class="clear"></div>
+                    </li>
+                    {?if $show_checkcode == 1?}
+                    <li>
+                        <p class="zc_title"><span style="color:red;">*</span>验证码</p>
+                       <input type="text" name="checkcode" id="regcode" size="4" maxlength="4" onBlur="checkregcode()"  class="kuang"/>
+                        <img src="{?$url_checkcode?}" alt="点击图片换验证码" style=" vertical-align:inherit;cursor:pointer;" onclick="this.src='{?$url_checkcode?}?rand='+Math.random();" class="yanzhengma">
+                        <p class="tishi" id="checkregcode">请输入验证码</p>
+                        <div class="clear"></div>
+                    </li>
+					{?/if?}
+                </ul>
+				<input type="hidden" name="action" id="action" value="newuser" />
+               <input type="submit" value=" " name="register" class="lijizhuce" />
+               
+                </form>
+                <img src="/themes/chaoliu/images/ztdh.jpg" class="ztdh"/>
+                <div class="clear"></div>
+            </div>
+			<style>
+			.maincon_r li{padding-left:0;width:250px;}
+			.lijidenglu{margin-left:-100px;}
+			</style>
+            <div class="maincon_r">
+                <div class="denglu_title"></div>
+              <form name="register" id="register" method="post" action="/login.php?do=submit">
+                <ul class="dengluxinxi">
+                    <li>
+                        <p class="dl_title">用户名</p>
+                       <input type="text" size="25" name="username" value=""  class="kuang2" ><span id="checkusername"></span>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <p class="dl_title">密码</p>
+                         <input type="password" size="25" name="password" value="" class="kuang2" ><span id="checkpassword"></span>
+                        <div class="clear"></div>
+                    </li>
+					{?if $show_checkcode == 1?}
+                    <li>
+                        <p class="dl_title">验证码</p>                      
+                        <input type="text" name="checkcode" id="regcode" size="4" class="kuang2" maxlength="4" onBlur="checkregcode()" onmouseover="input_over(this)" onmouseout="input_out(this)">
+                         <img src="{?$url_checkcode?}" alt="点击图片换验证码" style="vertical-align:inherit;cursor:pointer;" onclick="this.src='{?$url_checkcode?}?rand='+Math.random();">                         
+                         <span class="notice" id="checkregcode">&nbsp;</span>
+                        <div class="clear"></div>
+                    </li>
+					{?/if?}
+                </ul>
+              <input type="hidden" name="action" value="login">
+                <input type="submit" value=" " name="submit" class="lijidenglu" />
+                </form>
+                <img src="/themes/chaoliu/images/book_07_07.jpg" class="book"/>
+            
+            </div>
+            <div class="clear"></div>
+            
+            
+        </div>
+    </div>
+</div>

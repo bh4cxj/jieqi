@@ -1,0 +1,10 @@
+{?section name=i loop=$articlerows?}
+<li {?if $i['order']==1?}class="paihangbang_first"{?/if?} >
+    <p class="phb_title"><a href="h{?$articlerows[i].url_articleinfo?}"  target="_blank" title="{?$articlerows[i].articlename?}"><span class="grey">[{?$articlerows[i].sort?}]:</span>{?$articlerows[i].articlename?}</a></p>
+    <div class="phb_con"  style="display:none" >
+         <a href="{?$articlerows[i].url_articleinfo?}" target="_blank"><img src="{?$articlerows[i].url_image?}"  width="66" height="88" style=" float:left"  title="{?$articlerows[i].articlename?}" alt="{?$articlerows[i].articlename?}"></a>
+        <p class="phb_txt">{?$articlerows[i].intro|truncate:60:'..'?}</p>
+        <div class="clear"></div>
+    </div>
+</li>
+{?/section?}

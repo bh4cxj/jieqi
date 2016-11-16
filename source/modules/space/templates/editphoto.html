@@ -1,0 +1,61 @@
+{?set jieqi_page_template = "modules/space/empty.html"?}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>黎明_编辑照片</TITLE>
+<META http-equiv=content-type content="text/html; charset=gb2312">
+<LINK href="include/popup/comm.css" type=text/css rel=stylesheet>
+<SCRIPT>
+<!--
+
+function checkform(id){
+	ele=document.getElementById(id);
+	if(ele.value==''){
+	    alert('照片描述不充许为空!');
+		return false;
+	}else{	
+		return true;
+	}
+	
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3243" name=GENERATOR></HEAD>
+<BODY>
+<FORM onSubmit="return checkform('filebak');" action='editphoto.php?uid={?$uid?}' method=post>
+<INPUT type=hidden value='edit' name='action'>
+<INPUT id=spRefURL type=hidden name=spRefURL>
+<INPUT id=oldcatid type=hidden name=oldcatid value="{?$catid?}">
+<INPUT id=attachid type=hidden name=attachid value="{?$image_more['attachid']?}">
+<SCRIPT>
+        document.getElementById("spRefURL").value = window.location.href;
+</SCRIPT>
+ 
+<DIV class=dialog>
+<DIV class=box>
+<TABLE class=formarea cellSpacing=0 cellPadding=0 border=0>
+  <TR>
+    <TD class=itn vAlign=top align=right width=80>照片预览：</TD>
+    <TD vAlign=top><IMG src="{?$jieqi_url?}{?$image_more['url']|str_replace:'b_':''?}" 
+     border=0></TD></TR>
+  <TR>
+    <TD class=itn align=right>照片描述：</TD>
+    <TD><INPUT id=pd style="WIDTH: 220px" value="{?$image_more['filebak']?}" name=filebak></TD></TR>
+  <TR>
+    <TD class=itn align=right>所属相册：</TD>
+    <TD><SELECT style="WIDTH: 145px" name=catid>
+	    {? section name=i loop=$image_cats ?}
+	
+        <OPTION  value="{?$image_cats[i].id?}" {? if $image_cats[i].id==$catid ?}selected="selected"{?/if?}>{? $image_cats[i].name ?}</OPTION>
+        
+		{? /section ?}
+		</select>
+		</TD></TR>
+  <TR>
+    <TD class=itn align=right>设为封面：</TD>
+    <TD><INPUT type=radio value="1" name="isdefault" id="isdefault1" {?if $image_more['isdefault']==1 ?}CHECKED{?/if?}><LABEL 
+      for=isdefault1>允许</LABEL> <INPUT type=radio value="0" name="isdefault" id="isdefault2" {?if $image_more['isdefault']!=1 ?}CHECKED{?/if?}><LABEL 
+      for=isdefault2>禁止</LABEL> </TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD 
+class=sbt><INPUT type=submit value=保存修改 name=tj></TD></TR></TBODY></TABLE><BR></DIV></DIV></FORM></BODY></HTML>

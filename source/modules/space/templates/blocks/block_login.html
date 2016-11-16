@@ -1,0 +1,14 @@
+<form name="frmlogin" method="post" action="{?$jieqi_url?}/login.php">
+<ul class="ulrow">
+<li>用户名：<input type="text" class="text" size="10" maxlength="30" name="username" onKeyPress="javascript: if (event.keyCode==32) return false;" ></li>
+<li>密　码：<input type="password" class="text" size="10" maxlength="30" name="password"></li>
+{?if $show_checkcode == 1?}
+<li>验证码：<input type="text" class="text" size="10" maxlength="8" name="checkcode"><br><img src="{?$url_checkcode?}"></li>
+{?/if?}
+<li><input type="checkbox" class="checkbox" name="usecookie" value="1">
+记录cookie&nbsp;</li>
+<li><input type="submit" class="button" value="&nbsp;登&nbsp;&nbsp;录&nbsp;" name="submit">
+<input type="hidden" name="action" value="login"></li>
+<li><a href="{?$jieqi_url?}/register.php">新用户注册</a> &nbsp;&nbsp;<a href="{?$jieqi_url?}/getpass.php">取回密码</a></li>
+</ul>
+</form>

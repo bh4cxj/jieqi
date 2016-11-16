@@ -1,0 +1,69 @@
+
+<script type="text/javascript" src="include/popup/popup.js"></script>
+<script language="javascript">
+function photodel(str)
+{
+	var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+	pop.setContent("title","É¾³ýÕÕÆ¬");
+	pop.setContent("confirmCon","ÄúÈ·¶¨Òª³¹µ×É¾³ý¸ÃÕÕÆ¬Âð£¿");
+	pop.setContent("callBack",delCallback);
+	pop.setContent("parameter",{fid:str,popup:pop});
+	pop.build();
+	pop.show();
+	return false;
+}
+function delCallback(para)
+{
+	var o_pop=para["popup"];
+	o_pop.config.contentType=1;
+	o_pop.setContent("contentUrl","photo.php");
+	o_pop.reBuild();
+	G(para["fid"]).target=o_pop.iframeIdName;
+	setTimeout(function(){eval("document."+para["fid"]).submit();},500);
+}
+function editPhoto(url)
+{
+	var pop=new Popup({ contentType:1, isReloadOnClose:false, width:350, height:250 });
+	pop.setContent("title","±à¼­ÕÕÆ¬");
+	pop.setContent("contentUrl",url);
+	pop.build();
+	pop.show();
+	return false;
+}
+
+</script>
+<style  type="text/css">
+/*Ëæ±Ê*/
+.c_navigation{border-top: #ffffff 1px solid;border-left: #ffffff 1px solid;	border-bottom: #83b0e1 1px solid;font-weight: bold;font-size: 14px;background: #e0edff;color: #054e86; 
+	line-height: 26px;height:26px; padding-left: 10px;}
+.c_navigation span{ font-size:12px; font-weight:normal; color:#333333}
+.c_navigation .fr{ font-size:12px; font-weight:normal; margin-right:10px}
+.c_navigation .fr a{ color: #333333}
+
+.c_content{width:98%;margin:0px!important;margin:3px;padding:10px}
+.c_subject{ font-size:14px;}
+
+/*Ïà²á*/
+.c_img{ border-bottom:1p dashed #CCCCCC; clear:both; height:160px;}
+.c_img li{ float:left; margin:30px; text-align:center}
+.c_photo li{ float:left; margin:20px 20px 20px 16px;}
+.pages{
+	padding: 5px 0px; clear:both; margin:1px;
+}
+
+</style>
+<div class="c_navigation">
+	<div class="fl">µ±Ç°Ïà²á£º<span>{?$albumname?}</span></div>
+	<div class="fr">  <a href="{?$upload_href?}">ÉÏ´«ÐÂÕÕÆ¬</a> | <a href="{?$jieqi_modules['group']['url']?}/manalbum.php?g={?$gid?}">´´½¨ÐÂÏà²á</a></div>
+</div>
+<div class="c_subject">
+{? section name=i loop=$image_cats columns=5?}
+	{?if $i['column'] == 1?}<ul class="c_photo">{?/if?}
+	{?if $image_cats[i].photo!=''?}<form style='display:none;' action='photo.php?albumid={? $image_cats[i].albumid?}&g={?$gid?}&delid={? $image_cats[i].photoid?}&page={?$page?}' name='photoform{?$i['key']?}' id='photoform{?$i['key']?}' method='post'><input type='hidden' name='attachid' value='{? $image_cats[i].attachid?}'></form>
+    <li style="width:110px; overflow:hidden"><a href="{?$jieqi_modules['group']['url']?}/vphoto.php?albumid={? $image_cats[i].albumid?}&g={?$gid?}&photoid={? $image_cats[i].photoid?}&page={?$image_cats[i].vpage?}"><img src="{? $image_cats[i].photo ?}" border="0" /></a><br /> {?$image_cats[i].intro ?}{? if $image_cats[i].allowmanalbum==1 ?}<br /> <a href="#" onClick="editPhoto('ephoto.php?albumid={? $image_cats[i].albumid?}&g={?$gid?}&photoid={? $image_cats[i].photoid?}&page={?$page?}');return false;">±à¼­</a> | <a href="#" onClick="photodel('photoform{?$i['key']?}');return false;">É¾³ý</a>{?/if?}</li>
+{?/if?}
+	{?if $i['column'] == $i['columns']?}</ul>{?/if?}
+{? /section ?}
+</div>
+
+<div class="pages">{?$url_jumppage?}</div>

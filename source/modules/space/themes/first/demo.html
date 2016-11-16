@@ -1,0 +1,192 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" rev="stylesheet" href="style.css" type="text/css" media="all" />
+
+<script language="javascript" type="text/javascript" src="menu.js"></script>
+<script language="javascript" type="text/javascript" src="tips.js"></script>
+<script language="javascript" type="text/javascript">
+function selecttab(obj){
+	var n = 0;
+	var tabs = obj.parentElement.parentElement.getElementsByTagName("li"); 
+	for(i=0; i<tabs.length; i++){
+		tmp = tabs[i].getElementsByTagName("a")[0];
+		if(tmp == obj){
+			tmp.className="selected";
+			n=i;
+		}else{
+			tmp.className="";
+		}
+ 	}
+	var contents = obj.parentElement.parentElement.parentElement.parentElement.getElementsByTagName("div")[1].getElementsByTagName("div");
+	for(i=0; i<contents.length; i++){
+		contents[i].style.display = i==n ? "block" : "none";   
+ 	}
+}
+</script>
+
+<title>css效果演示</title>
+</head>
+
+<body>
+
+<h1>CSS效果演示</h1>
+
+
+<br />
+<div class="textbox">
+文字1 <span class="hottext">文字2</span> <span class="notetext">文字3</span> <span title="文字的提示信息">浮动提示文字</span><br />
+<a href="#">链接1</a> <a href="#" class="hotlink">链接2</a> <a href="#" class="btnlink">链接3</a> <a href="#" title="链接的提示信息">浮动提示链接</a><br />
+</div>
+
+<br />
+<div class="textbox">
+<ul class="ultop">
+  <li>项目1</li>
+  <li>项目2</li>
+  <li>项目3</li>
+</ul>
+<ul style="width:100%;">
+  <li style="float:left;width:120px; border:1px solid #000; margin-right:3px;">项目1</li>
+  <li style="float:left;width:120px; border:1px solid #000; margin-right:3px;">项目2</li>
+  <li style="float:left;width:120px; border:1px solid #000; margin-right:3px;">项目3</li>
+</ul>
+</div>
+
+<br />
+<div class="textbox">
+<table class="grid" width="80%">
+  <caption>标题</caption>
+  <tr>
+    <th>栏目一</th>
+    <th>栏目二</th>
+    <th>栏目三</th>
+    <th>栏目四</th>
+  </tr>
+  <tr>
+    <td>aaaa</td>
+    <td>bbbb</td>
+    <td>cccc</td>
+    <td>dddd</td>
+  </tr>
+  <tr>
+    <td>1111</td>
+    <td>2222</td>
+    <td>3333</td>
+    <td>4444</td>
+  </tr>
+</table>
+</div>
+
+<br />
+<div class="textbox">
+<form name="form1" id="form1" action="" method="post">
+  <table class="grid" width="80%">
+  <caption>标题</caption>
+  <tr>
+    <td>单行文本</td>
+    <td><input type="text" class="text" name="var1" id="var1" size="25" maxlength="30" value="" /></td>
+  </tr>
+  <tr>
+    <td>多行文本</td>
+    <td><textarea class="textarea" name="var2" id="var2" rows="6" cols="60"></textarea></td>
+  </tr>
+  <tr>
+    <td>单选</td>
+    <td><input type="radio" class="radio" name="var3" value="1" checked="checked" />是
+<input type="radio" class="radio" name="var3" value="0" />否</td>
+  </tr>
+  <tr>
+    <td>多选</td>
+    <td>
+	<input type="checkbox" class="checkbox" name="var4" value="1"  checked="checked" />选择1
+	<input type="checkbox" class="checkbox" name="var4" value="2"  checked="checked" />选择2
+    <input type="checkbox" class="checkbox" name="var4" value="3" />选择3</td>
+  </tr>
+  <tr>
+    <td>下拉</td>
+    <td>
+	    <select class="select" name="var5" id="var5">
+        <option value="1" selected="selected">选择1</option>
+        <option value="2">选择2</option>
+        <option value="3">选择3</option>
+        </select></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" class="button" name="submit" id="submit" value="提 交" /></td>
+  </tr>
+</table>
+</form>
+</div>
+
+<br />
+<div class="textbox">
+<div id="tab1" style="margin:20px; width:600px; padding:10px;">
+ <div class="tablist">
+     <ul>
+         <li><a href="javascript:void(0)" onclick="selecttab(this)" class="selected">标签一</a></li>
+         <li><a href="javascript:void(0)" onclick="selecttab(this)">标签二</a></li>
+         <li><a href="javascript:void(0)" onclick="selecttab(this)">标签三</a></li>
+    </ul>
+  </div>
+  <div class="tabcontent">
+     <div class="tabvalue">内容一</div>
+     <div class="tabvalue" style="display:none">内容二</div>
+     <div class="tabvalue" style="display:none">内容三</div>
+  </div>
+</div>
+</div>
+
+<br />
+<div class="textbox">
+<div class="m_menu">
+<ul id="jieqi_menu">
+<li><a href="#">菜单1</a>
+  <ul>
+    <li><a href="#">选项1_1</a></li>
+    <li><a href="#">选项1_2</a></li>
+    <li><a href="#">选项1_3</a></li>
+  </ul>
+</li>
+<li><a href="#">菜单2</a>
+  <ul>
+    <li><a href="#">选项2_1</a></li>
+    <li><a href="#">选项2_2</a></li>
+    <li><a href="#">选项2_3</a></li>
+  </ul>
+</li>
+<li><a href="#">菜单3</a></li>
+</ul>
+</div>
+</div>
+
+<br />
+<div class="textbox">
+<div class="c_title">文章标题</div>
+<div class="c_head">
+  <span class="c_lebel">属性1：</span><span class="c_value">值1</span>
+  <span class="c_lebel">属性2：</span><span class="c_value">值2</span>
+  <span class="c_lebel">属性3：</span><span class="c_value">值3</span>
+</div>
+<hr />
+<div class="c_content">
+  文章内容<br />
+  文章内容<br />
+  文章内容<br />
+  文章内容<br />
+</div>
+<hr />
+<div class="c_foot">
+  注解
+</div>
+</div>
+
+<br />
+
+<div class="pages"><div class="pagelink"><em>6/12</em><a href="#page=1" class="first">1</a><a href="#page=1" class="pgroup">&lt;&lt;</a><a href="#page=5" class="prev">&lt;</a><a href="#page=1">1</a><a href="#page=2">2</a><a href="#page=3">3</a><a href="#page=4">4</a><a href="#page=5">5</a><strong>6</strong><a href="#page=7">7</a><a href="#page=8">8</a><a href="#page=9">9</a><a href="#page=10">10</a><a href="#page=7" class="next">&gt;</a><a href="#page=13" class="ngroup">&gt;&gt;</a><a href="#page=13" class="last">12</a><kbd><input name="page" type="text" size="4" maxlength="6" onkeydown="if(event.keyCode==13){window.location='#page='+this.value; return false;}" /></kbd></div></div></div>
+
+
+<br /><br /><br /><br /><br /><br />
+</body>
+</html>

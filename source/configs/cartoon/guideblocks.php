@@ -1,0 +1,12 @@
+<?php 
+//showtype Î»ÔËËã£¬1111·Ö±ð±íÊ¾ ÍøÕ¾ËùÓÐÒ³¡¢Ä£¿éËùÓÐÒ³¡¢Ä£¿éÊ×Ò³¡¢ÍøÕ¾Ê×Ò³
+
+$jieqiBlocks[0]=array('bid'=>0, 'blockname'=>'·ÖÀàÔÄ¶Á', 'module'=>'cartoon', 'filename'=>'block_sort', 'classname'=>'BlockcartoonSort', 'side'=>JIEQI_SIDEBLOCK_LEFT, 'title'=>'·ÖÀàÔÄ¶Á', 'contenttype'=>JIEQI_CONTENT_TXT, 'showtype'=>15, 'custom'=>0, 'publish'=>3);
+//$jieqiBlocks[1]=array('bid'=>0, 'blockname'=>'°´×ÖÄ¸ÔÄ¶Á', 'module'=>'cartoon', 'filename'=>'block_word', 'classname'=>'BlockcartoonWord', 'side'=>JIEQI_SIDEBLOCK_LEFT, 'title'=>'°´×ÖÄ¸ÔÄ¶Á', 'contenttype'=>JIEQI_CONTENT_TXT, 'showtype'=>15, 'custom'=>0, 'publish'=>3);
+
+$jieqiBlocks[2]=array('bid'=>0, 'blockname'=>'ÅÅ ÐÐ °ñ', 'module'=>'cartoon', 'filename'=>'block_toplist', 'classname'=>'BlockcartoonToplist', 'side'=>JIEQI_SIDEBLOCK_LEFT, 'title'=>'ÅÅ ÐÐ °ñ', 'contenttype'=>JIEQI_CONTENT_TXT, 'showtype'=>15, 'custom'=>0, 'publish'=>3);
+
+$jieqiBlocks[3]=array('bid'=>0, 'blockname'=>'Âþ»­ËÑË÷', 'module'=>'cartoon', 'filename'=>'block_search', 'classname'=>'BlockcartoonSearch', 'side'=>JIEQI_SIDEBLOCK_LEFT, 'title'=>'Âþ»­ËÑË÷', 'contenttype'=>JIEQI_CONTENT_TXT, 'showtype'=>15, 'custom'=>0, 'publish'=>3);
+
+//$jieqiBlocks[]=array('bid'=>9, 'blockname'=>'Ï¹ÍæÍæ', 'module'=>'system', 'filename'=>'', 'classname'=>'BlockSystemCustom', 'side'=>0, 'title'=>'±¾Õ¾¹«¸æ°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡', 'vars'=>'', 'template'=>'', 'contenttype'=>1, 'custom'=>1, 'publish'=>3, 'hasvars'=>0);
+?>

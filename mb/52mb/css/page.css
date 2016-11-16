@@ -1,0 +1,87 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h5,form,p{margin:0;padding:0}
+input[type="button"],input[type="reset"],input[type="submit"],input[type="radio"],input[type="checkbox"]{cursor:pointer}
+body{color:#333;background-color:#e9faff;font:13px/1.5em "ËÎÌå",Verdana,Helvetica,Arial,sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:1em;overflow:hidden}
+a{color:#333;text-decoration:none}
+a:hover{color:#C00}
+ul,li{list-style:none}
+a img{border:none}
+div,dd,dl,dt,ul,li{overflow:hidden}
+em,strong,b{font-style:normal;font-weight:400;overflow:hidden}
+html{overflow:-moz-scrollbars-vertical}
+.read_page{width:980px;margin:0 auto}
+.wrap{margin:5px auto}
+.nowplace{border:1px solid #cacaca;padding:8px 45px;width:888px;border-bottom:1px solid #dedede;background:url(book_news.gif) #efefef no-repeat 18px 8px}
+.nowplace span{float:right}
+.nowplace a{font-weight:normal;color:#039}
+.info{paddinfg-top:20px;padding-bottom:5px;border-bottom:1px dashed #ececec;text-align:center}
+.yuedu_page{border:1px solid #d3d3d3;border-top:none;padding:10px;width:958px}
+.yuedu_zhengwen{padding:0 90px;width:778px;letter-spacing:2px;font-size:20px;font-family:"Microsoft YaHei","Î¢ÈíÑÅºÚ","¿¬Ìå","¿¬Ìå_GB2312","ËÎÌå";line-height:150%}
+.info h1{font-size:28px;color:#e11408;height:35px;line-height:35px}
+.info p{height:35px;line-height:35px;font-size:12px}
+.info p span{padding-right:20px}
+p.button{padding-left:300px}
+.button span{text-align:center;float:left;width:112px;height:30px;line-height:30px;margin-right:10px;background:url(button.gif) no-repeat 0 0}
+.tujian{border:1px solid #d3d3d3;border-top:none;background-color:#F3F3F3;padding:5px 10px}
+.page_next_preview{background:url(ts.gif) no-repeat center bottom;height:60px;padding:5px 0 17px 0}
+.header{background-color:#FFF;border-bottom:1px solid #c6edf9}
+.topbar{height:38px;background-color:#e43770}
+.topbar ul{width:980px;margin:0 auto}
+.topbar ul li{float:left;height:38px;line-height:38px}
+.topbar ul li a{background:url(icon.png) no-repeat 8px -25px;display:block;overflow:hidden;height:38px;line-height:38px;padding:0 20px 0 38px;font-size:14px;color:#fff;float:left;border-left:1px solid #ea5483;border-right:1px solid #de1a5a}
+.topbar ul li a:hover{background-color:#FFF;color:#e43770}
+.nav{width:980px;line-height:36px;font-size:14px;margin:0 auto}
+#home a{width:40px;padding:0px;background-color:#FFF;text-indent:-9999px}
+#loginbarx{float:right}
+#loginbarx a{width:40px;padding:0px;text-indent:-9999px;background-position:8px -325px}
+#loginbarx a:hover{background-position:8px -363px}
+.nav em{font-family:simsun;margin:0 6px;color:#999;font-size:12px}
+.nav strong{color:#390;font-weight:bold}
+.nav .all{color:#06c}
+.nav .nav-left{float:left}
+.nav .nav-right{float:right}
+#nav-link{padding:0 7px 0 17px;background-color:#FFF}
+#nav-link .home-nav{background-position:-2px -22px}
+.sign-nav{background-position:-122px -42px}
+#loginbarx a:hover .sign-nav{background-position:-122px -62px}
+#bookcase a{background-position:8px -55px}
+#bookcase a:hover{background-position:8px -85px}
+#toplist a{background-position:8px -118px}
+#toplist a:hover{background-position:8px -148px}
+#quanben a{background-position:8px -177px}
+#quanben a:hover{background-position:8px -210px}
+#visit a{background-position:8px -398px}
+#visit a:hover{background-position:8px -434px}
+#vote a{background-position:8px -542px}
+#vote a:hover{background-position:8px -572px}
+#fav a{background-position:8px -473px}
+#fav a:hover{background-position:8px -509px}
+#so a{background-position:8px -246px}
+#so a:hover{background-position:8px -282px}
+.quanwen{width:978px;border:1px solid #cacaca;border-top:none}
+.book_info{padding:20px 40px}
+.book_cover{float:left;width:130px;text-align:center}
+.book_cover img{width:120px;height:150px;padding:2px;border:1px dashed #A0A0A0;background-color:#FFF;margin-bottom:15px}
+.xiaoshuo{float:right;width:758px}
+.xiaoshuo h1{font-weight:bold;color:#333;width:450px;float:left;font-size:18px;line-height:30px}
+.xiaoshuo h2{color:#666;padding:5px 0;width:150px;float:left;height:16px;font-weight:normal}
+.xiaoshuo h5{width:450px;float:left;height:25px;margin-top:5px;line-height:25px;font-weight:normal;border-top:1px dotted #bebebe}
+.xiaoshuo h5 a{color:#F00}
+.info_right{width:300px;height:250px;float:right}
+.intro{float:left;width:450px}
+.intro h3{background-color:#f1f1f1;color:#8f8f8f;height:25px;margin:5px 0;line-height:25px;text-indent:10px}
+#intro{width:440px;padding:5px;height:88px;text-indent:25px;overflow:auto}
+.book_article_url{border-top:1px dotted #dfdfdf;height:30px;background-color:#f8f8f8;line-height:30px;text-indent:25px;border-bottom:1px dotted #dfdfdf;font-size:14px}
+.novel_list{padding:10px 40px;text-align:left}
+.book_article_texttitle{height:30px;line-height:30px;color:#333;font-weight:bold;font-size:14px;border-bottom:1px dotted #dfdfdf;text-align:center}
+.book_article_listtext{color:#333;line-height:25px;text-align:left}
+.book_article_listtext dd{float:left;height:25px;width:295px}
+.book_article_listtext dd a{color:#444;text-decoration:none;font-size:14px}
+.book_article_listtext dd a:hover{color:#ff72ae;text-decoration:none;font-size:14px}
+.footer{color:#555;text-align:center;padding:10px 0;line-height:18px}
+.tuijian{padding:0 10px;height:25px;line-height:25px}
+.l{float:left}
+.r{float:right}
+.contads{margin:5px 10px 0 10px}
+.centent_bootom{float:left;margin:5px 10px 0 0}
+.centent_top{float:left;margin:5px 10px 0 0}
