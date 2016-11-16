@@ -35,7 +35,7 @@ if(!isset($jieqiConfigs['article']['toppagenum'])) $jieqiConfigs['article']['top
 if(!isset($jieqiConfigs['article']['topcachenum'])) $jieqiConfigs['article']['topcachenum']=$jieqiConfigs['article']['cachenum'];
 //是否缓存
 $content_used_cache=false;
-// 个人修改
+// 当打开推荐时，页面显示推荐。其他页面显示点击
 if(in_array($_REQUEST['sort'], array('allvote', 'monthvote', 'mouthvote', 'weekvote', 'dayvote'))) {
 	$jieqiTset['jieqi_contents_template'] = $jieqiModules['article']['path'].'/templates/toplist.html';
 }else{
