@@ -29,7 +29,7 @@
 <ul>
   {?section name=i loop=$articlerows?}
 
-<li><span class="l1"><a href="/mulu/{?$articlerows[i].sortid?}-1.html">{?$articlerows[i].sort?}</a></span><span class="l2">《<a target="_blank" href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}全文阅读">{?$articlerows[i].articlename?}全文阅读</a>》</span><span class="l3"><a href="/modules/article/authorarticle.php?author={?$articlerows[i].author?}">{?$articlerows[i].author?}</a></span><span class="l4"><a href="{?$articlerows[i].url_lastchapter?}" target="_blank">{?$articlerows[i].lastchapter?}</a></span><span class="l5">{?$articlerows[i].size_c?}</span><span class="l6">{?$articlerows[i].allvisit?}</span><span class="l7">{?$articlerows[i].uptime|date:"y-m-d"?}</span></li>
+<li><span class="l1"><a href="/mulu/{?$articlerows[i].sortid?}-1.html">{?$articlerows[i].sort?}</a></span><span class="l2">《<a target="_blank" href="{?$articlerows[i].url_articleinfo?}" title="{?$articlerows[i].articlename?}全文阅读">{?$articlerows[i].articlename?}全文阅读</a>》</span><span class="l3"><a href="/modules/article/authorarticle.php?author={?$articlerows[i].author?}">{?$articlerows[i].author?}</a></span><span class="l4"><a href="{?$articlerows[i].url_lastchapter?}" target="_blank">{?$articlerows[i].lastchapter?}</a></span><span class="l5">{?$articlerows[i].size?}</span><span class="l6">{?$articlerows[i].allvisit?}</span><span class="l7">{?$articlerows[i].uptime|date:"y-m-d"?}</span></li>
 
   {?/section?}
 
